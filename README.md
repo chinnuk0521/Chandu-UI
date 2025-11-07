@@ -1,24 +1,24 @@
-# @chandu/components
+# chandu-ui-components
 
 A production-ready, reusable React component library. Similar to Material-UI and MUI.
 
 ## Installation
 
 ```bash
-npm install @chandu/components
+npm install chandu-ui-components
 # or
-yarn add @chandu/components
+yarn add chandu-ui-components
 # or
-pnpm add @chandu/components
+pnpm add chandu-ui-components
 ```
 
 ## Quick Start
 
 ```jsx
 import React from 'react';
-import { Header, Hero, Autocomplete } from '@chandu/components';
-import '@chandu/components/dist/Header.css';
-import '@chandu/components/dist/Autocomplete.css';
+import { Header, Hero, Autocomplete } from 'chandu-ui-components';
+import 'chandu-ui-components/dist/Header.css';
+import 'chandu-ui-components/dist/Autocomplete.css';
 
 function App() {
   return (
@@ -67,7 +67,7 @@ function App() {
 ### Header Component
 
 ```jsx
-import { Header } from '@chandu/components';
+import { Header } from 'chandu-ui-components';
 
 <Header
   logo="My App"
@@ -81,7 +81,7 @@ import { Header } from '@chandu/components';
 ### Hero Component
 
 ```jsx
-import { Hero } from '@chandu/components';
+import { Hero } from 'chandu-ui-components';
 
 <Hero
   title="Welcome to Our App"
@@ -96,7 +96,7 @@ import { Hero } from '@chandu/components';
 ### Autocomplete Component
 
 ```jsx
-import { Autocomplete } from '@chandu/components';
+import { Autocomplete } from 'chandu-ui-components';
 import { useState } from 'react';
 
 function MyComponent() {
@@ -116,7 +116,7 @@ function MyComponent() {
 ### GlobalSearch Component
 
 ```jsx
-import { GlobalSearch } from '@chandu/components';
+import { GlobalSearch } from 'chandu-ui-components';
 
 <GlobalSearch
   items={['Item 1', 'Item 2', 'Item 3']}
@@ -128,7 +128,7 @@ import { GlobalSearch } from '@chandu/components';
 ### Button Component
 
 ```jsx
-import { Button } from '@chandu/components';
+import { Button } from 'chandu-ui-components';
 
 <Button variant="primary" size="medium" onClick={() => {}}>
   Click Me
@@ -139,7 +139,7 @@ import { Button } from '@chandu/components';
 ### Card Component
 
 ```jsx
-import { Card } from '@chandu/components';
+import { Card } from 'chandu-ui-components';
 
 <Card
   title="Card Title"
@@ -154,7 +154,7 @@ import { Card } from '@chandu/components';
 ### Input Component
 
 ```jsx
-import { Input } from '@chandu/components';
+import { Input } from 'chandu-ui-components';
 
 <Input
   label="Name"
@@ -172,7 +172,7 @@ import { Input } from '@chandu/components';
 ### Modal Component
 
 ```jsx
-import { Modal } from '@chandu/components';
+import { Modal } from 'chandu-ui-components';
 import { useState } from 'react';
 
 function MyComponent() {
@@ -197,7 +197,7 @@ function MyComponent() {
 ### Badge Component
 
 ```jsx
-import { Badge } from '@chandu/components';
+import { Badge } from 'chandu-ui-components';
 
 <Badge variant="primary">New</Badge>
 <Badge variant="success">Active</Badge>
@@ -207,7 +207,7 @@ import { Badge } from '@chandu/components';
 ### Avatar Component
 
 ```jsx
-import { Avatar } from '@chandu/components';
+import { Avatar } from 'chandu-ui-components';
 
 <Avatar name="John Doe" size="medium" />
 <Avatar src="/path/to/image.jpg" alt="User" />
@@ -216,7 +216,7 @@ import { Avatar } from '@chandu/components';
 ### Spinner Component
 
 ```jsx
-import { Spinner } from '@chandu/components';
+import { Spinner } from 'chandu-ui-components';
 
 <Spinner size="medium" variant="primary" />
 ```
@@ -224,7 +224,7 @@ import { Spinner } from '@chandu/components';
 ### Tabs Component
 
 ```jsx
-import { Tabs } from '@chandu/components';
+import { Tabs } from 'chandu-ui-components';
 
 <Tabs
   tabs={[
@@ -241,11 +241,11 @@ Each component includes its own CSS file. Import the styles you need:
 
 ```jsx
 // Import individual component styles
-import '@chandu/components/dist/Header.css';
-import '@chandu/components/dist/Autocomplete.css';
+import 'chandu-ui-components/dist/Header.css';
+import 'chandu-ui-components/dist/Autocomplete.css';
 
 // Or import all styles (if available)
-import '@chandu/components/dist/index.css';
+import 'chandu-ui-components/dist/index.css';
 ```
 
 ## Props Documentation

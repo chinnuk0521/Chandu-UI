@@ -1,5 +1,5 @@
 {
-  "name": "@chandu/components",
+  "name": "chandu-ui-components",
   "version": "1.0.0",
   "description": "A production-ready, reusable React component library - Similar to Material-UI and MUI",
   "main": "dist/index.js",
@@ -28,7 +28,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chinnuk0521/Chandu-UI.git"
+    "url": "git+https://github.com/chinnuk0521/Chandu-UI.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "peerDependencies": {
     "react": "^18.0.0",
