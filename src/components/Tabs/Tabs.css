@@ -1,0 +1,55 @@
+.tabs {
+  width: 100%;
+}
+
+.tabs-header {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6b7280;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: -2px;
+  position: relative;
+}
+
+.tab-button:hover:not(.disabled) {
+  color: #00338d;
+}
+
+.tab-button.active {
+  color: #00338d;
+  border-bottom-color: #00338d;
+}
+
+.tab-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tabs-content {
+  min-height: 100px;
+  color: #374151;
+}
+
+@media (max-width: 768px) {
+  .tabs-header {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab-button {
+    white-space: nowrap;
+    padding: 0.75rem 1rem;
+  }
+}

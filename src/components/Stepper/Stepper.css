@@ -1,0 +1,126 @@
+.stepper {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.stepper-horizontal {
+  flex-direction: row;
+}
+
+.stepper-vertical {
+  flex-direction: column;
+}
+
+.stepper-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.stepper-horizontal .stepper-step {
+  flex-direction: row;
+}
+
+.stepper-connector {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 0;
+}
+
+.stepper-horizontal .stepper-connector {
+  top: 20px;
+  left: calc(50% + 20px);
+  right: calc(-50% + 20px);
+}
+
+.stepper-line {
+  height: 2px;
+  background: var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.stepper-line.completed {
+  background: var(--accent-primary);
+}
+
+.stepper-indicator {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-color);
+  color: var(--text-tertiary);
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.stepper-indicator.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+.stepper-indicator.completed {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.stepper-indicator.pending {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-tertiary);
+}
+
+.stepper-number {
+  font-size: 1rem;
+}
+
+.stepper-check-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.stepper-label {
+  margin-top: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stepper-horizontal .stepper-label {
+  margin-top: 0;
+  margin-left: 0.75rem;
+  text-align: left;
+}
+
+.stepper-label-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  transition: color 0.3s ease;
+}
+
+.stepper-label-text.active {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.stepper-description {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
