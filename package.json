@@ -4,7 +4,6 @@
   "description": "A production-ready, reusable React component library - Similar to Material-UI and MUI",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "README.md"
@@ -29,7 +28,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chandu/components.git"
+    "url": "https://github.com/chinnuk0521/Chandu-UI.git"
   },
   "peerDependencies": {
     "react": "^18.0.0",

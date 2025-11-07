@@ -12,7 +12,11 @@ export default defineConfig(({ mode }) => {
         lib: {
           entry: resolve(__dirname, 'src/index.js'),
           name: 'ChanduUIComponents',
-          fileName: (format) => `index.${format}.js`,
+          fileName: (format) => {
+            if (format === 'es') return 'index.esm.js';
+            if (format === 'cjs') return 'index.js';
+            return `index.${format}.js`;
+          },
           formats: ['es', 'cjs']
         },
         rollupOptions: {
