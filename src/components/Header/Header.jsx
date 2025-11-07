@@ -92,12 +92,10 @@ export default function Header({
           <span></span>
         </button>
       </div>
-      {isMobileMenuOpen && (
-        <div 
-          className="mobile-menu-overlay"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
+      <div 
+        className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
     </header>
   );
 }

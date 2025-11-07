@@ -3,13 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/Logo.svg" />
+    <!-- Favicon - using Logo.svg as-is -->
+    <link rel="icon" type="image/svg+xml" href="/Logo.svg" />
+    <link rel="alternate icon" type="image/svg+xml" href="/Logo.svg" />
+    <link rel="shortcut icon" type="image/svg+xml" href="/Logo.svg" />
+    <link rel="apple-touch-icon" href="/Logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <title>Chandu UI</title>
   </head>
   <body>
+    <!-- Logo displayed on page -->
+    <!-- <div style="position: fixed; top: 20px; left: 20px; z-index: 10000; pointer-events: none;">
+      <img src="/Logo.ico" alt="Chandu UI Logo" style="width: 400px; height: 400px; max-width: 100%; display: block; object-fit: contain;" />
+    </div> -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
