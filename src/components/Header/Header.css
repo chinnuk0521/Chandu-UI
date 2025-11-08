@@ -237,6 +237,10 @@
     height: 90px;
   }
 
+  .logo-text {
+    font-size: 1.35rem;
+  }
+
   .nav {
     gap: 1.25rem;
   }
@@ -244,6 +248,32 @@
   .nav-link {
     font-size: 0.875rem;
     padding: 0.5rem 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .header.scrolled {
+    top: 0.25rem;
+  }
+
+  .header-container {
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .logo-image {
+    height: 70px;
+  }
+
+  .logo-text {
+    font-size: 1.15rem;
   }
 }
 

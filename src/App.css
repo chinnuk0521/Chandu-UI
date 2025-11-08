@@ -57,6 +57,14 @@
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Ensure images and media are responsive */
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -68,6 +76,7 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 .app {
@@ -365,6 +374,10 @@ html {
 }
 
 @media (max-width: 1024px) {
+  .components-showcase {
+    padding: 4rem 1.5rem;
+  }
+
   .component-demo {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -378,27 +391,168 @@ html {
   .component-demo-title {
     font-size: 2rem;
   }
-}
 
-@media (max-width: 768px) {
   .showcase-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .showcase-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .components-showcase {
+    padding: 3rem 1rem;
+  }
+
+  .showcase-container {
+    padding: 0;
+  }
+
+  .showcase-header {
+    margin-bottom: 3rem;
+  }
+
+  .showcase-title {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .showcase-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .showcase-description {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  .components-grid {
+    gap: 4rem;
+  }
+
+  .component-demo {
+    gap: 1.5rem;
+    padding: 1.5rem 0;
   }
 
   .component-demo-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
   }
 
   .component-demo-story {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .component-demo-features {
+    margin: 1rem 0;
+  }
+
+  .component-demo-features li {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
   }
 
   .component-demo-visual {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+
+  .component-demo-visual-modal {
+    min-height: 400px;
+    padding: 2rem 1.25rem;
+  }
+
+  .demo-interactive {
     padding: 1.5rem;
+    min-height: 150px;
+  }
+
+  .demo-interactive-modal {
+    min-height: 350px;
+    padding: 2rem 1.25rem;
+  }
+
+  .button-group {
+    gap: 0.75rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .input-group {
+    gap: 1.25rem;
+  }
+
+  .badge-group {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .avatar-group {
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .spinner-group {
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .view-code-button {
+    width: 100%;
+    justify-content: center;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .components-showcase {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .showcase-title {
+    font-size: 1.5rem;
+  }
+
+  .showcase-subtitle {
+    font-size: 1rem;
+  }
+
+  .showcase-description {
+    font-size: 0.875rem;
+  }
+
+  .component-demo-title {
+    font-size: 1.25rem;
+  }
+
+  .component-demo-story {
+    font-size: 0.875rem;
+  }
+
+  .component-demo-visual {
+    padding: 1rem;
+  }
+
+  .demo-interactive {
+    padding: 1.25rem;
+  }
+
+  .component-demo-features li {
+    font-size: 0.85rem;
   }
 }
 
