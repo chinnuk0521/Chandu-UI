@@ -10,6 +10,9 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .about-content {
@@ -17,6 +20,17 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.about-text,
+.about-image {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .about-text {
@@ -31,6 +45,10 @@
   color: var(--accent-primary);
   margin-bottom: 1rem;
   transition: color 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .about-description {
@@ -38,6 +56,8 @@
   color: var(--text-tertiary);
   line-height: 1.8;
   transition: color 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .about-stats {
@@ -321,8 +341,14 @@
     padding: 4rem 1.5rem;
   }
 
+  .about-container {
+    padding: 0 0.5rem;
+  }
+
   .about-content {
     gap: 2.5rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   .about-title {

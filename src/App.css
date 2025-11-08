@@ -126,6 +126,10 @@ html {
   background: var(--bg-secondary);
   position: relative;
   transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .showcase-container {
@@ -133,11 +137,17 @@ html {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .showcase-header {
   text-align: center;
   margin-bottom: 4rem;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .showcase-title {
@@ -146,6 +156,10 @@ html {
   color: var(--accent-primary);
   margin-bottom: 1rem;
   transition: color 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .showcase-subtitle {
@@ -154,6 +168,10 @@ html {
   margin-bottom: 1rem;
   font-weight: 500;
   transition: color 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .showcase-description {
@@ -163,6 +181,11 @@ html {
   margin: 0 auto;
   line-height: 1.6;
   transition: color 0.3s ease;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .components-grid {
@@ -178,6 +201,9 @@ html {
   align-items: center;
   padding: 4rem 0;
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .component-demo:nth-child(even) {
@@ -186,6 +212,15 @@ html {
 
 .component-demo:nth-child(even) > * {
   direction: ltr;
+}
+
+/* Ensure content doesn't overflow */
+.component-demo-content,
+.component-demo-visual {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .component-demo-content {
@@ -227,6 +262,8 @@ html {
   margin-bottom: 1rem;
   line-height: 1.2;
   transition: color 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .component-demo-story {
@@ -235,6 +272,8 @@ html {
   line-height: 1.8;
   margin-bottom: 1.5rem;
   transition: color 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .component-demo-features {
@@ -411,10 +450,19 @@ html {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 2rem 0;
+    width: 100%;
+    max-width: 100%;
   }
 
   .component-demo:nth-child(even) {
     direction: ltr;
+  }
+
+  .component-demo-content,
+  .component-demo-visual {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
   }
 
   .component-demo-title {
@@ -436,11 +484,14 @@ html {
   }
 
   .showcase-container {
-    padding: 0;
+    padding: 0 0.5rem;
   }
 
   .showcase-header {
     margin-bottom: 3rem;
+    padding: 0 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .showcase-title {
@@ -608,8 +659,13 @@ html {
     padding: 2rem 0.5rem;
   }
 
+  .showcase-container {
+    padding: 0 0.25rem;
+  }
+
   .showcase-title {
     font-size: 1.25rem;
+    padding: 0 0.5rem;
   }
 
   .component-demo-title {
@@ -618,6 +674,10 @@ html {
 
   .component-demo-visual {
     padding: 0.875rem;
+  }
+
+  .component-demo {
+    padding: 1rem 0;
   }
 }
 
@@ -637,6 +697,43 @@ table {
 
   * {
     -webkit-tap-highlight-color: rgba(0, 51, 141, 0.1);
+  }
+
+  /* Ensure all containers are properly constrained */
+  .components-showcase,
+  .showcase-container,
+  .component-demo,
+  .component-demo-content,
+  .component-demo-visual {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Prevent horizontal overflow */
+  body,
+  .app {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  /* Ensure all text elements are properly constrained */
+  h1, h2, h3, h4, h5, h6,
+  p, span, div, a, button {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Center align content on mobile */
+  .showcase-header,
+  .features-header,
+  .services-header {
+    text-align: center;
+    width: 100%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
   }
 }
 
