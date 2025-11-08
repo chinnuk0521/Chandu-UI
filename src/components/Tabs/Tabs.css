@@ -6,12 +6,14 @@
   display: flex;
   gap: 0.5rem;
   border-bottom: 2px solid #e5e7eb;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+  overflow-x: auto;
 }
 
 .tab-button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
   font-weight: 500;
   color: #6b7280;
   background: transparent;
@@ -21,6 +23,8 @@
   transition: all 0.2s ease;
   margin-bottom: -2px;
   position: relative;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .tab-button:hover:not(.disabled) {

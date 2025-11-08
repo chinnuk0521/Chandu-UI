@@ -130,6 +130,7 @@ html {
   max-width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
+  margin-top: 20px;
 }
 
 .showcase-container {
@@ -233,10 +234,14 @@ html {
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 2.5rem;
+  padding: 1.5rem;
   box-shadow: 0 2px 8px var(--shadow-sm);
   transition: all 0.3s ease;
   position: relative;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .component-demo-visual:hover {
@@ -326,17 +331,20 @@ html {
 }
 
 .demo-interactive {
-  padding: 2rem;
+  padding: 1.5rem;
   background: var(--bg-card);
   border-radius: 12px;
   border: 1px solid var(--border-light);
-  min-height: 200px;
+  min-height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  gap: 1.25rem;
+  flex-direction: column;
 }
 
 /* Modal component specific - larger interactive area */
@@ -348,9 +356,11 @@ html {
 
 .button-group {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-group:last-child {

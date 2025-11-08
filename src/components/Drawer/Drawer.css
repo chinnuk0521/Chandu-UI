@@ -53,15 +53,15 @@
 }
 
 .drawer-small {
-  width: 320px;
+  width: 300px;
 }
 
 .drawer-medium {
-  width: 400px;
+  width: 380px;
 }
 
 .drawer-large {
-  width: 600px;
+  width: 560px;
 }
 
 .drawer-top.drawer-small,
