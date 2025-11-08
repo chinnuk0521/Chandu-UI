@@ -144,7 +144,7 @@ export default function Button({
   to {
     transform: rotate(360deg);
   }
-}`
+}`,
   },
   Card: {
     jsx: `import React from 'react';
@@ -254,7 +254,7 @@ export default function Card({
   padding: 1rem 1.5rem;
   border-top: 1px solid #d1d5db;
   background: #e8e8e8;
-}`
+}`,
   },
   Input: {
     jsx: `import React from 'react';
@@ -380,7 +380,7 @@ export default function Input({
   font-size: 0.875rem;
   color: #6b7280;
   margin-top: 0.25rem;
-}`
+}`,
   },
   Autocomplete: {
     jsx: `import React, { useState, useRef, useEffect } from 'react';
@@ -600,7 +600,7 @@ export default function Autocomplete({
 .suggestions li.highlighted {
   background: #e5e7eb;
   color: #00338d;
-}`
+}`,
   },
   GlobalSearch: {
     jsx: `import React, { useState, useRef, useEffect } from 'react';
@@ -787,7 +787,7 @@ export default function GlobalSearch({
 .global-search-result.highlighted {
   background: #e5e7eb;
   color: #00338d;
-}`
+}`,
   },
   Badge: {
     jsx: `import React from 'react';
@@ -858,7 +858,7 @@ export default function Badge({
 .badge-large {
   font-size: 1rem;
   padding: 0.375rem 1rem;
-}`
+}`,
   },
   Avatar: {
     jsx: `import React from 'react';
@@ -928,7 +928,7 @@ export default function Avatar({
   width: 64px;
   height: 64px;
   font-size: 1.25rem;
-}`
+}`,
   },
   Spinner: {
     jsx: `import React from 'react';
@@ -986,7 +986,7 @@ export default function Spinner({
   to {
     transform: rotate(360deg);
   }
-}`
+}`,
   },
   Modal: {
     jsx: `import React, { useEffect } from 'react';
@@ -1164,7 +1164,7 @@ export default function Modal({
     transform: translateY(0);
     opacity: 1;
   }
-}`
+}`,
   },
   Tabs: {
     jsx: `import React, { useState } from 'react';
@@ -1250,7 +1250,7 @@ export default function Tabs({
 .tabs-content {
   padding: 1.5rem 0;
   color: #374151;
-}`
+}`,
   },
   Dropdown: {
     jsx: `import React, { useState, useRef, useEffect } from 'react';
@@ -1435,7 +1435,7 @@ export default function Dropdown({
 .dropdown-item.selected:hover {
   background: #002a6f;
   padding-left: 1.25rem;
-}`
+}`,
   },
   Checkbox: {
     jsx: `import React from 'react';
@@ -1534,7 +1534,7 @@ export default function Checkbox({
   font-size: 1rem;
   color: #374151;
   line-height: 1.5;
-}`
+}`,
   },
   Radio: {
     jsx: `import React from 'react';
@@ -1629,7 +1629,7 @@ export default function Radio({
   font-size: 1rem;
   color: #374151;
   line-height: 1.5;
-}`
+}`,
   },
   Switch: {
     jsx: `import React from 'react';
@@ -1736,7 +1736,7 @@ export default function Switch({
 
 .switch-input:disabled {
   cursor: not-allowed;
-}`
+}`,
   },
   Textarea: {
     jsx: `import React from 'react';
@@ -1850,7 +1850,7 @@ export default function Textarea({
   font-size: 0.875rem;
   color: #6b7280;
   margin-top: 0.25rem;
-}`
+}`,
   },
   Progress: {
     jsx: `import React from 'react';
@@ -1939,7 +1939,7 @@ export default function Progress({
 
 .progress-error {
   background: #ef4444;
-}`
+}`,
   },
   Alert: {
     jsx: `import React from 'react';
@@ -2080,7 +2080,7 @@ export default function Alert({
 .alert-close:hover {
   opacity: 1;
   background: rgba(0, 0, 0, 0.1);
-}`
+}`,
   },
   Tooltip: {
     jsx: `import React, { useState } from 'react';
@@ -2196,7 +2196,7 @@ export default function Tooltip({
     opacity: 1;
     transform: translateY(0);
   }
-}`
+}`,
   },
   Divider: {
     jsx: `import React from 'react';
@@ -2246,7 +2246,7 @@ export default function Divider({
   color: #6b7280;
   font-size: 0.875rem;
   position: relative;
-}`
+}`,
   },
   Skeleton: {
     jsx: `import React from 'react';
@@ -2312,7 +2312,7 @@ export default function Skeleton({
   100% {
     background-position: -200% 0;
   }
-}`
+}`,
   },
   Chip: {
     jsx: `import React from 'react';
@@ -2426,7 +2426,7 @@ export default function Chip({
 .chip-delete svg {
   width: 12px;
   height: 12px;
-}`
+}`,
   },
   Breadcrumb: {
     jsx: `import React from 'react';
@@ -2483,7 +2483,7 @@ export default function Breadcrumb({
 }
 
 .breadcrumb-separator {
-  color: var(--text-tertiary);
+  color: #6b7280;
   display: flex;
   align-items: center;
   font-size: 0.875rem;
@@ -2491,23 +2491,23 @@ export default function Breadcrumb({
 }
 
 .breadcrumb-link {
-  color: var(--text-secondary);
+  color: #374151;
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.3s ease;
 }
 
 .breadcrumb-link:hover {
-  color: var(--accent-primary);
+  color: #00338d;
   text-decoration: underline;
 }
 
 .breadcrumb-current {
-  color: var(--text-primary);
+  color: #1a1a1a;
   font-size: 0.875rem;
   font-weight: 500;
   transition: color 0.3s ease;
-}`
+}`,
   },
   Pagination: {
     jsx: `import React from 'react';
@@ -2608,10 +2608,10 @@ export default function Pagination({
   min-width: 40px;
   height: 40px;
   padding: 0.5rem 0.75rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid #d1d5db;
   border-radius: 8px;
-  background: var(--bg-card);
-  color: var(--text-secondary);
+  background: #fafafa;
+  color: #374151;
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
@@ -2623,9 +2623,9 @@ export default function Pagination({
 }
 
 .pagination-button:hover:not(:disabled):not(.active) {
-  background: var(--bg-tertiary);
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
+  background: #f0f0f0;
+  border-color: #00338d;
+  color: #00338d;
 }
 
 .pagination-button:disabled {
@@ -2634,14 +2634,14 @@ export default function Pagination({
 }
 
 .pagination-button.active {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
+  background: #00338d;
+  border-color: #00338d;
   color: white;
 }
 
 .pagination-button.active:hover {
-  background: var(--accent-hover);
-}`
+  background: #002a6f;
+}`,
   },
   Accordion: {
     jsx: `import React, { useState } from 'react';
@@ -2697,14 +2697,14 @@ export default function Accordion({
 }`,
     css: `.accordion {
   width: 100%;
-  border: 1px solid var(--border-color);
+  border: 1px solid #d1d5db;
   border-radius: 8px;
   overflow: hidden;
   transition: border-color 0.3s ease;
 }
 
 .accordion-item {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid #d1d5db;
   transition: border-color 0.3s ease;
 }
 
@@ -2715,7 +2715,7 @@ export default function Accordion({
 .accordion-header {
   width: 100%;
   padding: 1rem 1.25rem;
-  background: var(--bg-card);
+  background: #fafafa;
   border: none;
   text-align: left;
   cursor: pointer;
@@ -2727,38 +2727,38 @@ export default function Accordion({
 }
 
 .accordion-header:hover {
-  background: var(--bg-tertiary);
+  background: #f0f0f0;
 }
 
 .accordion-header.open {
-  background: var(--bg-tertiary);
-  border-bottom: 1px solid var(--border-color);
+  background: #f0f0f0;
+  border-bottom: 1px solid #d1d5db;
 }
 
 .accordion-title {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #1a1a1a;
   transition: color 0.3s ease;
 }
 
 .accordion-icon {
   width: 20px;
   height: 20px;
-  color: var(--text-tertiary);
+  color: #6b7280;
   transition: transform 0.3s ease, color 0.3s ease;
   flex-shrink: 0;
 }
 
 .accordion-icon.open {
   transform: rotate(180deg);
-  color: var(--accent-primary);
+  color: #00338d;
 }
 
 .accordion-content {
   padding: 1rem 1.25rem;
-  background: var(--bg-card);
-  color: var(--text-secondary);
+  background: #fafafa;
+  color: #374151;
   line-height: 1.6;
   animation: slideDown 0.3s ease;
   transition: color 0.3s ease;
@@ -2773,7 +2773,7 @@ export default function Accordion({
     opacity: 1;
     max-height: 500px;
   }
-}`
+}`,
   },
   Drawer: {
     jsx: `import React, { useEffect } from 'react';
@@ -2853,13 +2853,13 @@ export default function Drawer({
 .drawer {
   position: fixed;
   top: 0;
-  background: var(--bg-modal);
-  box-shadow: -4px 0 24px var(--shadow-lg);
+  background: #fafafa;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
   z-index: 10000;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease;
-  border: 1px solid var(--border-color);
+  border: 1px solid #d1d5db;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -2910,14 +2910,14 @@ export default function Drawer({
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid #d1d5db;
   transition: border-color 0.3s ease;
 }
 
 .drawer-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--accent-primary);
+  color: #00338d;
   margin: 0;
   transition: color 0.3s ease;
 }
@@ -2930,7 +2930,7 @@ export default function Drawer({
   justify-content: center;
   border: none;
   background: transparent;
-  color: var(--text-tertiary);
+  color: #6b7280;
   font-size: 1.5rem;
   cursor: pointer;
   border-radius: 50%;
@@ -2938,15 +2938,15 @@ export default function Drawer({
 }
 
 .drawer-close:hover {
-  background: var(--bg-tertiary);
-  color: var(--text-primary);
+  background: #f0f0f0;
+  color: #1a1a1a;
 }
 
 .drawer-content {
   padding: 1.5rem;
   overflow-y: auto;
   flex: 1;
-  color: var(--text-secondary);
+  color: #374151;
   transition: color 0.3s ease;
 }
 
@@ -2973,7 +2973,7 @@ export default function Drawer({
 @keyframes slideInBottom {
   from { transform: translateY(100%); }
   to { transform: translateY(0); }
-}`
+}`,
   },
   Popover: {
     jsx: `import React, { useState, useRef, useEffect } from 'react';
@@ -3052,12 +3052,12 @@ export default function Popover({
 }
 
 .popover-content {
-  background: var(--bg-modal);
-  border: 1px solid var(--border-color);
+  background: #fafafa;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
   padding: 0.75rem 1rem;
-  box-shadow: 0 4px 12px var(--shadow-md);
-  color: var(--text-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #1a1a1a;
   font-size: 0.875rem;
   min-width: 150px;
   max-width: 300px;
@@ -3081,7 +3081,7 @@ export default function Popover({
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  border-top-color: var(--bg-modal);
+  border-top-color: #fafafa;
 }
 
 .popover-bottom {
@@ -3094,7 +3094,7 @@ export default function Popover({
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  border-bottom-color: var(--bg-modal);
+  border-bottom-color: #fafafa;
 }
 
 .popover-left {
@@ -3107,7 +3107,7 @@ export default function Popover({
   left: 100%;
   top: 50%;
   transform: translateY(-50%);
-  border-left-color: var(--bg-modal);
+  border-left-color: #fafafa;
 }
 
 .popover-right {
@@ -3120,7 +3120,7 @@ export default function Popover({
   right: 100%;
   top: 50%;
   transform: translateY(-50%);
-  border-right-color: var(--bg-modal);
+  border-right-color: #fafafa;
 }
 
 @keyframes fadeIn {
@@ -3132,7 +3132,7 @@ export default function Popover({
     opacity: 1;
     transform: translateY(0);
   }
-}`
+}`,
   },
   Stepper: {
     jsx: `import React from 'react';
@@ -3226,12 +3226,12 @@ export default function Stepper({
 
 .stepper-line {
   height: 2px;
-  background: var(--border-color);
+  background: #d1d5db;
   transition: background-color 0.3s ease;
 }
 
 .stepper-line.completed {
-  background: var(--accent-primary);
+  background: #00338d;
 }
 
 .stepper-indicator {
@@ -3241,9 +3241,9 @@ export default function Stepper({
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-tertiary);
-  border: 2px solid var(--border-color);
-  color: var(--text-tertiary);
+  background: #f0f0f0;
+  border: 2px solid #d1d5db;
+  color: #6b7280;
   font-weight: 600;
   position: relative;
   z-index: 1;
@@ -3251,21 +3251,21 @@ export default function Stepper({
 }
 
 .stepper-indicator.active {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
+  background: #00338d;
+  border-color: #00338d;
   color: white;
 }
 
 .stepper-indicator.completed {
-  background: var(--success);
-  border-color: var(--success);
+  background: #10b981;
+  border-color: #10b981;
   color: white;
 }
 
 .stepper-indicator.pending {
-  background: var(--bg-tertiary);
-  border-color: var(--border-color);
-  color: var(--text-tertiary);
+  background: #f0f0f0;
+  border-color: #d1d5db;
+  color: #6b7280;
 }
 
 .stepper-number {
@@ -3294,20 +3294,20 @@ export default function Stepper({
 .stepper-label-text {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text-tertiary);
+  color: #6b7280;
   transition: color 0.3s ease;
 }
 
 .stepper-label-text.active {
-  color: var(--accent-primary);
+  color: #00338d;
   font-weight: 600;
 }
 
 .stepper-description {
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: #9ca3af;
   transition: color 0.3s ease;
-}`
+}`,
   },
   Rating: {
     jsx: `import React, { useState } from 'react';
@@ -3384,7 +3384,7 @@ export default function Rating({
   border: none;
   padding: 0;
   cursor: pointer;
-  color: var(--border-color);
+  color: #d1d5db;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
@@ -3392,12 +3392,12 @@ export default function Rating({
 }
 
 .rating-star:not(.readonly):hover {
-  color: var(--warning);
+  color: #f59e0b;
   transform: scale(1.1);
 }
 
 .rating-star.filled {
-  color: var(--warning);
+  color: #f59e0b;
 }
 
 .rating.readonly .rating-star {
@@ -3424,7 +3424,7 @@ export default function Rating({
 
 .rating-star:disabled {
   cursor: default;
-}`
+}`,
   },
   Slider: {
     jsx: `import React, { useState } from 'react';
@@ -3491,13 +3491,13 @@ export default function Slider({
   align-items: center;
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #374151;
   transition: color 0.3s ease;
 }
 
 .slider-value {
   font-weight: 600;
-  color: var(--accent-primary);
+  color: #00338d;
   transition: color 0.3s ease;
 }
 
@@ -3510,7 +3510,7 @@ export default function Slider({
   width: 100%;
   height: 6px;
   border-radius: 3px;
-  background: var(--border-color);
+  background: #d1d5db;
   outline: none;
   -webkit-appearance: none;
   appearance: none;
@@ -3523,32 +3523,32 @@ export default function Slider({
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--accent-primary);
+  background: #00338d;
   cursor: pointer;
   border: 2px solid white;
-  box-shadow: 0 2px 4px var(--shadow-sm);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .slider-input::-webkit-slider-thumb:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 8px var(--shadow-md);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .slider-input::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--accent-primary);
+  background: #00338d;
   cursor: pointer;
   border: 2px solid white;
-  box-shadow: 0 2px 4px var(--shadow-sm);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .slider-input::-moz-range-thumb:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 8px var(--shadow-md);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .slider-input:disabled {
@@ -3561,9 +3561,9 @@ export default function Slider({
   margin-top: 0.5rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--accent-primary);
+  color: #00338d;
   transition: color 0.3s ease;
-}`
+}`,
   },
   Menu: {
     jsx: `import React, { useState, useRef, useEffect } from 'react';
@@ -3634,10 +3634,10 @@ export default function Menu({
 
 .menu {
   position: absolute;
-  background: var(--bg-modal);
-  border: 1px solid var(--border-color);
+  background: #fafafa;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
-  box-shadow: 0 4px 12px var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: 0.5rem;
   min-width: 200px;
   z-index: 1000;
@@ -3672,15 +3672,15 @@ export default function Menu({
   padding: 0.75rem 1rem;
   cursor: pointer;
   border-radius: 6px;
-  color: var(--text-secondary);
+  color: #374151;
   font-size: 0.875rem;
   transition: all 0.2s ease;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .menu-item:hover:not(.disabled) {
-  background: var(--bg-tertiary);
-  color: var(--accent-primary);
+  background: #f0f0f0;
+  color: #00338d;
 }
 
 .menu-item.disabled {
@@ -3689,7 +3689,7 @@ export default function Menu({
 }
 
 .menu-item.divider {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid #d1d5db;
   margin: 0.25rem 0;
   padding-bottom: 0.75rem;
   transition: border-color 0.3s ease;
@@ -3709,7 +3709,7 @@ export default function Menu({
 .menu-arrow {
   width: 16px;
   height: 16px;
-  color: var(--text-tertiary);
+  color: #6b7280;
   transition: color 0.3s ease;
 }
 
@@ -3722,7 +3722,7 @@ export default function Menu({
     opacity: 1;
     transform: translateY(0);
   }
-}`
+}`,
   },
   Toast: {
     jsx: `import React, { useEffect } from 'react';
@@ -3777,7 +3777,7 @@ export default function Toast({
   gap: 0.75rem;
   padding: 1rem 1.25rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   min-width: 300px;
   max-width: 500px;
   animation: slideIn 0.3s ease;
@@ -3821,26 +3821,26 @@ export default function Toast({
 
 .toast-info {
   background: rgba(59, 130, 246, 0.1);
-  border-color: var(--info);
-  color: var(--info);
+  border-color: #3b82f6;
+  color: #3b82f6;
 }
 
 .toast-success {
   background: rgba(16, 185, 129, 0.1);
-  border-color: var(--success);
-  color: var(--success);
+  border-color: #10b981;
+  color: #10b981;
 }
 
 .toast-warning {
   background: rgba(245, 158, 11, 0.1);
-  border-color: var(--warning);
-  color: var(--warning);
+  border-color: #f59e0b;
+  color: #f59e0b;
 }
 
 .toast-error {
   background: rgba(239, 68, 68, 0.1);
-  border-color: var(--error);
-  color: var(--error);
+  border-color: #ef4444;
+  color: #ef4444;
 }
 
 @keyframes slideIn {
@@ -3852,6 +3852,2150 @@ export default function Toast({
     opacity: 1;
     transform: translateX(0);
   }
-}`
+}`,
+  },
+  Table: {
+    jsx: `import React from 'react';
+import './Table.css';
+
+export default function Table({
+  columns = [],
+  data = [],
+  striped = false,
+  bordered = false,
+  className = '',
+  ...props
+}) {
+  return (
+    <div className={\`table-wrapper \${className}\`} {...props}>
+      <table className={\`table \${striped ? 'table-striped' : ''} \${bordered ? 'table-bordered' : ''}\`}>
+        <thead>
+          <tr>
+            {columns.map((column) => (
+              <th key={column.key} className={column.sortable ? 'sortable' : ''}>
+                {column.label}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, index) => (
+            <tr key={index}>
+              {columns.map((column) => (
+                <td key={column.key}>{row[column.key]}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}`,
+    css: `.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #fafafa;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table thead {
+  background: #f0f0f0;
+}
+
+.table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  color: #1a1a1a;
+  border-bottom: 2px solid #d1d5db;
+}
+
+.table td {
+  padding: 1rem 1.25rem;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table tbody tr:hover {
+  background: #f0f0f0;
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background: #f0f0f0;
+}`,
+  },
+  Timeline: {
+    jsx: `import React from 'react';
+import './Timeline.css';
+
+export default function Timeline({
+  items = [],
+  orientation = 'vertical',
+  className = '',
+  ...props
+}) {
+  return (
+    <div className={\`timeline timeline-\${orientation} \${className}\`} {...props}>
+      {items.map((item, index) => (
+        <div key={index} className="timeline-item">
+          <div className="timeline-marker">
+            {item.icon || <div className="timeline-dot"></div>}
+          </div>
+          <div className="timeline-content">
+            {item.date && <div className="timeline-date">{item.date}</div>}
+            <h3 className="timeline-title">{item.title}</h3>
+            {item.description && (
+              <p className="timeline-description">{item.description}</p>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}`,
+    css: `.timeline {
+  position: relative;
+  width: 100%;
+}
+
+.timeline-vertical {
+  padding-left: 2rem;
+}
+
+.timeline-vertical::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #d1d5db;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  border: 3px solid #00338d;
+  border-radius: 50%;
+  z-index: 1;
+}`,
+  },
+  Carousel: {
+    jsx: `import React, { useState, useEffect } from 'react';
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
+import './Carousel.css';
+
+export default function Carousel({
+  items = [],
+  autoPlay = false,
+  interval = 3000,
+  showIndicators = true,
+  showArrows = true,
+  className = '',
+  ...props
+}) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (autoPlay && items.length > 1) {
+      const timer = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % items.length);
+      }, interval);
+      return () => clearInterval(timer);
+    }
+  }, [autoPlay, interval, items.length]);
+
+  return (
+    <div className={\`carousel \${className}\`} {...props}>
+      <div className="carousel-container">
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className={\`carousel-slide \${index === currentIndex ? 'active' : ''}\`}
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+      {showArrows && items.length > 1 && (
+        <>
+          <button className="carousel-arrow carousel-arrow-prev" onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}>
+            <HiChevronLeft />
+          </button>
+          <button className="carousel-arrow carousel-arrow-next" onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}>
+            <HiChevronRight />
+          </button>
+        </>
+      )}
+      {showIndicators && items.length > 1 && (
+        <div className="carousel-indicators">
+          {items.map((_, index) => (
+            <button
+              key={index}
+              className={\`carousel-indicator \${index === currentIndex ? 'active' : ''}\`}
+              onClick={() => setCurrentIndex(index)}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}`,
+    css: `.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carousel-slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  z-index: 2;
+}`,
+  },
+  FileUpload: {
+    jsx: `import React, { useState, useRef } from 'react';
+import { HiCloudUpload, HiX } from 'react-icons/hi';
+import './FileUpload.css';
+
+export default function FileUpload({
+  onFileSelect,
+  accept = '*/*',
+  maxSize = 10,
+  multiple = false,
+  className = '',
+  ...props
+}) {
+  const [files, setFiles] = useState([]);
+  const [isDragging, setIsDragging] = useState(false);
+  const fileInputRef = useRef(null);
+
+  const handleFileSelect = (selectedFiles) => {
+    const fileArray = Array.from(selectedFiles);
+    const validFiles = fileArray.filter((file) => {
+      if (file.size > maxSize * 1024 * 1024) {
+        alert(\`File \${file.name} exceeds maximum size of \${maxSize}MB\`);
+        return false;
+      }
+      return true;
+    });
+
+    const newFiles = multiple ? [...files, ...validFiles] : validFiles;
+    setFiles(newFiles);
+    if (onFileSelect) {
+      onFileSelect(multiple ? newFiles : newFiles[0]);
+    }
+  };
+
+  return (
+    <div className={\`file-upload \${className}\`} {...props}>
+      <div
+        className={\`file-upload-area \${isDragging ? 'dragging' : ''}\`}
+        onDrop={(e) => {
+          e.preventDefault();
+          setIsDragging(false);
+          handleFileSelect(e.dataTransfer.files);
+        }}
+        onDragOver={(e) => {
+          e.preventDefault();
+          setIsDragging(true);
+        }}
+        onDragLeave={() => setIsDragging(false)}
+        onClick={() => fileInputRef.current?.click()}
+      >
+        <HiCloudUpload className="file-upload-icon" />
+        <p className="file-upload-text">Drag and drop files here, or click to select</p>
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept={accept}
+          multiple={multiple}
+          onChange={(e) => handleFileSelect(e.target.files)}
+          className="file-upload-input"
+        />
+      </div>
+    </div>
+  );
+}`,
+    css: `.file-upload-area {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f0f0f0;
+}
+
+.file-upload-area:hover {
+  border-color: #00338d;
+  background: #fafafa;
+}
+
+.file-upload-area.dragging {
+  border-color: #00338d;
+  background: rgba(0, 51, 141, 0.05);
+}`,
+  },
+  Calendar: {
+    jsx: `import React, { useState } from 'react';
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
+import './Calendar.css';
+
+export default function Calendar({
+  value = null,
+  onChange,
+  minDate = null,
+  maxDate = null,
+  className = '',
+  ...props
+}) {
+  const [currentDate, setCurrentDate] = useState(value || new Date());
+  const [selectedDate, setSelectedDate] = useState(value);
+
+  const monthNames = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+
+  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  const getDaysInMonth = (date) => {
+    return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+  };
+
+  const getFirstDayOfMonth = (date) => {
+    return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+  };
+
+  const handleDateClick = (day) => {
+    const newDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+    if (minDate && newDate < minDate) return;
+    if (maxDate && newDate > maxDate) return;
+    setSelectedDate(newDate);
+    if (onChange) onChange(newDate);
+  };
+
+  const daysInMonth = getDaysInMonth(currentDate);
+  const firstDay = getFirstDayOfMonth(currentDate);
+  const days = [];
+
+  for (let i = 0; i < firstDay; i++) {
+    days.push(null);
   }
+
+  for (let i = 1; i <= daysInMonth; i++) {
+    days.push(i);
+  }
+
+  return (
+    <div className={\`calendar \${className}\`} {...props}>
+      <div className="calendar-header">
+        <button className="calendar-nav" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1))}>
+          <HiChevronLeft />
+        </button>
+        <h3 className="calendar-month">
+          {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
+        </h3>
+        <button className="calendar-nav" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1))}>
+          <HiChevronRight />
+        </button>
+      </div>
+      <div className="calendar-weekdays">
+        {dayNames.map((day) => (
+          <div key={day} className="calendar-weekday">{day}</div>
+        ))}
+      </div>
+      <div className="calendar-days">
+        {days.map((day, index) => (
+          <button
+            key={index}
+            className={\`calendar-day \${day === null ? 'empty' : ''} \${day === new Date().getDate() && currentDate.getMonth() === new Date().getMonth() && currentDate.getFullYear() === new Date().getFullYear() ? 'today' : ''} \${day === selectedDate?.getDate() && currentDate.getMonth() === selectedDate?.getMonth() && currentDate.getFullYear() === selectedDate?.getFullYear() ? 'selected' : ''}\`}
+            onClick={() => day && handleDateClick(day)}
+            disabled={day === null}
+          >
+            {day}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}`,
+    css: `.calendar {
+  width: 100%;
+  max-width: 400px;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: none;
+  background: transparent;
+  color: #1a1a1a;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.calendar-day.selected {
+  background: #00338d;
+  color: white;
+}`,
+  },
+  Notification: {
+    jsx: `import React from 'react';
+import { HiCheckCircle, HiInformationCircle, HiExclamationCircle, HiXCircle, HiX } from 'react-icons/hi';
+import './Notification.css';
+
+export default function Notification({
+  type = 'info',
+  title,
+  message,
+  showIcon = true,
+  closable = true,
+  onClose,
+  className = '',
+  ...props
+}) {
+  const icons = {
+    success: HiCheckCircle,
+    info: HiInformationCircle,
+    warning: HiExclamationCircle,
+    error: HiXCircle,
+  };
+
+  const Icon = icons[type] || HiInformationCircle;
+
+  return (
+    <div className={\`notification notification-\${type} \${className}\`} {...props}>
+      {showIcon && (
+        <div className="notification-icon">
+          <Icon />
+        </div>
+      )}
+      <div className="notification-content">
+        {title && <h4 className="notification-title">{title}</h4>}
+        {message && <p className="notification-message">{message}</p>}
+      </div>
+      {closable && onClose && (
+        <button className="notification-close" onClick={onClose}>
+          <HiX />
+        </button>
+      )}
+    </div>
+  );
+}`,
+    css: `.notification {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid;
+  background: #fafafa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.notification-success {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.notification-info {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+}`,
+  },
+  Backdrop: {
+    jsx: `import React from 'react';
+import './Backdrop.css';
+
+export default function Backdrop({
+  open = false,
+  onClick,
+  className = '',
+  ...props
+}) {
+  if (!open) return null;
+
+  return (
+    <div
+      className={\`backdrop \${className}\`}
+      onClick={onClick}
+      {...props}
+    />
+  );
+}`,
+    css: `.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}`,
+  },
+  Snackbar: {
+    jsx: `import React, { useEffect } from 'react';
+import { HiX } from 'react-icons/hi';
+import './Snackbar.css';
+
+export default function Snackbar({
+  open = false,
+  message = '',
+  variant = 'default',
+  duration = 4000,
+  onClose,
+  position = 'bottom-center',
+  className = '',
+  ...props
+}) {
+  useEffect(() => {
+    if (open && duration > 0 && onClose) {
+      const timer = setTimeout(() => {
+        onClose();
+      }, duration);
+      return () => clearTimeout(timer);
+    }
+  }, [open, duration, onClose]);
+
+  if (!open) return null;
+
+  return (
+    <div className={\`snackbar snackbar-\${variant} snackbar-\${position} \${className}\`} {...props}>
+      <span className="snackbar-message">{message}</span>
+      {onClose && (
+        <button className="snackbar-close" onClick={onClose}>
+          <HiX />
+        </button>
+      )}
+    </div>
+  );
+}`,
+    css: `.snackbar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.25rem;
+  background: #fafafa;
+  color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  min-width: 300px;
+  max-width: 500px;
+  animation: slideIn 0.3s ease;
+}
+
+.snackbar-bottom-center {
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}`,
+  },
+  List: {
+    jsx: `import React from 'react';
+import './List.css';
+
+export default function List({
+  items = [],
+  dense = false,
+  dividers = true,
+  className = '',
+  ...props
+}) {
+  return (
+    <ul className={\`list \${dense ? 'list-dense' : ''} \${dividers ? 'list-dividers' : ''} \${className}\`} {...props}>
+      {items.map((item, index) => (
+        <li key={index} className="list-item">
+          {item.icon && <div className="list-item-icon">{item.icon}</div>}
+          <div className="list-item-content">
+            {item.primary && <div className="list-item-primary">{item.primary}</div>}
+            {item.secondary && <div className="list-item-secondary">{item.secondary}</div>}
+          </div>
+          {item.action && <div className="list-item-action">{item.action}</div>}
+        </li>
+      ))}
+    </ul>
+  );
+}`,
+    css: `.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  overflow: hidden;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  background: #f0f0f0;
+}`,
+  },
+  Tag: {
+    jsx: `import React from 'react';
+import { HiX } from 'react-icons/hi';
+import './Tag.css';
+
+export default function Tag({
+  variant = 'default',
+  size = 'medium',
+  closable = false,
+  onClose,
+  className = '',
+  children,
+  ...props
+}) {
+  return (
+    <span className={\`tag tag-\${variant} tag-\${size} \${className}\`} {...props}>
+      {children}
+      {closable && onClose && (
+        <button className="tag-close" onClick={onClose}>
+          <HiX />
+        </button>
+      )}
+    </span>
+  );
+}`,
+    css: `.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.tag-primary {
+  background: #00338d;
+  color: white;
+}
+
+.tag-success {
+  background: #10b981;
+  color: white;
+}`,
+  },
+  SearchBar: {
+    jsx: `import React, { useState, useRef, useEffect } from 'react';
+import { HiSearch, HiX } from 'react-icons/hi';
+import './SearchBar.css';
+
+export default function SearchBar({
+  suggestions = [],
+  onSearch,
+  onSelect,
+  placeholder = 'Search...',
+  className = '',
+  ...props
+}) {
+  const [query, setQuery] = useState('');
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [filteredSuggestions, setFilteredSuggestions] = useState([]);
+  const searchRef = useRef(null);
+
+  useEffect(() => {
+    if (query && suggestions.length > 0) {
+      const filtered = suggestions.filter(item =>
+        item.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredSuggestions(filtered.slice(0, 5));
+      setShowSuggestions(true);
+    } else {
+      setFilteredSuggestions([]);
+      setShowSuggestions(false);
+    }
+  }, [query, suggestions]);
+
+  return (
+    <div className={\`search-bar \${className}\`} ref={searchRef} {...props}>
+      <div className="search-bar-input-wrapper">
+        <HiSearch className="search-bar-icon" />
+        <input
+          type="text"
+          className="search-bar-input"
+          placeholder={placeholder}
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            if (onSearch) onSearch(e.target.value);
+          }}
+        />
+        {query && (
+          <button className="search-bar-clear" onClick={() => setQuery('')}>
+            <HiX />
+          </button>
+        )}
+      </div>
+      {showSuggestions && filteredSuggestions.length > 0 && (
+        <div className="search-bar-suggestions">
+          {filteredSuggestions.map((suggestion, index) => (
+            <div
+              key={index}
+              className="search-bar-suggestion"
+              onClick={() => {
+                setQuery(suggestion);
+                setShowSuggestions(false);
+                if (onSelect) onSelect(suggestion);
+              }}
+            >
+              {suggestion}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}`,
+    css: `.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-bar-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-bar-input-wrapper:focus-within {
+  border-color: #00338d;
+  box-shadow: 0 0 0 3px rgba(0, 51, 141, 0.1);
+}`,
+  },
+  Navbar: {
+    jsx: `import React, { useState } from 'react';
+import { HiMenu, HiX } from 'react-icons/hi';
+import './Navbar.css';
+
+export default function Navbar({
+  items = [],
+  logo,
+  onItemClick,
+  className = '',
+  ...props
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className={\`navbar \${className}\`} {...props}>
+      <div className="navbar-container">
+        {logo && <div className="navbar-logo">{logo}</div>}
+        <button
+          className="navbar-toggle"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <HiX /> : <HiMenu />}
+        </button>
+        <ul className={\`navbar-menu \${isOpen ? 'open' : ''}\`}>
+          {items.map((item, index) => (
+            <li key={index} className="navbar-item">
+              <a
+                href={item.href}
+                className="navbar-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsOpen(false);
+                  if (onItemClick) onItemClick(item);
+                }}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
+}`,
+    css: `.navbar {
+  width: 100%;
+  background: #fafafa;
+  border-bottom: 1px solid #d1d5db;
+  padding: 1rem 0;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}`,
+  },
+  Sidebar: {
+    jsx: `import React from 'react';
+import { HiX } from 'react-icons/hi';
+import './Sidebar.css';
+
+export default function Sidebar({
+  open = false,
+  onClose,
+  position = 'left',
+  children,
+  className = '',
+  ...props
+}) {
+  if (!open) return null;
+
+  return (
+    <>
+      <div className="sidebar-backdrop" onClick={onClose} />
+      <aside className={\`sidebar sidebar-\${position} \${className}\`} {...props}>
+        {onClose && (
+          <button className="sidebar-close" onClick={onClose}>
+            <HiX />
+          </button>
+        )}
+        <div className="sidebar-content">{children}</div>
+      </aside>
+    </>
+  );
+}`,
+    css: `.sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  animation: fadeIn 0.2s ease;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 90vw;
+  background: #fafafa;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease;
+}`,
+  },
+  ImageGallery: {
+    jsx: `import React, { useState } from 'react';
+import { HiX, HiChevronLeft, HiChevronRight } from 'react-icons/hi';
+import './ImageGallery.css';
+
+export default function ImageGallery({
+  images = [],
+  showThumbnails = true,
+  className = '',
+  ...props
+}) {
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  return (
+    <div className={\`image-gallery \${className}\`} {...props}>
+      <div className="image-gallery-grid">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className="image-gallery-item"
+            onClick={() => setSelectedIndex(index)}
+          >
+            <img src={image} alt={\`Gallery \${index + 1}\`} />
+          </div>
+        ))}
+      </div>
+
+      {selectedIndex !== null && (
+        <div className="image-gallery-lightbox" onClick={() => setSelectedIndex(null)}>
+          <button className="image-gallery-close" onClick={() => setSelectedIndex(null)}>
+            <HiX />
+          </button>
+          <img
+            src={images[selectedIndex]}
+            alt={\`Gallery \${selectedIndex + 1}\`}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+    </div>
+  );
+}`,
+    css: `.image-gallery {
+  width: 100%;
+}
+
+.image-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.image-gallery-item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}`,
+  },
+  VideoPlayer: {
+    jsx: `import React, { useState, useRef } from 'react';
+import { HiPlay, HiPause, HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
+import './VideoPlayer.css';
+
+export default function VideoPlayer({
+  src,
+  poster,
+  controls = true,
+  autoplay = false,
+  className = '',
+  ...props
+}) {
+  const [isPlaying, setIsPlaying] = useState(autoplay);
+  const [isMuted, setIsMuted] = useState(false);
+  const [volume, setVolume] = useState(1);
+  const videoRef = useRef(null);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  return (
+    <div className={\`video-player \${className}\`} {...props}>
+      <video
+        ref={videoRef}
+        src={src}
+        poster={poster}
+        className="video-player-video"
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+      />
+      {controls && (
+        <div className="video-player-controls">
+          <button className="video-player-button" onClick={togglePlay}>
+            {isPlaying ? <HiPause /> : <HiPlay />}
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}`,
+    css: `.video-player {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-player-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}`,
+  },
+  AudioPlayer: {
+    jsx: `import React, { useState, useRef, useEffect } from 'react';
+import { HiPlay, HiPause, HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
+import './AudioPlayer.css';
+
+export default function AudioPlayer({
+  src,
+  title = 'Audio Track',
+  artist = 'Unknown Artist',
+  autoplay = false,
+  className = '',
+  ...props
+}) {
+  const [isPlaying, setIsPlaying] = useState(autoplay);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const audioRef = useRef(null);
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  return (
+    <div className={\`audio-player \${className}\`} {...props}>
+      <audio ref={audioRef} src={src} />
+      <div className="audio-player-info">
+        <div className="audio-player-title">{title}</div>
+        <div className="audio-player-artist">{artist}</div>
+      </div>
+      <div className="audio-player-controls">
+        <button className="audio-player-button" onClick={togglePlay}>
+          {isPlaying ? <HiPause /> : <HiPlay />}
+        </button>
+      </div>
+    </div>
+  );
+}`,
+    css: `.audio-player {
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.audio-player-info {
+  text-align: center;
+}`,
+  },
+  Chart: {
+    jsx: `import React from 'react';
+import './Chart.css';
+
+export default function Chart({
+  data = [],
+  type = 'line',
+  title,
+  className = '',
+  ...props
+}) {
+  const maxValue = Math.max(...data.map(d => d.value), 0);
+
+  return (
+    <div className={\`chart chart-\${type} \${className}\`} {...props}>
+      {title && <h3 className="chart-title">{title}</h3>}
+      <div className="chart-container">
+        {/* Chart rendering logic */}
+      </div>
+    </div>
+  );
+}`,
+    css: `.chart {
+  width: 100%;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.chart-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}`,
+  },
+  DataTable: {
+    jsx: `import React, { useState } from 'react';
+import { HiChevronUp, HiChevronDown, HiSearch } from 'react-icons/hi';
+import './DataTable.css';
+
+export default function DataTable({
+  columns = [],
+  data = [],
+  searchable = true,
+  sortable = true,
+  className = '',
+  ...props
+}) {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortColumn, setSortColumn] = useState(null);
+  const [sortDirection, setSortDirection] = useState('asc');
+
+  return (
+    <div className={\`data-table \${className}\`} {...props}>
+      {searchable && (
+        <div className="data-table-search">
+          <HiSearch className="data-table-search-icon" />
+          <input
+            type="text"
+            className="data-table-search-input"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+      )}
+      <div className="data-table-container">
+        <table className="data-table-table">
+          <thead>
+            <tr>
+              {columns.map((column) => (
+                <th key={column.key}>{column.label}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((row, index) => (
+              <tr key={index}>
+                {columns.map((column) => (
+                  <td key={column.key}>{row[column.key]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}`,
+    css: `.data-table {
+  width: 100%;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.data-table-search {
+  padding: 1rem;
+  border-bottom: 1px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f0f0f0;
+}`,
+  },
+  Form: {
+    jsx: `import React from 'react';
+import './Form.css';
+
+export default function Form({
+  onSubmit,
+  children,
+  className = '',
+  ...props
+}) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (onSubmit) {
+      onSubmit(e);
+    }
+  };
+
+  return (
+    <form
+      className={\`form \${className}\`}
+      onSubmit={handleSubmit}
+      {...props}
+    >
+      {children}
+    </form>
+  );
+}`,
+    css: `.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}`,
+  },
+  Select: {
+    jsx: `import React, { useState, useRef, useEffect } from 'react';
+import { HiChevronDown, HiCheck } from 'react-icons/hi';
+import './Select.css';
+
+export default function Select({
+  options = [],
+  value = '',
+  onChange,
+  placeholder = 'Select an option...',
+  disabled = false,
+  className = '',
+  ...props
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef(null);
+
+  const selectedOption = options.find((opt) => opt.value === value);
+
+  return (
+    <div className={\`select \${disabled ? 'disabled' : ''} \${isOpen ? 'open' : ''} \${className}\`} ref={selectRef} {...props}>
+      <div
+        className="select-trigger"
+        onClick={() => !disabled && setIsOpen(!isOpen)}
+      >
+        <span className={selectedOption ? 'select-value' : 'select-placeholder'}>
+          {selectedOption ? selectedOption.label : placeholder}
+        </span>
+        <HiChevronDown className={\`select-icon \${isOpen ? 'open' : ''}\`} />
+      </div>
+      {isOpen && !disabled && (
+        <div className="select-dropdown">
+          {options.map((option) => (
+            <div
+              key={option.value}
+              className={\`select-option \${value === option.value ? 'selected' : ''}\`}
+              onClick={() => {
+                if (onChange) onChange(option.value);
+                setIsOpen(false);
+              }}
+            >
+              <span>{option.label}</span>
+              {value === option.value && <HiCheck className="select-check" />}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}`,
+    css: `.select {
+  position: relative;
+  width: 100%;
+}
+
+.select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+}`,
+  },
+  DateRangePicker: {
+    jsx: `import React, { useState } from 'react';
+import { HiCalendar } from 'react-icons/hi';
+import './DateRangePicker.css';
+
+export default function DateRangePicker({
+  startDate = null,
+  endDate = null,
+  onChange,
+  className = '',
+  ...props
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const formatDate = (date) => {
+    if (!date) return '';
+    return date.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+    });
+  };
+
+  return (
+    <div className={\`date-range-picker \${className}\`} {...props}>
+      <div
+        className="date-range-picker-trigger"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <HiCalendar className="date-range-picker-icon" />
+        <span className="date-range-picker-text">
+          {startDate && endDate
+            ? \`\${formatDate(startDate)} - \${formatDate(endDate)}\`
+            : 'Select date range'}
+        </span>
+      </div>
+      {isOpen && (
+        <div className="date-range-picker-dropdown">
+          <div className="date-range-picker-inputs">
+            <div className="date-range-picker-input-group">
+              <label>Start Date</label>
+              <input
+                type="date"
+                className="date-range-picker-input"
+                onChange={(e) => {
+                  const date = new Date(e.target.value);
+                  if (onChange) onChange({ startDate: date, endDate });
+                }}
+              />
+            </div>
+            <div className="date-range-picker-input-group">
+              <label>End Date</label>
+              <input
+                type="date"
+                className="date-range-picker-input"
+                onChange={(e) => {
+                  const date = new Date(e.target.value);
+                  if (onChange) onChange({ startDate, endDate: date });
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}`,
+    css: `.date-range-picker {
+  position: relative;
+  width: 100%;
+}
+
+.date-range-picker-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+}`,
+  },
+  TimePicker: {
+    jsx: `import React, { useState } from 'react';
+import { HiClock } from 'react-icons/hi';
+import './TimePicker.css';
+
+export default function TimePicker({
+  value = '',
+  onChange,
+  className = '',
+  ...props
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [hours, setHours] = useState('12');
+  const [minutes, setMinutes] = useState('00');
+
+  const handleTimeChange = (newHours, newMinutes) => {
+    setHours(newHours);
+    setMinutes(newMinutes);
+    const timeString = \`\${newHours.padStart(2, '0')}:\${newMinutes.padStart(2, '0')}\`;
+    if (onChange) {
+      onChange(timeString);
+    }
+  };
+
+  return (
+    <div className={\`time-picker \${className}\`} {...props}>
+      <div
+        className="time-picker-trigger"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <HiClock className="time-picker-icon" />
+        <span className="time-picker-text">
+          {value || 'Select time'}
+        </span>
+      </div>
+      {isOpen && (
+        <div className="time-picker-dropdown">
+          <div className="time-picker-selectors">
+            <div className="time-picker-selector">
+              <label>Hours</label>
+              <select
+                value={hours}
+                onChange={(e) => handleTimeChange(e.target.value, minutes)}
+                className="time-picker-select"
+              >
+                {Array.from({ length: 24 }, (_, i) => (
+                  <option key={i} value={i.toString().padStart(2, '0')}>
+                    {i.toString().padStart(2, '0')}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <span className="time-picker-separator">:</span>
+            <div className="time-picker-selector">
+              <label>Minutes</label>
+              <select
+                value={minutes}
+                onChange={(e) => handleTimeChange(hours, e.target.value)}
+                className="time-picker-select"
+              >
+                {Array.from({ length: 60 }, (_, i) => (
+                  <option key={i} value={i.toString().padStart(2, '0')}>
+                    {i.toString().padStart(2, '0')}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}`,
+    css: `.time-picker {
+  position: relative;
+  width: 100%;
+}
+
+.time-picker-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+}`,
+  },
+  ColorPicker: {
+    jsx: `import React, { useState } from 'react';
+import './ColorPicker.css';
+
+export default function ColorPicker({
+  value = '#000000',
+  onChange,
+  presetColors = [
+    '#000000', '#FFFFFF', '#FF0000', '#00FF00', '#0000FF',
+    '#FFFF00', '#FF00FF', '#00FFFF', '#FFA500', '#800080',
+  ],
+  className = '',
+  ...props
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className={\`color-picker \${className}\`} {...props}>
+      <div
+        className="color-picker-trigger"
+        onClick={() => setIsOpen(!isOpen)}
+        style={{ backgroundColor: value }}
+      >
+        <span className="color-picker-value">{value}</span>
+      </div>
+      {isOpen && (
+        <div className="color-picker-dropdown">
+          <div className="color-picker-presets">
+            {presetColors.map((color, index) => (
+              <button
+                key={index}
+                className={\`color-picker-preset \${value === color ? 'active' : ''}\`}
+                style={{ backgroundColor: color }}
+                onClick={() => {
+                  if (onChange) onChange(color);
+                }}
+              />
+            ))}
+          </div>
+          <div className="color-picker-input-group">
+            <label>Custom Color</label>
+            <input
+              type="color"
+              value={value}
+              onChange={(e) => {
+                if (onChange) onChange(e.target.value);
+              }}
+              className="color-picker-input"
+            />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}`,
+    css: `.color-picker {
+  position: relative;
+  width: 100%;
+}
+
+.color-picker-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  background: #fafafa;
+}`,
+  },
+  RichTextEditor: {
+    jsx: `import React, { useRef } from 'react';
+import './RichTextEditor.css';
+
+export default function RichTextEditor({
+  value = '',
+  onChange,
+  placeholder = 'Start typing...',
+  className = '',
+  ...props
+}) {
+  const editorRef = useRef(null);
+
+  const execCommand = (command, value = null) => {
+    document.execCommand(command, false, value);
+    editorRef.current?.focus();
+    if (onChange) {
+      onChange(editorRef.current?.innerHTML || '');
+    }
+  };
+
+  return (
+    <div className={\`rich-text-editor \${className}\`} {...props}>
+      <div className="rich-text-editor-toolbar">
+        <button
+          type="button"
+          className="rich-text-editor-button"
+          onClick={() => execCommand('bold')}
+          title="Bold"
+        >
+          <strong>B</strong>
+        </button>
+        <button
+          type="button"
+          className="rich-text-editor-button"
+          onClick={() => execCommand('italic')}
+          title="Italic"
+        >
+          <em>I</em>
+        </button>
+        <button
+          type="button"
+          className="rich-text-editor-button"
+          onClick={() => execCommand('underline')}
+          title="Underline"
+        >
+          <u>U</u>
+        </button>
+        <div className="rich-text-editor-separator" />
+        <button
+          type="button"
+          className="rich-text-editor-button"
+          onClick={() => execCommand('insertUnorderedList')}
+          title="Bullet List"
+        >
+          <span className="rich-text-editor-list-icon">•</span>
+        </button>
+        <button
+          type="button"
+          className="rich-text-editor-button"
+          onClick={() => execCommand('insertOrderedList')}
+          title="Numbered List"
+        >
+          <span className="rich-text-editor-list-icon">1.</span>
+        </button>
+      </div>
+      <div
+        ref={editorRef}
+        className="rich-text-editor-content"
+        contentEditable
+        onInput={(e) => {
+          if (onChange) onChange(e.target.innerHTML);
+        }}
+        dangerouslySetInnerHTML={{ __html: value }}
+        data-placeholder={placeholder}
+      />
+    </div>
+  );
+}`,
+    css: `.rich-text-editor {
+  width: 100%;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rich-text-editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #d1d5db;
+  background: #f0f0f0;
+}`,
+  },
+  CodeEditor: {
+    jsx: `import React, { useState, useRef, useEffect } from 'react';
+import './CodeEditor.css';
+
+export default function CodeEditor({
+  value = '',
+  onChange,
+  language = 'javascript',
+  className = '',
+  ...props
+}) {
+  const [lineNumbers, setLineNumbers] = useState(['1']);
+  const textareaRef = useRef(null);
+  const lineNumbersRef = useRef(null);
+
+  useEffect(() => {
+    const lines = value.split('\\n');
+    setLineNumbers(lines.map((_, index) => (index + 1).toString()));
+  }, [value]);
+
+  return (
+    <div className={\`code-editor code-editor-\${language} \${className}\`} {...props}>
+      <div className="code-editor-header">
+        <span className="code-editor-language">{language}</span>
+      </div>
+      <div className="code-editor-container">
+        <div className="code-editor-line-numbers" ref={lineNumbersRef}>
+          {lineNumbers.map((line, index) => (
+            <div key={index} className="code-editor-line-number">
+              {line}
+            </div>
+          ))}
+        </div>
+        <textarea
+          ref={textareaRef}
+          className="code-editor-textarea"
+          value={value}
+          onChange={(e) => {
+            if (onChange) onChange(e.target.value);
+          }}
+          spellCheck={false}
+          placeholder="// Start coding..."
+        />
+      </div>
+    </div>
+  );
+}`,
+    css: `.code-editor {
+  width: 100%;
+  background: #1e1e1e;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+}
+
+.code-editor-header {
+  padding: 0.75rem 1rem;
+  background: #252526;
+  border-bottom: 1px solid #3e3e42;
+}`,
+  },
+  TreeView: {
+    jsx: `import React, { useState } from 'react';
+import { HiChevronRight, HiChevronDown, HiFolder, HiFolderOpen, HiDocument } from 'react-icons/hi';
+import './TreeView.css';
+
+export default function TreeView({
+  data = [],
+  onSelect,
+  className = '',
+  ...props
+}) {
+  const [expanded, setExpanded] = useState({});
+
+  const renderNode = (node, level = 0) => {
+    const hasChildren = node.children && node.children.length > 0;
+    const isExpanded = expanded[node.id];
+
+    return (
+      <div key={node.id} className="tree-view-node">
+        <div
+          className="tree-view-item"
+          style={{ paddingLeft: \`\${level * 1.5}rem\` }}
+          onClick={() => {
+            if (hasChildren) {
+              setExpanded((prev) => ({
+                ...prev,
+                [node.id]: !prev[node.id],
+              }));
+            }
+            if (onSelect) onSelect(node);
+          }}
+        >
+          {hasChildren && (
+            <span className="tree-view-chevron">
+              {isExpanded ? <HiChevronDown /> : <HiChevronRight />}
+            </span>
+          )}
+          <span className="tree-view-icon">
+            {hasChildren ? (isExpanded ? <HiFolderOpen /> : <HiFolder />) : <HiDocument />}
+          </span>
+          <span className="tree-view-label">{node.label}</span>
+        </div>
+        {hasChildren && isExpanded && (
+          <div className="tree-view-children">
+            {node.children.map((child) => renderNode(child, level + 1))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  return (
+    <div className={\`tree-view \${className}\`} {...props}>
+      {data.map((node) => renderNode(node))}
+    </div>
+  );
+}`,
+    css: `.tree-view {
+  width: 100%;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0.5rem;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.tree-view-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}`,
+  },
+  DragDrop: {
+    jsx: `import React, { useState } from 'react';
+import './DragDrop.css';
+
+export default function DragDrop({
+  items = [],
+  onReorder,
+  renderItem,
+  className = '',
+  ...props
+}) {
+  const [draggedIndex, setDraggedIndex] = useState(null);
+  const [dragOverIndex, setDragOverIndex] = useState(null);
+
+  const handleDrop = (e, dropIndex) => {
+    e.preventDefault();
+    if (draggedIndex !== null && draggedIndex !== dropIndex) {
+      const newItems = [...items];
+      const [removed] = newItems.splice(draggedIndex, 1);
+      newItems.splice(dropIndex, 0, removed);
+      if (onReorder) {
+        onReorder(newItems);
+      }
+    }
+    setDraggedIndex(null);
+    setDragOverIndex(null);
+  };
+
+  return (
+    <div className={\`drag-drop \${className}\`} {...props}>
+      {items.map((item, index) => (
+        <div
+          key={index}
+          className={\`drag-drop-item \${draggedIndex === index ? 'dragging' : ''} \${dragOverIndex === index ? 'drag-over' : ''}\`}
+          draggable
+          onDragStart={() => setDraggedIndex(index)}
+          onDragOver={(e) => {
+            e.preventDefault();
+            setDragOverIndex(index);
+          }}
+          onDrop={(e) => handleDrop(e, index)}
+          onDragEnd={() => {
+            setDraggedIndex(null);
+            setDragOverIndex(null);
+          }}
+        >
+          <span className="drag-drop-handle">⋮⋮</span>
+          {renderItem ? renderItem(item, index) : <span>{item}</span>}
+        </div>
+      ))}
+    </div>
+  );
+}`,
+    css: `.drag-drop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.drag-drop-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: move;
+  transition: all 0.2s ease;
+}`,
+  },
+  Wizard: {
+    jsx: `import React, { useState } from 'react';
+import { HiCheck } from 'react-icons/hi';
+import './Wizard.css';
+
+export default function Wizard({
+  steps = [],
+  currentStep = 0,
+  onStepChange,
+  className = '',
+  ...props
+}) {
+  return (
+    <div className={\`wizard \${className}\`} {...props}>
+      <div className="wizard-steps">
+        {steps.map((step, index) => {
+          const isCompleted = index < currentStep;
+          const isActive = index === currentStep;
+
+          return (
+            <div
+              key={index}
+              className={\`wizard-step \${isActive ? 'active' : ''} \${isCompleted ? 'completed' : ''}\`}
+              onClick={() => onStepChange && onStepChange(index)}
+            >
+              <div className="wizard-step-indicator">
+                {isCompleted ? (
+                  <HiCheck className="wizard-step-check" />
+                ) : (
+                  <span className="wizard-step-number">{index + 1}</span>
+                )}
+              </div>
+              <div className="wizard-step-content">
+                <div className="wizard-step-title">{step.title}</div>
+                {step.description && (
+                  <div className="wizard-step-description">{step.description}</div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      {steps[currentStep] && (
+        <div className="wizard-content">
+          {steps[currentStep].content}
+        </div>
+      )}
+    </div>
+  );
+}`,
+    css: `.wizard {
+  width: 100%;
+}
+
+.wizard-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.wizard-step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 150px;
+  position: relative;
+}`,
+  },
+  Tour: {
+    jsx: `import React, { useState, useEffect, useRef } from 'react';
+import { HiX, HiChevronLeft, HiChevronRight } from 'react-icons/hi';
+import './Tour.css';
+
+export default function Tour({
+  steps = [],
+  open = false,
+  onClose,
+  onComplete,
+  className = '',
+  ...props
+}) {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [position, setPosition] = useState({ top: 0, left: 0 });
+  const tourRef = useRef(null);
+
+  useEffect(() => {
+    if (open && steps.length > 0) {
+      const step = steps[currentStep];
+      const element = document.querySelector(step.target);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        setPosition({
+          top: rect.bottom + 10,
+          left: rect.left + rect.width / 2,
+        });
+      }
+    }
+  }, [open, currentStep, steps]);
+
+  if (!open || steps.length === 0) return null;
+
+  const step = steps[currentStep];
+
+  return (
+    <>
+      <div className="tour-overlay" onClick={onClose} />
+      <div
+        ref={tourRef}
+        className={\`tour \${className}\`}
+        style={{
+          top: \`\${position.top}px\`,
+          left: \`\${position.left}px\`,
+          transform: 'translateX(-50%)',
+        }}
+        {...props}
+      >
+        <div className="tour-header">
+          <div className="tour-title">{step.title}</div>
+          <button className="tour-close" onClick={onClose}>
+            <HiX />
+          </button>
+        </div>
+        <div className="tour-content">
+          <p className="tour-description">{step.content}</p>
+        </div>
+        <div className="tour-footer">
+          <div className="tour-progress">
+            {currentStep + 1} / {steps.length}
+          </div>
+          <div className="tour-actions">
+            {currentStep > 0 && (
+              <button className="tour-button tour-button-secondary" onClick={() => setCurrentStep(currentStep - 1)}>
+                <HiChevronLeft />
+                Previous
+              </button>
+            )}
+            <button
+              className="tour-button tour-button-primary"
+              onClick={() => {
+                if (currentStep < steps.length - 1) {
+                  setCurrentStep(currentStep + 1);
+                } else {
+                  if (onComplete) onComplete();
+                  if (onClose) onClose();
+                }
+              }}
+            >
+              {currentStep < steps.length - 1 ? (
+                <>
+                  Next
+                  <HiChevronRight />
+                </>
+              ) : (
+                'Finish'
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}`,
+    css: `.tour-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  animation: fadeIn 0.2s ease;
+}
+
+.tour {
+  position: fixed;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  min-width: 320px;
+  max-width: 400px;
+  animation: slideDown 0.3s ease;
+}`,
+  },
+  Chat: {
+    jsx: `import React, { useState, useRef, useEffect } from 'react';
+import { HiPaperAirplane, HiEmojiHappy } from 'react-icons/hi';
+import './Chat.css';
+
+export default function Chat({
+  messages = [],
+  onSend,
+  placeholder = 'Type a message...',
+  className = '',
+  ...props
+}) {
+  const [inputValue, setInputValue] = useState('');
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  const handleSend = () => {
+    if (inputValue.trim() && onSend) {
+      onSend(inputValue.trim());
+      setInputValue('');
+    }
+  };
+
+  return (
+    <div className={\`chat \${className}\`} {...props}>
+      <div className="chat-messages">
+        {messages.map((message, index) => (
+          <div
+            key={index}
+            className={\`chat-message \${message.sender === 'user' ? 'user' : 'other'}\`}
+          >
+            {message.avatar && (
+              <div className="chat-avatar">{message.avatar}</div>
+            )}
+            <div className="chat-message-content">
+              {message.sender !== 'user' && message.name && (
+                <div className="chat-message-name">{message.name}</div>
+              )}
+              <div className="chat-message-text">{message.text}</div>
+              {message.timestamp && (
+                <div className="chat-message-time">{message.timestamp}</div>
+              )}
+            </div>
+          </div>
+        ))}
+        <div ref={messagesEndRef} />
+      </div>
+      <div className="chat-input-container">
+        <button className="chat-input-button">
+          <HiEmojiHappy />
+        </button>
+        <input
+          type="text"
+          className="chat-input"
+          placeholder={placeholder}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyPress={(e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault();
+              handleSend();
+            }
+          }}
+        />
+        <button className="chat-input-button chat-send-button" onClick={handleSend}>
+          <HiPaperAirplane />
+        </button>
+      </div>
+    </div>
+  );
+}`,
+    css: `.chat {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}`,
+  },
 };

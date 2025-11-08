@@ -1,14 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
-import './Tooltip.css';
+import React, { useState, useRef, useEffect } from "react";
+import "./Tooltip.css";
 
 /**
  * Reusable Tooltip Component
  */
 export default function Tooltip({
   content,
-  position = 'top',
+  position = "top",
   children,
-  className = '',
+  className = "",
   ...props
 }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,14 +23,10 @@ export default function Tooltip({
     >
       {children}
       {isVisible && (
-        <div
-          ref={tooltipRef}
-          className={`tooltip tooltip-${position}`}
-        >
+        <div ref={tooltipRef} className={`tooltip tooltip-${position}`}>
           {content}
         </div>
       )}
     </div>
   );
 }
-

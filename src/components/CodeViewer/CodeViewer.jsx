@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
-import { HiClipboard, HiCheck } from 'react-icons/hi2';
-import Modal from '../Modal/Modal';
-import Tabs from '../Tabs/Tabs';
-import './CodeViewer.css';
+import React, { useState } from "react";
+import { HiClipboard, HiCheck } from "react-icons/hi2";
+import Modal from "../Modal/Modal";
+import Tabs from "../Tabs/Tabs";
+import "./CodeViewer.css";
 
 /**
  * Code Viewer Component
  * Displays code with syntax highlighting and copy functionality
  */
-export default function CodeViewer({ isOpen, onClose, title, jsxCode, cssCode }) {
+export default function CodeViewer({
+  isOpen,
+  onClose,
+  title,
+  jsxCode,
+  cssCode,
+}) {
   const [copiedSection, setCopiedSection] = useState(null);
 
   const copyToClipboard = (text, section) => {
@@ -19,20 +25,20 @@ export default function CodeViewer({ isOpen, onClose, title, jsxCode, cssCode })
   };
 
   const tabs = [];
-  
+
   if (jsxCode) {
     tabs.push({
-      label: 'JSX',
+      label: "JSX",
       content: (
         <div className="code-section">
           <div className="code-header">
             <h3 className="code-title">JSX Code</h3>
             <button
               className="copy-button"
-              onClick={() => copyToClipboard(jsxCode, 'jsx')}
+              onClick={() => copyToClipboard(jsxCode, "jsx")}
               aria-label="Copy JSX code"
             >
-              {copiedSection === 'jsx' ? (
+              {copiedSection === "jsx" ? (
                 <>
                   <HiCheck /> Copied!
                 </>
@@ -53,17 +59,17 @@ export default function CodeViewer({ isOpen, onClose, title, jsxCode, cssCode })
 
   if (cssCode) {
     tabs.push({
-      label: 'CSS',
+      label: "CSS",
       content: (
         <div className="code-section">
           <div className="code-header">
             <h3 className="code-title">CSS Code</h3>
             <button
               className="copy-button"
-              onClick={() => copyToClipboard(cssCode, 'css')}
+              onClick={() => copyToClipboard(cssCode, "css")}
               aria-label="Copy CSS code"
             >
-              {copiedSection === 'css' ? (
+              {copiedSection === "css" ? (
                 <>
                   <HiCheck /> Copied!
                 </>
@@ -86,17 +92,18 @@ export default function CodeViewer({ isOpen, onClose, title, jsxCode, cssCode })
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title={title || 'Component Code'}
+      title={title || "Component Code"}
       size="large"
     >
       <div className="code-viewer">
         {tabs.length > 0 ? (
           <Tabs tabs={tabs} />
         ) : (
-          <div className="no-code-message">No code available for this component.</div>
+          <div className="no-code-message">
+            No code available for this component.
+          </div>
         )}
       </div>
     </Modal>
   );
 }
-

@@ -1,8 +1,19 @@
 .global-search-wrapper {
   width: 100%;
   max-width: 600px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
   position: relative;
 }
 
@@ -129,6 +140,7 @@
   cursor: pointer;
   transition: all 0.15s ease;
   border-bottom: 1px solid #f3f4f6;
+  -webkit-user-select: none;
   user-select: none;
 }
 

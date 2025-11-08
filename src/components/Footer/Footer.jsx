@@ -1,6 +1,6 @@
-import React from 'react';
-import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import './Footer.css';
+import React from "react";
+import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import "./Footer.css";
 
 /**
  * Footer Component for Tech Companies
@@ -13,7 +13,8 @@ export default function Footer() {
           <div className="footer-section">
             <h3 className="footer-logo">Chandu UI</h3>
             <p className="footer-description">
-              Professional React component library for modern tech companies and startups.
+              Professional React component library for modern tech companies and
+              startups.
             </p>
             <div className="footer-contact">
               <a href="mailto:chanduui@outlook.in" className="footer-email">
@@ -22,13 +23,31 @@ export default function Footer() {
               </a>
             </div>
             <div className="footer-social">
-              <a href="https://github.com/chandu/components" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
+              <a
+                href="https://github.com/chandu/components"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+                aria-label="GitHub"
+              >
                 <FaGithub />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Twitter">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+                aria-label="Twitter"
+              >
                 <FaTwitter />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+                aria-label="LinkedIn"
+              >
                 <FaLinkedin />
               </a>
             </div>
@@ -36,19 +55,35 @@ export default function Footer() {
           <div className="footer-section">
             <h4 className="footer-title">Resources</h4>
             <ul className="footer-links">
-              <li><a href="https://github.com/chandu/components">Documentation</a></li>
-              <li><a href="https://github.com/chandu/components">GitHub</a></li>
-              <li><a href="#contact">Support</a></li>
-              <li><a href="#about">About</a></li>
+              <li>
+                <a href="https://github.com/chandu/components">Documentation</a>
+              </li>
+              <li>
+                <a href="https://github.com/chandu/components">GitHub</a>
+              </li>
+              <li>
+                <a href="#contact">Support</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
             </ul>
           </div>
           <div className="footer-section">
             <h4 className="footer-title">Company</h4>
             <ul className="footer-links">
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Use Cases</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#features">Features</a></li>
+              <li>
+                <a href="#about">About Us</a>
+              </li>
+              <li>
+                <a href="#services">Use Cases</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+              <li>
+                <a href="#features">Features</a>
+              </li>
             </ul>
           </div>
         </div>

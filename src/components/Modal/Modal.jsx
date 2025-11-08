@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import './Modal.css';
+import React, { useEffect } from "react";
+import "./Modal.css";
 
 /**
  * Reusable Modal Component
- * 
+ *
  * @param {boolean} isOpen - Modal open state
  * @param {Function} onClose - Close handler
  * @param {string} title - Modal title
@@ -18,49 +18,49 @@ export default function Modal({
   title,
   children,
   footer,
-  size = 'medium',
-  className = '',
+  size = "medium",
+  className = "",
 }) {
   useEffect(() => {
     if (isOpen) {
       if (document && document.body) {
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = "hidden";
       }
     } else {
       if (document && document.body) {
-        document.body.style.overflow = '';
+        document.body.style.overflow = "";
       }
     }
-    
+
     return () => {
       if (document && document.body) {
-        document.body.style.overflow = '';
+        document.body.style.overflow = "";
       }
     };
   }, [isOpen]);
 
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape' && isOpen) {
-        if (onClose && typeof onClose === 'function') {
+      if (e.key === "Escape" && isOpen) {
+        if (onClose && typeof onClose === "function") {
           onClose();
         }
       }
     };
-    
+
     if (document) {
-      document.addEventListener('keydown', handleEscape);
+      document.addEventListener("keydown", handleEscape);
     }
-    
+
     return () => {
       if (document) {
-        document.removeEventListener('keydown', handleEscape);
+        document.removeEventListener("keydown", handleEscape);
       }
     };
   }, [isOpen, onClose]);
 
   const handleOverlayClick = (e) => {
-    if (onClose && typeof onClose === 'function') {
+    if (onClose && typeof onClose === "function") {
       onClose();
     }
   };
@@ -101,4 +101,3 @@ export default function Modal({
     </div>
   );
 }
-

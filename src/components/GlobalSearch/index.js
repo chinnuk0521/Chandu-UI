@@ -1,2 +1,1 @@
-export { default } from './GlobalSearch';
-
+export { default } from "./GlobalSearch";

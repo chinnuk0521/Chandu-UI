@@ -1,0 +1,254 @@
+.wizard {
+  width: 100%;
+}
+
+.wizard-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.wizard-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 140px;
+  position: relative;
+  padding: 0 0.5rem;
+}
+
+.wizard-step.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.wizard-step:not(.disabled) {
+  cursor: pointer;
+}
+
+.wizard-step:not(.disabled):hover .wizard-step-indicator {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 51, 141, 0.2);
+}
+
+.wizard-step-indicator {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  border: 3px solid #d1d5db;
+  color: #6b7280;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.wizard-step-indicator::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(0, 51, 141, 0.1);
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  transform: scale(0.8);
+  z-index: -1;
+}
+
+.wizard-step.active .wizard-step-indicator {
+  background: #00338d;
+  border-color: #00338d;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 51, 141, 0.4);
+}
+
+.wizard-step.active .wizard-step-indicator::before {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.wizard-step.completed .wizard-step-indicator {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+}
+
+.wizard-step.completed .wizard-step-indicator::before {
+  background: rgba(16, 185, 129, 0.1);
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.wizard-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.wizard-step-check {
+  font-size: 1.5rem;
+  color: white;
+  stroke-width: 3;
+}
+
+.wizard-step-content {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.wizard-step-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+  line-height: 1.4;
+}
+
+.wizard-step.active .wizard-step-title {
+  color: #00338d;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.wizard-step.completed .wizard-step-title {
+  color: #374151;
+}
+
+.wizard-step-description {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.wizard-step.active .wizard-step-description {
+  color: #374151;
+  font-weight: 500;
+}
+
+.wizard-step-connector {
+  position: absolute;
+  top: 24px;
+  left: calc(50% + 24px);
+  right: calc(-50% + 24px);
+  height: 3px;
+  background: #d1d5db;
+  z-index: 0;
+  border-radius: 2px;
+  transition: background 0.4s ease;
+}
+
+.wizard-step.completed .wizard-step-connector {
+  background: #10b981;
+}
+
+.wizard-step.active .wizard-step-connector {
+  background: linear-gradient(90deg, #10b981 0%, #d1d5db 100%);
+}
+
+.wizard-content {
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  border-radius: 16px;
+  padding: 2.5rem;
+  min-height: 280px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .wizard-steps {
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .wizard-step {
+    min-width: 100px;
+    gap: 0.5rem;
+  }
+
+  .wizard-step-indicator {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9375rem;
+    border-width: 2px;
+  }
+
+  .wizard-step-title {
+    font-size: 0.875rem;
+  }
+
+  .wizard-step.active .wizard-step-title {
+    font-size: 0.9375rem;
+  }
+
+  .wizard-step-description {
+    font-size: 0.75rem;
+  }
+
+  .wizard-step-connector {
+    top: 20px;
+    left: calc(50% + 20px);
+    right: calc(-50% + 20px);
+    height: 2px;
+  }
+
+  .wizard-content {
+    padding: 1.5rem;
+    min-height: 220px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wizard-steps {
+    gap: 0.5rem;
+  }
+
+  .wizard-step {
+    min-width: 80px;
+    padding: 0 0.25rem;
+  }
+
+  .wizard-step-indicator {
+    width: 36px;
+    height: 36px;
+    font-size: 0.875rem;
+  }
+
+  .wizard-step-title {
+    font-size: 0.8125rem;
+  }
+
+  .wizard-step-description {
+    font-size: 0.6875rem;
+  }
+
+  .wizard-content {
+    padding: 1.25rem;
+    min-height: 200px;
+  }
+}

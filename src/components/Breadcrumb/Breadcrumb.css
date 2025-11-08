@@ -76,7 +76,7 @@
 }
 
 .breadcrumb-current::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 50%;
@@ -212,4 +212,3 @@
     font-size: 0.5625rem;
   }
 }
-

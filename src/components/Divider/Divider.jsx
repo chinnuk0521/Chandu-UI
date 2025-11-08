@@ -1,24 +1,20 @@
-import React from 'react';
-import './Divider.css';
+import React from "react";
+import "./Divider.css";
 
 /**
  * Reusable Divider Component
  */
 export default function Divider({
-  orientation = 'horizontal',
+  orientation = "horizontal",
   text,
-  className = '',
+  className = "",
   ...props
 }) {
   return (
-    <div
-      className={`divider divider-${orientation} ${className}`}
-      {...props}
-    >
-      {text && orientation === 'horizontal' && (
+    <div className={`divider divider-${orientation} ${className}`} {...props}>
+      {text && orientation === "horizontal" && (
         <span className="divider-text">{text}</span>
       )}
     </div>
   );
 }
-

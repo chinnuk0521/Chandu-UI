@@ -1,13 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
-import { HiMagnifyingGlass, HiXMark, HiInformationCircle } from 'react-icons/hi2';
+import {
+  HiMagnifyingGlass,
+  HiXMark,
+  HiInformationCircle,
+} from "react-icons/hi2";
 import "./GlobalSearch.css";
 
 /**
  * Reusable Global Search Component
- * 
+ *
  * A production-ready global search component with real-time filtering,
  * keyboard navigation, and customizable search logic.
- * 
+ *
  * @param {Array} items - Array of items to search through
  * @param {Function} onSelect - Callback when an item is selected
  * @param {Function} getItemLabel - Function to get display label from item (default: returns item as string)
@@ -22,8 +26,8 @@ import "./GlobalSearch.css";
 export default function GlobalSearch({
   items = [],
   onSelect,
-  getItemLabel = (item) => typeof item === 'string' ? item : String(item),
-  getItemValue = (item) => typeof item === 'string' ? item : String(item),
+  getItemLabel = (item) => (typeof item === "string" ? item : String(item)),
+  getItemValue = (item) => (typeof item === "string" ? item : String(item)),
   searchFunction,
   placeholder = "Search...",
   showResultsOnFocus = true,
@@ -35,7 +39,7 @@ export default function GlobalSearch({
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const [results, setResults] = useState([]);
-  
+
   const containerRef = useRef(null);
   const inputRef = useRef(null);
   const resultsRef = useRef(null);
@@ -45,12 +49,14 @@ export default function GlobalSearch({
     if (!searchTerm.trim()) {
       return items.slice(0, maxResults);
     }
-    
+
     const term = searchTerm.toLowerCase();
-    return items.filter((item) => {
-      const label = getItemLabel(item).toLowerCase();
-      return label.includes(term);
-    }).slice(0, maxResults);
+    return items
+      .filter((item) => {
+        const label = getItemLabel(item).toLowerCase();
+        return label.includes(term);
+      })
+      .slice(0, maxResults);
   };
 
   // Perform search
@@ -133,7 +139,10 @@ export default function GlobalSearch({
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (containerRef.current && !containerRef.current.contains(event.target)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
         setHighlightedIndex(-1);
       }
@@ -184,7 +193,7 @@ export default function GlobalSearch({
               inputRef.current?.focus();
             }}
             aria-label="Clear search"
-            >
+          >
             <HiXMark />
           </button>
         )}
@@ -214,4 +223,3 @@ export default function GlobalSearch({
     </div>
   );
 }
-

@@ -1,6 +1,6 @@
-import React from 'react';
-import { HiXMark } from 'react-icons/hi2';
-import './Chip.css';
+import React from "react";
+import { HiXMark } from "react-icons/hi2";
+import "./Chip.css";
 
 /**
  * Reusable Chip Component
@@ -8,9 +8,9 @@ import './Chip.css';
 export default function Chip({
   label,
   onDelete,
-  variant = 'default',
-  size = 'medium',
-  className = '',
+  variant = "default",
+  size = "medium",
+  className = "",
   ...props
 }) {
   return (
@@ -31,4 +31,3 @@ export default function Chip({
     </span>
   );
 }
-

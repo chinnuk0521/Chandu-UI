@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { HiChevronRight } from 'react-icons/hi2';
-import './Menu.css';
+import React, { useState, useRef, useEffect } from "react";
+import { HiChevronRight } from "react-icons/hi2";
+import "./Menu.css";
 
 /**
  * Reusable Menu Component
@@ -8,8 +8,8 @@ import './Menu.css';
 export default function Menu({
   items = [],
   trigger,
-  position = 'bottom-left',
-  className = '',
+  position = "bottom-left",
+  className = "",
   ...props
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,14 +17,18 @@ export default function Menu({
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (containerRef.current && !containerRef.current.contains(event.target)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
       }
     };
 
     if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
     }
   }, [isOpen]);
 
@@ -45,7 +49,7 @@ export default function Menu({
           {items.map((item, index) => (
             <div
               key={index}
-              className={`menu-item ${item.disabled ? 'disabled' : ''} ${item.divider ? 'divider' : ''}`}
+              className={`menu-item ${item.disabled ? "disabled" : ""} ${item.divider ? "divider" : ""}`}
               onClick={() => handleItemClick(item)}
             >
               {item.icon && <span className="menu-icon">{item.icon}</span>}
@@ -58,4 +62,3 @@ export default function Menu({
     </div>
   );
 }
-

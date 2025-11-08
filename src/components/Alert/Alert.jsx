@@ -1,16 +1,21 @@
-import React from 'react';
-import { HiInformationCircle, HiCheckCircle, HiExclamationTriangle, HiXCircle } from 'react-icons/hi2';
-import './Alert.css';
+import React from "react";
+import {
+  HiInformationCircle,
+  HiCheckCircle,
+  HiExclamationTriangle,
+  HiXCircle,
+} from "react-icons/hi2";
+import "./Alert.css";
 
 /**
  * Reusable Alert Component
  */
 export default function Alert({
-  variant = 'info',
+  variant = "info",
   title,
   children,
   onClose,
-  className = '',
+  className = "",
   ...props
 }) {
   const icons = {
@@ -32,11 +37,14 @@ export default function Alert({
         </div>
       </div>
       {onClose && (
-        <button className="alert-close" onClick={onClose} aria-label="Close alert">
+        <button
+          className="alert-close"
+          onClick={onClose}
+          aria-label="Close alert"
+        >
           ×
         </button>
       )}
     </div>
   );
 }
-

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './Slider.css';
+import React, { useState } from "react";
+import "./Slider.css";
 
 /**
  * Reusable Slider Component
@@ -13,7 +13,7 @@ export default function Slider({
   disabled = false,
   showValue = true,
   label,
-  className = '',
+  className = "",
   ...props
 }) {
   const [currentValue, setCurrentValue] = useState(value);
@@ -45,7 +45,7 @@ export default function Slider({
           onChange={handleChange}
           disabled={disabled}
           style={{
-            '--percentage': `${percentage}%`,
+            "--percentage": `${percentage}%`,
           }}
         />
         {!label && showValue && (
@@ -55,4 +55,3 @@ export default function Slider({
     </div>
   );
 }
-

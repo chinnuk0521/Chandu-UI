@@ -1,13 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
-import { HiInformationCircle, HiMagnifyingGlass, HiCheckCircle } from 'react-icons/hi2';
+import {
+  HiInformationCircle,
+  HiMagnifyingGlass,
+  HiCheckCircle,
+} from "react-icons/hi2";
 import "./Autocomplete.css";
 
 /**
  * Reusable Autocomplete Component
- * 
+ *
  * A production-ready autocomplete component with multi-select, search, and custom input support.
  * Can be easily integrated into any React application.
- * 
+ *
  * @param {Array} options - Array of options to display (strings or objects)
  * @param {Array} value - Selected values (controlled component)
  * @param {Function} onChange - Callback when selection changes (receives new selected array)
@@ -22,8 +26,10 @@ export default function Autocomplete({
   options = [],
   value = [],
   onChange,
-  getOptionLabel = (option) => typeof option === 'string' ? option : String(option),
-  getOptionValue = (option) => typeof option === 'string' ? option : String(option),
+  getOptionLabel = (option) =>
+    typeof option === "string" ? option : String(option),
+  getOptionValue = (option) =>
+    typeof option === "string" ? option : String(option),
   placeholder = "Type to search or add custom...",
   allowCustomInput = true,
   className = "",
@@ -33,7 +39,7 @@ export default function Autocomplete({
   const [customInputs, setCustomInputs] = useState([]);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const containerRef = useRef(null);
   const inputRef = useRef(null);
   const dropdownRef = useRef(null);
@@ -46,13 +52,13 @@ export default function Autocomplete({
     const label = getOptionLabel(option).toLowerCase();
     const searchLower = search.toLowerCase();
     const optionValue = getOptionValue(option);
-    const isSelected = selected.some((selectedItem) => 
-      getOptionValue(selectedItem) === optionValue
+    const isSelected = selected.some(
+      (selectedItem) => getOptionValue(selectedItem) === optionValue
     );
-    const isCustom = customInputs.some((customItem) => 
-      getOptionValue(customItem) === optionValue
+    const isCustom = customInputs.some(
+      (customItem) => getOptionValue(customItem) === optionValue
     );
-    
+
     return label.includes(searchLower) && !isSelected && !isCustom;
   });
 
@@ -67,13 +73,13 @@ export default function Autocomplete({
 
   const handleRemove = (optionToRemove) => {
     const optionValue = getOptionValue(optionToRemove);
-    const newSelected = selected.filter((item) => 
-      getOptionValue(item) !== optionValue
+    const newSelected = selected.filter(
+      (item) => getOptionValue(item) !== optionValue
     );
-    setCustomInputs(customInputs.filter((item) => 
-      getOptionValue(item) !== optionValue
-    ));
-    
+    setCustomInputs(
+      customInputs.filter((item) => getOptionValue(item) !== optionValue)
+    );
+
     if (inputRef.current === document.activeElement) {
       setIsOpen(true);
     }
@@ -85,10 +91,10 @@ export default function Autocomplete({
     e.preventDefault();
     if (search.trim() && allowCustomInput) {
       const trimmedValue = search.trim();
-      const isAlreadySelected = selected.some((item) => 
-        getOptionValue(item) === trimmedValue
+      const isAlreadySelected = selected.some(
+        (item) => getOptionValue(item) === trimmedValue
       );
-      
+
       if (!isAlreadySelected) {
         const newSelected = [...selected, trimmedValue];
         setCustomInputs([...customInputs, trimmedValue]);
@@ -113,7 +119,7 @@ export default function Autocomplete({
       const optionValue = getOptionValue(option);
       return !selected.some((item) => getOptionValue(item) === optionValue);
     });
-    
+
     if (hasAvailableItems || search.length > 0) {
       setIsOpen(true);
     }
@@ -145,8 +151,8 @@ export default function Autocomplete({
         if (highlightedIndex >= 0 && filtered[highlightedIndex]) {
           handleSelect(filtered[highlightedIndex]);
         } else if (search.trim() && allowCustomInput) {
-          const isAlreadySelected = selected.some((item) => 
-            getOptionValue(item) === search.trim()
+          const isAlreadySelected = selected.some(
+            (item) => getOptionValue(item) === search.trim()
           );
           if (!isAlreadySelected) {
             handleCustomInput(e);
@@ -172,7 +178,10 @@ export default function Autocomplete({
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (containerRef.current && !containerRef.current.contains(event.target)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
         setHighlightedIndex(-1);
       }
@@ -194,8 +203,9 @@ export default function Autocomplete({
     }
   }, [highlightedIndex]);
 
-  const canAddCustom = search.trim() && 
-    allowCustomInput && 
+  const canAddCustom =
+    search.trim() &&
+    allowCustomInput &&
     !selected.some((item) => getOptionValue(item) === search.trim()) &&
     !options.some((option) => getOptionValue(option) === search.trim());
 
@@ -218,7 +228,9 @@ export default function Autocomplete({
         <input
           ref={inputRef}
           type="text"
-          placeholder={selected.length === 0 ? placeholder : "Add more items..."}
+          placeholder={
+            selected.length === 0 ? placeholder : "Add more items..."
+          }
           value={search}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
@@ -249,7 +261,10 @@ export default function Autocomplete({
           ) : search.trim() && canAddCustom ? (
             <div className="empty-state" role="status">
               <HiMagnifyingGlass className="empty-icon" />
-              <p>No suggestions found. Press <kbd>Enter</kbd> to add "{search.trim()}"</p>
+              <p>
+                No suggestions found. Press <kbd>Enter</kbd> to add "
+                {search.trim()}"
+              </p>
             </div>
           ) : search.trim() && !canAddCustom ? (
             <div className="empty-state" role="status">

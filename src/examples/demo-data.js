@@ -50,4 +50,3 @@ export const TECHNOLOGIES = [
   { value: "go", label: "Go" },
   { value: "rust", label: "Rust" },
 ];
-

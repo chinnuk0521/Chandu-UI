@@ -17,7 +17,7 @@
 }
 
 .tooltip::after {
-  content: '';
+  content: "";
   position: absolute;
   border: 5px solid transparent;
 }
@@ -84,4 +84,3 @@
     transform: translateY(0);
   }
 }
-

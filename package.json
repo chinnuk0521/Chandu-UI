@@ -13,7 +13,9 @@
     "build": "vite build && npm run build:lib",
     "build:lib": "vite build --mode library",
     "preview": "vite preview",
-    "lint": "eslint src --ext js,jsx"
+    "lint": "eslint src --ext js,jsx",
+    "format": "prettier --write \"src/**/*.{js,jsx,css}\" --ignore-path .prettierignore",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,css}\" --ignore-path .prettierignore"
   },
   "keywords": [
     "react",
@@ -46,6 +48,7 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.0.0",
+    "prettier": "^3.6.2",
     "vite": "^4.4.0"
   }
 }

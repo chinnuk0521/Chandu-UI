@@ -1,0 +1,98 @@
+.rich-text-editor {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rich-text-editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-tertiary);
+}
+
+.rich-text-editor-button {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  min-width: 36px;
+  height: 36px;
+}
+
+.rich-text-editor-button:hover {
+  background: var(--bg-hover);
+  color: var(--accent-primary);
+}
+
+.rich-text-editor-button strong {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.rich-text-editor-button em {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.rich-text-editor-button u {
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+.rich-text-editor-list-icon {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.rich-text-editor-separator {
+  width: 1px;
+  height: 24px;
+  background: var(--border-color);
+  margin: 0 0.25rem;
+}
+
+.rich-text-editor-content {
+  min-height: 200px;
+  padding: 1rem;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  overflow-y: auto;
+}
+
+.rich-text-editor-content:empty::before {
+  content: attr(data-placeholder);
+  color: var(--text-tertiary);
+  pointer-events: none;
+}
+
+.rich-text-editor-content:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .rich-text-editor-toolbar {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .rich-text-editor-content {
+    min-height: 150px;
+    padding: 0.75rem;
+  }
+}

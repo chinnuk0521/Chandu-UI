@@ -74,7 +74,7 @@
 }
 
 .stepper-line::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -114,7 +114,7 @@
 }
 
 .stepper-indicator::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -4px;
   border-radius: 50%;
@@ -405,4 +405,3 @@
     display: none;
   }
 }
-
