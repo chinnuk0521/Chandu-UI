@@ -1,6 +1,6 @@
-import React from 'react';
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2';
-import './Pagination.css';
+import React from "react";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
+import "./Pagination.css";
 
 /**
  * Reusable Pagination Component
@@ -10,7 +10,7 @@ export default function Pagination({
   totalPages = 10,
   onPageChange,
   showFirstLast = true,
-  className = '',
+  className = "",
   ...props
 }) {
   const pages = [];
@@ -36,7 +36,11 @@ export default function Pagination({
   if (totalPages <= 1) return null;
 
   return (
-    <nav className={`pagination ${className}`} aria-label="Pagination" {...props}>
+    <nav
+      className={`pagination ${className}`}
+      aria-label="Pagination"
+      {...props}
+    >
       {showFirstLast && (
         <button
           className="pagination-button"
@@ -58,10 +62,10 @@ export default function Pagination({
       {pages.map((page) => (
         <button
           key={page}
-          className={`pagination-button ${currentPage === page ? 'active' : ''}`}
+          className={`pagination-button ${currentPage === page ? "active" : ""}`}
           onClick={() => handlePageChange(page)}
           aria-label={`Page ${page}`}
-          aria-current={currentPage === page ? 'page' : undefined}
+          aria-current={currentPage === page ? "page" : undefined}
         >
           {page}
         </button>
@@ -87,4 +91,3 @@ export default function Pagination({
     </nav>
   );
 }
-

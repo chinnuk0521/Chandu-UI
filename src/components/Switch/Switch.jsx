@@ -1,5 +1,5 @@
-import React from 'react';
-import './Switch.css';
+import React from "react";
+import "./Switch.css";
 
 /**
  * Reusable Switch/Toggle Component
@@ -9,13 +9,17 @@ export default function Switch({
   checked = false,
   onChange,
   disabled = false,
-  className = '',
+  className = "",
   ...props
 }) {
   return (
-    <label className={`switch-wrapper ${disabled ? 'disabled' : ''} ${className}`}>
+    <label
+      className={`switch-wrapper ${disabled ? "disabled" : ""} ${className}`}
+    >
       {label && <span className="switch-label">{label}</span>}
-      <div className={`switch ${checked ? 'checked' : ''} ${disabled ? 'disabled' : ''}`}>
+      <div
+        className={`switch ${checked ? "checked" : ""} ${disabled ? "disabled" : ""}`}
+      >
         <input
           type="checkbox"
           className="switch-input"
@@ -29,4 +33,3 @@ export default function Switch({
     </label>
   );
 }
-

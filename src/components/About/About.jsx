@@ -1,5 +1,5 @@
-import React from 'react';
-import './About.css';
+import React from "react";
+import "./About.css";
 
 /**
  * About Component for Tech Companies
@@ -12,18 +12,20 @@ export default function About() {
           <div className="about-text">
             <h2 className="about-title">Built for Modern Teams</h2>
             <p className="about-description">
-              Chandu UI is a comprehensive React component library designed specifically for tech companies and startups. 
-              We understand the challenges of building modern web applications - you need components that are reliable, 
-              performant, and easy to integrate.
+              Chandu UI is a comprehensive React component library designed
+              specifically for tech companies and startups. We understand the
+              challenges of building modern web applications - you need
+              components that are reliable, performant, and easy to integrate.
             </p>
             <p className="about-description">
-              Our components are production-ready, fully accessible, and optimized for performance. Whether you're 
-              building a SaaS platform, a startup MVP, or an enterprise application, Chandu UI provides the building 
-              blocks you need to ship faster.
+              Our components are production-ready, fully accessible, and
+              optimized for performance. Whether you're building a SaaS
+              platform, a startup MVP, or an enterprise application, Chandu UI
+              provides the building blocks you need to ship faster.
             </p>
             <div className="about-stats">
               <div className="stat-item">
-                <div className="stat-number">41+</div>
+                <div className="stat-number">71+</div>
                 <div className="stat-label">Components</div>
               </div>
               <div className="stat-item">
@@ -51,13 +53,13 @@ export default function About() {
                   <div className="code-content">
                     <div className="code-line">
                       <span className="code-keyword">import</span>
-                      <span className="code-bracket">{' {'}</span>
+                      <span className="code-bracket">{" {"}</span>
                       <span className="code-identifier"> Button </span>
-                      <span className="code-bracket">{'}'}</span>
+                      <span className="code-bracket">{"}"}</span>
                       <span className="code-keyword"> from</span>
                     </div>
                     <div className="code-line">
-                      <span className="code-string">  '@chandu/components'</span>
+                      <span className="code-string"> '@chandu/components'</span>
                       <span className="code-punctuation">;</span>
                     </div>
                     <div className="code-line code-empty"></div>
@@ -70,7 +72,7 @@ export default function About() {
                       <span className="code-tag">&gt;</span>
                     </div>
                     <div className="code-line">
-                      <span className="code-text">  Get Started</span>
+                      <span className="code-text"> Get Started</span>
                     </div>
                     <div className="code-line">
                       <span className="code-tag">&lt;/</span>

@@ -1,5 +1,5 @@
-import React from 'react';
-import './Checkbox.css';
+import React from "react";
+import "./Checkbox.css";
 
 /**
  * Reusable Checkbox Component
@@ -9,11 +9,13 @@ export default function Checkbox({
   checked = false,
   onChange,
   disabled = false,
-  className = '',
+  className = "",
   ...props
 }) {
   return (
-    <label className={`checkbox-wrapper ${disabled ? 'disabled' : ''} ${className}`}>
+    <label
+      className={`checkbox-wrapper ${disabled ? "disabled" : ""} ${className}`}
+    >
       <input
         type="checkbox"
         className="checkbox-input"
@@ -27,4 +29,3 @@ export default function Checkbox({
     </label>
   );
 }
-

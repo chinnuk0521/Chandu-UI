@@ -1,0 +1,59 @@
+.drag-drop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.drag-drop-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: move;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.drag-drop-item:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 2px 8px rgba(0, 51, 141, 0.1);
+}
+
+.drag-drop-item.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.drag-drop-item.drag-over {
+  border-color: var(--accent-primary);
+  background: rgba(0, 51, 141, 0.05);
+  transform: translateY(-2px);
+}
+
+.drag-drop-handle {
+  color: var(--text-tertiary);
+  font-size: 1.25rem;
+  cursor: grab;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.drag-drop-handle:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+  .drag-drop-item {
+    padding: 0.75rem;
+  }
+
+  .drag-drop-handle {
+    font-size: 1rem;
+  }
+}

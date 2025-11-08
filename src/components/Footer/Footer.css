@@ -40,7 +40,7 @@
 }
 
 .footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -218,7 +218,6 @@
 .footer-legal a:hover {
   color: #ffffff;
 }
-
 
 @media (max-width: 900px) {
   .footer-container {

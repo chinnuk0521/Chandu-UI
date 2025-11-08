@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { HiStar } from 'react-icons/hi2';
-import './Rating.css';
+import React, { useState } from "react";
+import { HiStar } from "react-icons/hi2";
+import "./Rating.css";
 
 /**
  * Reusable Rating Component
@@ -10,8 +10,8 @@ export default function Rating({
   max = 5,
   onChange,
   readOnly = false,
-  size = 'medium',
-  className = '',
+  size = "medium",
+  className = "",
   ...props
 }) {
   const [hoverValue, setHoverValue] = useState(0);
@@ -38,7 +38,7 @@ export default function Rating({
 
   return (
     <div
-      className={`rating rating-${size} ${readOnly ? 'readonly' : ''} ${className}`}
+      className={`rating rating-${size} ${readOnly ? "readonly" : ""} ${className}`}
       onMouseLeave={handleMouseLeave}
       {...props}
     >
@@ -51,7 +51,7 @@ export default function Rating({
           <button
             key={index}
             type="button"
-            className={`rating-star ${isFilled ? 'filled' : ''} ${isHalf ? 'half' : ''}`}
+            className={`rating-star ${isFilled ? "filled" : ""} ${isHalf ? "half" : ""}`}
             onClick={() => handleClick(rating)}
             onMouseEnter={() => handleMouseEnter(rating)}
             disabled={readOnly}
@@ -64,4 +64,3 @@ export default function Rating({
     </div>
   );
 }
-

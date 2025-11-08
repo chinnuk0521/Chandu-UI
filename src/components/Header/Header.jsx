@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import './Header.css';
+import React, { useState, useEffect } from "react";
+import "./Header.css";
 
 // Import logo image
-import logoImage from '../../assets/Logo.svg';
+import logoImage from "../../assets/Logo.svg";
 
 /**
  * Reusable Header/Navigation Component
- * 
+ *
  * @param {Array} menuItems - Array of menu items { label, href }
  * @param {string} logo - Logo text or image URL
  * @param {Function} onMenuItemClick - Callback when menu item is clicked
@@ -14,15 +14,15 @@ import logoImage from '../../assets/Logo.svg';
  */
 export default function Header({
   menuItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Features', href: '#features' },
-    { label: 'Contact', href: '#contact' },
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Features", href: "#features" },
+    { label: "Contact", href: "#contact" },
   ],
-  logo = 'Chandu UI',
+  logo = "Chandu UI",
   onMenuItemClick,
-  className = '',
+  className = "",
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,28 +31,28 @@ export default function Header({
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.classList.add('mobile-menu-open');
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
+      document.body.classList.add("mobile-menu-open");
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
     } else {
-      document.body.classList.remove('mobile-menu-open');
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
+      document.body.classList.remove("mobile-menu-open");
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
     }
     return () => {
-      document.body.classList.remove('mobile-menu-open');
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
+      document.body.classList.remove("mobile-menu-open");
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
     };
   }, [isMobileMenuOpen]);
 
@@ -62,28 +62,28 @@ export default function Header({
   };
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''} ${className}`}>
+    <header className={`header ${isScrolled ? "scrolled" : ""} ${className}`}>
       <div className="header-container">
-        <a 
-          href="#home" 
+        <a
+          href="#home"
           className="logo"
           onClick={(e) => {
             e.preventDefault();
-            const element = document.querySelector('#home');
-            element?.scrollIntoView({ behavior: 'smooth' });
+            const element = document.querySelector("#home");
+            element?.scrollIntoView({ behavior: "smooth" });
           }}
         >
-          <img 
-            src={logoImage} 
-            alt="Chandu UI Logo" 
+          <img
+            src={logoImage}
+            alt="Chandu UI Logo"
             className="logo-image"
             onError={(e) => {
               // Fallback if image doesn't exist
-              e.target.style.display = 'none';
+              e.target.style.display = "none";
             }}
           />
         </a>
-        <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
+        <nav className={`nav ${isMobileMenuOpen ? "open" : ""}`}>
           {menuItems.map((item, index) => (
             <a
               key={index}
@@ -92,9 +92,9 @@ export default function Header({
               onClick={(e) => {
                 e.preventDefault();
                 handleClick(item);
-                if (item.href.startsWith('#')) {
+                if (item.href.startsWith("#")) {
                   const element = document.querySelector(item.href);
-                  element?.scrollIntoView({ behavior: 'smooth' });
+                  element?.scrollIntoView({ behavior: "smooth" });
                 }
               }}
             >
@@ -103,7 +103,7 @@ export default function Header({
           ))}
         </nav>
         <button
-          className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
+          className={`mobile-menu-toggle ${isMobileMenuOpen ? "active" : ""}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
           aria-expanded={isMobileMenuOpen}
@@ -113,11 +113,10 @@ export default function Header({
           <span></span>
         </button>
       </div>
-      <div 
-        className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`}
+      <div
+        className={`mobile-menu-overlay ${isMobileMenuOpen ? "active" : ""}`}
         onClick={() => setIsMobileMenuOpen(false)}
       />
     </header>
   );
 }
-
