@@ -156,3 +156,34 @@
     font-size: 0.9rem;
   }
 }
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .services {
+    padding: 3rem 1.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .services {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .services-title {
+    font-size: 1.35rem;
+  }
+
+  .service-card {
+    padding: 1.25rem;
+  }
+}

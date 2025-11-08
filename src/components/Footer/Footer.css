@@ -368,3 +368,29 @@
     font-size: 0.8rem;
   }
 }
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .footer {
+    padding: 2.5rem 0 1.25rem;
+  }
+
+  .footer-content {
+    gap: 1.5rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+
+  .footer-container {
+    padding: 0 0.75rem;
+  }
+
+  .footer-logo {
+    font-size: 1.1rem;
+  }
+}

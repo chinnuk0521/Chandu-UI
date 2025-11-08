@@ -63,6 +63,13 @@ video,
 iframe {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+/* Prevent text overflow */
+* {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 body {
@@ -77,6 +84,28 @@ body {
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Ensure touch targets are at least 44x44px for mobile */
+button,
+a,
+input[type="button"],
+input[type="submit"],
+input[type="checkbox"],
+input[type="radio"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (max-width: 768px) {
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 48px;
+  }
 }
 
 .app {
@@ -553,6 +582,61 @@ html {
 
   .component-demo-features li {
     font-size: 0.85rem;
+  }
+}
+
+/* Landscape orientation support for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .components-showcase {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 360px) {
+  .components-showcase {
+    padding: 2rem 0.5rem;
+  }
+
+  .showcase-title {
+    font-size: 1.25rem;
+  }
+
+  .component-demo-title {
+    font-size: 1.1rem;
+  }
+
+  .component-demo-visual {
+    padding: 0.875rem;
+  }
+}
+
+/* Ensure tables and other elements are responsive */
+table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Smooth scrolling for mobile */
+@media (max-width: 768px) {
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  * {
+    -webkit-tap-highlight-color: rgba(0, 51, 141, 0.1);
   }
 }
 

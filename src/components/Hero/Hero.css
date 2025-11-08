@@ -164,6 +164,7 @@
 
   .hero-title {
     font-size: 1.75rem;
+    word-wrap: break-word;
   }
 
   .hero-subtitle {
@@ -173,10 +174,29 @@
   .hero-description {
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
+    word-wrap: break-word;
   }
 
   .hero-button {
     padding: 0.75rem 1.25rem;
     font-size: 0.9rem;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding-top: 70px;
+    padding-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
 }

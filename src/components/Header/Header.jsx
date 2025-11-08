@@ -35,6 +35,27 @@ export default function Header({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.classList.add('mobile-menu-open');
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const handleClick = (item) => {
     setIsMobileMenuOpen(false);
     onMenuItemClick?.(item);
@@ -82,7 +103,7 @@ export default function Header({
           ))}
         </nav>
         <button
-          className="mobile-menu-toggle"
+          className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
           aria-expanded={isMobileMenuOpen}

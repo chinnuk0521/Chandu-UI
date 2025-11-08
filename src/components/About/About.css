@@ -417,3 +417,35 @@
     font-size: 0.7rem;
   }
 }
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .about {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-content {
+    gap: 2rem;
+  }
+
+  .about-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .about {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .about-title {
+    font-size: 1.35rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}
