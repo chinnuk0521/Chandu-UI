@@ -86,8 +86,17 @@
     padding: 4rem 1.5rem;
   }
 
+  .features-header {
+    margin-bottom: 3rem;
+  }
+
   .features-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .features-subtitle {
+    font-size: 1rem;
   }
 
   .features-grid {
@@ -97,5 +106,53 @@
 
   .feature-card {
     padding: 2rem;
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .feature-title {
+    font-size: 1.35rem;
+  }
+
+  .feature-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features {
+    padding: 3rem 1rem;
+  }
+
+  .features-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .features-title {
+    font-size: 1.5rem;
+  }
+
+  .features-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-title {
+    font-size: 1.25rem;
+  }
+
+  .feature-description {
+    font-size: 0.9rem;
   }
 }
