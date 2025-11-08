@@ -287,12 +287,57 @@ npm run preview
 
 ## Contributing
 
-Contributions are welcome! Please read our contributing guidelines first.
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) first.
+
+We have a [Code of Conduct](CODE_OF_CONDUCT.md) that all contributors are expected to follow.
+
+### How to Contribute
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Commit your changes (`git commit -m 'feat: Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
+
+For detailed instructions, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Security
+
+We take security seriously. If you discover a security vulnerability, please follow our [Security Policy](SECURITY.md).
+
+**Please do not report security vulnerabilities through public GitHub issues.**
+
+Instead, please report them via:
+- Email: [security@chanduui.com] (or your preferred security contact)
+- GitHub Security Advisory: [Private Vulnerability Reporting](https://github.com/chinnuk0521/Chandu-UI/security/advisories/new)
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Maintainers
+
+See [MAINTAINERS.md](MAINTAINERS.md) for information about project maintainers.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a list of changes and version history.
+
+## Support
+
+- 📖 [Documentation](README.md)
+- 💬 [Discussions](https://github.com/chinnuk0521/Chandu-UI/discussions)
+- 🐛 [Issues](https://github.com/chinnuk0521/Chandu-UI/issues)
+- 🔒 [Security](SECURITY.md)
 
 ## Author
 
-Chandu UI
+**Chandu UI**
+
+- GitHub: [@chinnuk0521](https://github.com/chinnuk0521)
+- Project: [Chandu UI](https://github.com/chinnuk0521/Chandu-UI)
+
+---
+
+Made with ❤️ by the Chandu UI team
