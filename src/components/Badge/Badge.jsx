@@ -1,9 +1,9 @@
-import React from 'react';
-import './Badge.css';
+import React from "react";
+import "./Badge.css";
 
 /**
  * Reusable Badge Component
- * 
+ *
  * @param {React.ReactNode} children - Badge content
  * @param {string} variant - Badge variant: 'primary', 'secondary', 'success', 'warning', 'error'
  * @param {string} size - Badge size: 'small', 'medium', 'large'
@@ -11,9 +11,9 @@ import './Badge.css';
  */
 export default function Badge({
   children,
-  variant = 'primary',
-  size = 'medium',
-  className = '',
+  variant = "primary",
+  size = "medium",
+  className = "",
   ...props
 }) {
   return (
@@ -25,4 +25,3 @@ export default function Badge({
     </span>
   );
 }
-

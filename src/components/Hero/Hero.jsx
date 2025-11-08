@@ -1,9 +1,9 @@
-import React from 'react';
-import './Hero.css';
+import React from "react";
+import "./Hero.css";
 
 /**
  * Reusable Hero Section Component
- * 
+ *
  * @param {string} title - Main heading
  * @param {string} subtitle - Subheading
  * @param {string} description - Description text
@@ -12,18 +12,24 @@ import './Hero.css';
  * @param {string} className - Additional CSS classes
  */
 export default function Hero({
-  title = 'Welcome to Chandu UI',
-  subtitle = 'Innovation Meets Excellence',
-  description = 'We build cutting-edge solutions that transform businesses and drive success in the digital age.',
+  title = "Welcome to Chandu UI",
+  subtitle = "Innovation Meets Excellence",
+  description = "We build cutting-edge solutions that transform businesses and drive success in the digital age.",
   buttons = [
-    { label: 'Get Started', onClick: () => {}, variant: 'primary' },
-    { label: 'Learn More', onClick: () => {}, variant: 'secondary' },
+    { label: "Get Started", onClick: () => {}, variant: "primary" },
+    { label: "Learn More", onClick: () => {}, variant: "secondary" },
   ],
   backgroundImage,
-  className = '',
+  className = "",
 }) {
   return (
-    <section className={`hero ${className}`} id="home" style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : {}}>
+    <section
+      className={`hero ${className}`}
+      id="home"
+      style={
+        backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : {}
+      }
+    >
       <div className="hero-overlay"></div>
       <div className="hero-container">
         <div className="hero-content">
@@ -35,7 +41,7 @@ export default function Hero({
               {buttons.map((button, index) => (
                 <button
                   key={index}
-                  className={`hero-button ${button.variant || 'primary'}`}
+                  className={`hero-button ${button.variant || "primary"}`}
                   onClick={button.onClick}
                 >
                   {button.label}
@@ -48,4 +54,3 @@ export default function Hero({
     </section>
   );
 }
-

@@ -48,7 +48,7 @@
 
 .switch-slider::before {
   position: absolute;
-  content: '';
+  content: "";
   height: 18px;
   width: 18px;
   left: 3px;
@@ -75,4 +75,3 @@
 .switch-input:disabled {
   cursor: not-allowed;
 }
-

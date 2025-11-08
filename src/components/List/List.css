@@ -1,0 +1,73 @@
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  background: var(--bg-tertiary);
+}
+
+.list-dense .list-item {
+  padding: 0.75rem 1rem;
+}
+
+.list-dividers .list-item:not(:last-child) {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.list-item-icon {
+  flex-shrink: 0;
+  color: var(--accent-primary);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.list-item-primary {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.list-item-secondary {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+
+.list-item-action {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .list-item {
+    padding: 0.875rem 1rem;
+  }
+
+  .list-dense .list-item {
+    padding: 0.625rem 0.875rem;
+  }
+}

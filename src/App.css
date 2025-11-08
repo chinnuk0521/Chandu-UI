@@ -54,7 +54,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 /* Ensure images and media are responsive */
@@ -74,15 +77,27 @@ iframe {
 
 body {
   margin: 0;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   background: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   overflow-x: hidden;
   width: 100%;
   position: relative;
@@ -220,21 +235,21 @@ html {
 }
 
 /* Ensure content doesn't overflow */
-.component-demo-content,
-.component-demo-visual {
+.component-demo-content {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-}
-
-.component-demo-content {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
 .component-demo-visual {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   border-radius: 20px;
@@ -242,21 +257,24 @@ html {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  min-height: 280px;
+  min-height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .component-demo-visual::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-light));
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary),
+    var(--accent-light)
+  );
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -273,12 +291,73 @@ html {
 
 /* Modal component specific - larger visual area */
 .component-demo-visual-modal {
-  min-height: 500px;
+  min-height: 600px;
   padding: 3rem;
 }
 
 .component-demo-visual-modal:hover {
   transform: translateY(-4px);
+}
+
+/* Component-specific sizing for better visibility */
+.component-demo-visual:has(.chat) {
+  min-height: 650px;
+  padding: 2rem;
+}
+
+.component-demo-visual:has(.video-player) {
+  min-height: 550px;
+  padding: 2rem;
+}
+
+.component-demo-visual:has(.audio-player) {
+  min-height: 400px;
+  padding: 2rem;
+}
+
+.component-demo-visual:has(.chart) {
+  min-height: 550px;
+  padding: 2rem;
+}
+
+.component-demo-visual:has(.data-table) {
+  min-height: 500px;
+  padding: 2rem;
+}
+
+.component-demo-visual:has(.image-gallery) {
+  min-height: 550px;
+  padding: 2rem;
+}
+
+.component-demo-visual:has(.code-editor) {
+  min-height: 550px;
+  padding: 2rem;
+}
+
+.component-demo-visual:has(.rich-text-editor) {
+  min-height: 500px;
+  padding: 2rem;
+}
+
+.component-demo-visual:has(.wizard) {
+  min-height: 600px;
+  padding: 2rem;
+}
+
+.component-demo-visual:has(.tree-view) {
+  min-height: 500px;
+  padding: 2rem;
+}
+
+.component-demo-visual:has(.carousel) {
+  min-height: 450px;
+  padding: 2rem;
+}
+
+.component-demo-visual:has(.calendar) {
+  min-height: 450px;
+  padding: 2rem;
 }
 
 .component-demo-title {
@@ -323,7 +402,7 @@ html {
 }
 
 .component-demo-features li::before {
-  content: '✓';
+  content: "✓";
   color: var(--accent-primary);
   font-weight: 700;
   font-size: 1.125rem;
@@ -375,13 +454,13 @@ html {
   background: var(--bg-card);
   border-radius: 16px;
   border: 1px solid var(--border-light);
-  min-height: 200px;
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
   gap: 1.5rem;
   flex-direction: column;
@@ -483,7 +562,10 @@ html {
   border-radius: 8px;
   color: var(--text-primary);
   font-size: 0.95rem;
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .selected-display strong {
@@ -588,23 +670,45 @@ html {
   }
 
   .component-demo-visual {
-    padding: 1.25rem;
+    padding: 1.5rem;
     border-radius: 12px;
+    min-height: 400px;
   }
 
   .component-demo-visual-modal {
+    min-height: 550px;
+    padding: 2rem 1.5rem;
+  }
+
+  .component-demo-visual:has(.chat) {
+    min-height: 550px;
+    padding: 1.5rem;
+  }
+
+  .component-demo-visual:has(.video-player),
+  .component-demo-visual:has(.chart),
+  .component-demo-visual:has(.image-gallery),
+  .component-demo-visual:has(.code-editor),
+  .component-demo-visual:has(.wizard) {
+    min-height: 450px;
+    padding: 1.5rem;
+  }
+
+  .component-demo-visual:has(.data-table),
+  .component-demo-visual:has(.rich-text-editor),
+  .component-demo-visual:has(.tree-view) {
     min-height: 400px;
-    padding: 2rem 1.25rem;
+    padding: 1.5rem;
   }
 
   .demo-interactive {
     padding: 1.5rem;
-    min-height: 150px;
+    min-height: 280px;
   }
 
   .demo-interactive-modal {
-    min-height: 350px;
-    padding: 2rem 1.25rem;
+    min-height: 450px;
+    padding: 2rem 1.5rem;
   }
 
   .button-group {
@@ -675,11 +779,44 @@ html {
   }
 
   .component-demo-visual {
-    padding: 1rem;
+    padding: 1.25rem;
+    min-height: 350px;
+  }
+
+  .component-demo-visual-modal {
+    min-height: 500px;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .component-demo-visual:has(.chat) {
+    min-height: 500px;
+    padding: 1.25rem;
+  }
+
+  .component-demo-visual:has(.video-player),
+  .component-demo-visual:has(.chart),
+  .component-demo-visual:has(.image-gallery),
+  .component-demo-visual:has(.code-editor),
+  .component-demo-visual:has(.wizard) {
+    min-height: 400px;
+    padding: 1.25rem;
+  }
+
+  .component-demo-visual:has(.data-table),
+  .component-demo-visual:has(.rich-text-editor),
+  .component-demo-visual:has(.tree-view) {
+    min-height: 350px;
+    padding: 1.25rem;
   }
 
   .demo-interactive {
     padding: 1.25rem;
+    min-height: 250px;
+  }
+
+  .demo-interactive-modal {
+    min-height: 400px;
+    padding: 1.5rem 1.25rem;
   }
 
   .component-demo-features li {
@@ -770,8 +907,17 @@ table {
   }
 
   /* Ensure all text elements are properly constrained */
-  h1, h2, h3, h4, h5, h6,
-  p, span, div, a, button {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div,
+  a,
+  button {
     max-width: 100%;
     word-wrap: break-word;
     overflow-wrap: break-word;

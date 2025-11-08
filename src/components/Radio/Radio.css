@@ -40,7 +40,7 @@
 }
 
 .radio-input:checked ~ .radio-checkmark::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
@@ -61,4 +61,3 @@
   color: #374151;
   line-height: 1.5;
 }
-

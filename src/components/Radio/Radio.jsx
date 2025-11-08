@@ -1,5 +1,5 @@
-import React from 'react';
-import './Radio.css';
+import React from "react";
+import "./Radio.css";
 
 /**
  * Reusable Radio Component
@@ -11,11 +11,13 @@ export default function Radio({
   checked = false,
   onChange,
   disabled = false,
-  className = '',
+  className = "",
   ...props
 }) {
   return (
-    <label className={`radio-wrapper ${disabled ? 'disabled' : ''} ${className}`}>
+    <label
+      className={`radio-wrapper ${disabled ? "disabled" : ""} ${className}`}
+    >
       <input
         type="radio"
         className="radio-input"
@@ -31,4 +33,3 @@ export default function Radio({
     </label>
   );
 }
-

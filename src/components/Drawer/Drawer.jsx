@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { HiXMark } from 'react-icons/hi2';
-import './Drawer.css';
+import React, { useEffect } from "react";
+import { HiXMark } from "react-icons/hi2";
+import "./Drawer.css";
 
 /**
  * Reusable Drawer Component
@@ -10,30 +10,30 @@ export default function Drawer({
   onClose,
   title,
   children,
-  position = 'right',
-  size = 'medium',
-  className = '',
+  position = "right",
+  size = "medium",
+  className = "",
   ...props
 }) {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (e.key === "Escape" && isOpen) {
         onClose?.();
       }
     };
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
@@ -64,4 +64,3 @@ export default function Drawer({
     </>
   );
 }
-

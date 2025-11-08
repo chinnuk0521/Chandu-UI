@@ -1,17 +1,17 @@
-import React from 'react';
-import './Spinner.css';
+import React from "react";
+import "./Spinner.css";
 
 /**
  * Reusable Spinner/Loader Component
- * 
+ *
  * @param {string} size - Spinner size: 'small', 'medium', 'large'
  * @param {string} variant - Spinner variant: 'primary', 'secondary'
  * @param {string} className - Additional CSS classes
  */
 export default function Spinner({
-  size = 'medium',
-  variant = 'primary',
-  className = '',
+  size = "medium",
+  variant = "primary",
+  className = "",
   ...props
 }) {
   return (
@@ -25,4 +25,3 @@ export default function Spinner({
     </div>
   );
 }
-

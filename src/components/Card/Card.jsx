@@ -1,9 +1,9 @@
-import React from 'react';
-import './Card.css';
+import React from "react";
+import "./Card.css";
 
 /**
  * Reusable Card Component
- * 
+ *
  * @param {React.ReactNode} children - Card content
  * @param {string} title - Card title
  * @param {string} subtitle - Card subtitle
@@ -18,13 +18,13 @@ export default function Card({
   subtitle,
   image,
   footer,
-  className = '',
+  className = "",
   onClick,
   ...props
 }) {
   return (
     <div
-      className={`card ${onClick ? 'clickable' : ''} ${className}`}
+      className={`card ${onClick ? "clickable" : ""} ${className}`}
       onClick={onClick}
       {...props}
     >
@@ -40,4 +40,3 @@ export default function Card({
     </div>
   );
 }
-

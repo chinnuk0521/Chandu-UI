@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import './Tabs.css';
+import React, { useState } from "react";
+import "./Tabs.css";
 
 /**
  * Reusable Tabs Component
- * 
+ *
  * @param {Array} tabs - Array of tab objects { label, content, disabled }
  * @param {number} defaultTab - Default active tab index
  * @param {Function} onChange - Tab change handler
@@ -13,7 +13,7 @@ export default function Tabs({
   tabs = [],
   defaultTab = 0,
   onChange,
-  className = '',
+  className = "",
 }) {
   const [activeTab, setActiveTab] = useState(defaultTab);
 
@@ -29,7 +29,7 @@ export default function Tabs({
         {tabs.map((tab, index) => (
           <button
             key={index}
-            className={`tab-button ${activeTab === index ? 'active' : ''} ${tab.disabled ? 'disabled' : ''}`}
+            className={`tab-button ${activeTab === index ? "active" : ""} ${tab.disabled ? "disabled" : ""}`}
             onClick={() => handleTabClick(index)}
             disabled={tab.disabled}
           >
@@ -37,10 +37,7 @@ export default function Tabs({
           </button>
         ))}
       </div>
-      <div className="tabs-content">
-        {tabs[activeTab]?.content}
-      </div>
+      <div className="tabs-content">{tabs[activeTab]?.content}</div>
     </div>
   );
 }
-

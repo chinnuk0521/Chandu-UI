@@ -1,0 +1,57 @@
+import React, { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
+import "./Navbar.css";
+
+/**
+ * Reusable Navbar Component
+ *
+ * @param {Array} items - Navigation items
+ * @param {string} logo - Logo text or element
+ * @param {Function} onItemClick - Item click handler
+ * @param {string} className - Additional CSS classes
+ */
+export default function Navbar({
+  items = [],
+  logo,
+  onItemClick,
+  className = "",
+  ...props
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleItemClick = (item) => {
+    setIsOpen(false);
+    if (onItemClick) onItemClick(item);
+  };
+
+  return (
+    <nav className={`navbar ${className}`} {...props}>
+      <div className="navbar-container">
+        {logo && <div className="navbar-logo">{logo}</div>}
+        <button
+          className="navbar-toggle"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <HiX /> : <HiMenu />}
+        </button>
+        <ul className={`navbar-menu ${isOpen ? "open" : ""}`}>
+          {items.map((item, index) => (
+            <li key={index} className="navbar-item">
+              <a
+                href={item.href}
+                className="navbar-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleItemClick(item);
+                }}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
+}

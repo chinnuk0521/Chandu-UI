@@ -121,20 +121,27 @@
 .mac-card {
   background: #1e1e1e;
   border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 100%;
   max-width: 100%;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .dark-mode .mac-card {
   background: #1e1e1e;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .code-block {
-  font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
+  font-family:
+    "SF Mono", "Monaco", "Menlo", "Consolas", "Courier New", monospace;
   font-size: 0.875rem;
   line-height: 1.6;
   background: transparent !important;
@@ -151,7 +158,9 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #3a3a3a;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .dark-mode .code-header {
@@ -192,7 +201,12 @@
   color: #ffffff;
   font-weight: 500;
   letter-spacing: 0.3px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   transition: color 0.3s ease;
 }
 
@@ -219,7 +233,8 @@
   padding-left: 0;
   position: relative;
   white-space: pre;
-  font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace;
+  font-family:
+    "SF Mono", "Monaco", "Menlo", "Consolas", "Courier New", monospace;
   color: #ffffff;
   font-size: 0.875rem;
   line-height: 1.6;

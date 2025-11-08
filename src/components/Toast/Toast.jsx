@@ -1,16 +1,22 @@
-import React, { useEffect } from 'react';
-import { HiXMark, HiCheckCircle, HiExclamationTriangle, HiInformationCircle, HiXCircle } from 'react-icons/hi2';
-import './Toast.css';
+import React, { useEffect } from "react";
+import {
+  HiXMark,
+  HiCheckCircle,
+  HiExclamationTriangle,
+  HiInformationCircle,
+  HiXCircle,
+} from "react-icons/hi2";
+import "./Toast.css";
 
 /**
  * Reusable Toast Component
  */
 export default function Toast({
   message,
-  variant = 'info',
+  variant = "info",
   duration = 5000,
   onClose,
-  className = '',
+  className = "",
   ...props
 }) {
   useEffect(() => {
@@ -47,4 +53,3 @@ export default function Toast({
     </div>
   );
 }
-

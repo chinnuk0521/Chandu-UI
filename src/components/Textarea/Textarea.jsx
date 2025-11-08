@@ -1,5 +1,5 @@
-import React from 'react';
-import './Textarea.css';
+import React from "react";
+import "./Textarea.css";
 
 /**
  * Reusable Textarea Component
@@ -14,7 +14,7 @@ export default function Textarea({
   required = false,
   disabled = false,
   rows = 4,
-  className = '',
+  className = "",
   ...props
 }) {
   return (
@@ -26,7 +26,7 @@ export default function Textarea({
         </label>
       )}
       <textarea
-        className={`textarea ${error ? 'textarea-error' : ''}`}
+        className={`textarea ${error ? "textarea-error" : ""}`}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
@@ -42,4 +42,3 @@ export default function Textarea({
     </div>
   );
 }
-

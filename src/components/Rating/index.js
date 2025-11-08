@@ -1,2 +1,1 @@
-export { default } from './Rating';
-
+export { default } from "./Rating";

@@ -1,14 +1,14 @@
-import React from 'react';
-import './Skeleton.css';
+import React from "react";
+import "./Skeleton.css";
 
 /**
  * Reusable Skeleton Loading Component
  */
 export default function Skeleton({
-  variant = 'text',
+  variant = "text",
   width,
   height,
-  className = '',
+  className = "",
   ...props
 }) {
   const style = {};
@@ -23,4 +23,3 @@ export default function Skeleton({
     />
   );
 }
-
