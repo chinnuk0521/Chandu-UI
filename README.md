@@ -33,24 +33,37 @@ function App() {
 
 ## Components
 
+**Total: 69 production-ready components**
+
 ### Layout Components
 
 - **Header** - Navigation header with mobile menu
 - **Hero** - Full-screen hero section
 - **Footer** - Multi-column footer
+- **Navbar** - Navigation bar component
+- **Sidebar** - Sidebar navigation component
 
 ### Section Components
 
 - **Features** - Features grid section
 - **About** - About section with highlights
 - **Services** - Services grid section
-- **Contact** - Contact form section
 
 ### Form Components
 
 - **Autocomplete** - Multi-select autocomplete with search
 - **GlobalSearch** - Global search component
 - **Input** - Text input with label, error, and helper text
+- **Textarea** - Multi-line text input
+- **Select** - Select dropdown component
+- **Checkbox** - Checkbox input component
+- **Radio** - Radio button component
+- **Switch** - Toggle switch component
+- **Form** - Form component with validation
+- **FileUpload** - File upload component with drag and drop support
+- **DateRangePicker** - Date range picker component
+- **TimePicker** - Time picker component
+- **ColorPicker** - Color picker component
 
 ### UI Components
 
@@ -61,6 +74,59 @@ function App() {
 - **Avatar** - Avatar component with image or initials
 - **Spinner** - Loading spinner component
 - **Tabs** - Tabs component for organizing content
+- **Chip** - Chip component for labels and tags
+- **Tag** - Tag component for labels and categories
+- **Divider** - Divider component for visual separation
+- **Skeleton** - Skeleton loading component
+- **Progress** - Progress bar component
+- **Slider** - Slider component for range selection
+- **Rating** - Rating component with stars
+- **Accordion** - Accordion component for collapsible content
+- **Drawer** - Drawer component for side panels
+- **Popover** - Popover component for contextual information
+- **Tooltip** - Tooltip component for hover information
+- **Menu** - Menu component for dropdown menus
+- **Dropdown** - Dropdown component for selections
+- **SearchBar** - Search bar component
+- **Breadcrumb** - Breadcrumb navigation component
+- **Pagination** - Pagination component for navigation
+- **Stepper** - Stepper component for multi-step processes
+- **List** - List component for displaying items
+
+### Data Display Components
+
+- **Table** - Data table component for displaying structured data
+- **DataTable** - Advanced data table with sorting and filtering
+- **Timeline** - Timeline component for displaying chronological events
+- **TreeView** - Tree view component for hierarchical data
+- **CodeViewer** - Code viewer component for displaying code
+- **Chart** - Chart component for data visualization
+
+### Media Components
+
+- **ImageGallery** - Image gallery component
+- **VideoPlayer** - Video player component
+- **AudioPlayer** - Audio player component
+- **Carousel** - Image/content carousel component
+
+### Feedback Components
+
+- **Alert** - Alert component for notifications
+- **Toast** - Toast notification component
+- **ToastContainer** - Toast container component
+- **Notification** - Notification component for displaying alerts
+- **Snackbar** - Snackbar component for temporary messages
+- **Backdrop** - Backdrop component for modal overlays
+
+### Advanced Components
+
+- **RichTextEditor** - Rich text editor component
+- **CodeEditor** - Code editor component
+- **Calendar** - Calendar component for date selection
+- **DragDrop** - Drag and drop component
+- **Wizard** - Multi-step wizard component
+- **Tour** - Product tour/onboarding component
+- **Chat** - Chat interface component
 
 ## Usage Examples
 
@@ -237,16 +303,14 @@ import { Tabs } from 'chandu-ui-components';
 
 ## Styling
 
-Each component includes its own CSS file. Import the styles you need:
+Import the main stylesheet to get all component styles:
 
 ```jsx
-// Import individual component styles
-import 'chandu-ui-components/dist/Header.css';
-import 'chandu-ui-components/dist/Autocomplete.css';
-
-// Or import all styles (if available)
-import 'chandu-ui-components/dist/index.css';
+// Import all component styles
+import 'chandu-ui-components/dist/style.css';
 ```
+
+This will include styles for all 69 components. The styles are optimized and minified for production use.
 
 ## Props Documentation
 

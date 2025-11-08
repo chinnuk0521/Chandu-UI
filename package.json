@@ -1,6 +1,6 @@
 {
   "name": "chandu-ui-components",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A production-ready, reusable React component library - Similar to Material-UI and MUI",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
