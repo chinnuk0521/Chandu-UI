@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { HiPaperAirplane, HiEmojiHappy } from "react-icons/hi";
+import { HiPaperAirplane, HiFaceSmile } from "react-icons/hi2";
 import "./Chat.css";
 
 /**
@@ -63,8 +63,12 @@ export default function Chat({
         <div ref={messagesEndRef} />
       </div>
       <div className="chat-input-container">
-        <button className="chat-input-button">
-          <HiEmojiHappy />
+        <button 
+          className="chat-input-button"
+          type="button"
+          aria-label="Add emoji"
+        >
+          <HiFaceSmile />
         </button>
         <input
           type="text"
@@ -77,6 +81,9 @@ export default function Chat({
         <button
           className="chat-input-button chat-send-button"
           onClick={handleSend}
+          type="button"
+          aria-label="Send message"
+          disabled={!inputValue.trim()}
         >
           <HiPaperAirplane />
         </button>

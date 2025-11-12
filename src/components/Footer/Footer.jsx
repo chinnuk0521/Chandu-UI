@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import Logo from "../../assets/Logo.svg";
 import "./Footer.css";
 
 /**
@@ -11,7 +12,10 @@ export default function Footer() {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-logo">Chandu UI</h3>
+            <div className="footer-logo-container">
+              <img src={Logo} alt="Chandu UI Logo" className="footer-logo-img" />
+              <h3 className="footer-logo">Chandu UI</h3>
+            </div>
             <p className="footer-description">
               Professional React component library for modern tech companies and
               startups.

@@ -46,17 +46,24 @@ export default function Menu({
       </div>
       {isOpen && (
         <div className={`menu menu-${position}`}>
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className={`menu-item ${item.disabled ? "disabled" : ""} ${item.divider ? "divider" : ""}`}
-              onClick={() => handleItemClick(item)}
-            >
-              {item.icon && <span className="menu-icon">{item.icon}</span>}
-              <span className="menu-label">{item.label}</span>
-              {item.children && <HiChevronRight className="menu-arrow" />}
-            </div>
-          ))}
+          {items.map((item, index) => {
+            // Handle divider items
+            if (item.type === "divider" || item.divider) {
+              return <div key={index} className="menu-divider" />;
+            }
+            
+            return (
+              <div
+                key={index}
+                className={`menu-item ${item.disabled ? "disabled" : ""}`}
+                onClick={() => handleItemClick(item)}
+              >
+                {item.icon && <span className="menu-icon">{item.icon}</span>}
+                <span className="menu-label">{item.label || ""}</span>
+                {item.children && <HiChevronRight className="menu-arrow" />}
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

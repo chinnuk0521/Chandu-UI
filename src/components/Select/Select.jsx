@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { HiChevronDown, HiCheck } from "react-icons/hi";
 import "./Select.css";
 
@@ -22,7 +22,9 @@ export default function Select({
   ...props
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownWidth, setDropdownWidth] = useState(null);
   const selectRef = useRef(null);
+  const triggerRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -31,11 +33,26 @@ export default function Select({
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const selectedOption = options.find((opt) => opt.value === value);
+  useLayoutEffect(() => {
+    if (isOpen && triggerRef.current) {
+      const width = triggerRef.current.offsetWidth;
+      setDropdownWidth(width);
+    }
+  }, [isOpen]);
+
+  // Normalize options to handle both string arrays and object arrays
+  const normalizedOptions = options.map((opt) => {
+    if (typeof opt === "string") {
+      return { value: opt, label: opt };
+    }
+    return opt;
+  });
+
+  const selectedOption = normalizedOptions.find((opt) => opt.value === value);
 
   const handleSelect = (option) => {
     if (onChange) {
@@ -48,30 +65,41 @@ export default function Select({
     <div
       className={`select ${disabled ? "disabled" : ""} ${isOpen ? "open" : ""} ${className}`}
       ref={selectRef}
-      {...props}
-    >
-      <div
-        className="select-trigger"
-        onClick={() => !disabled && setIsOpen(!isOpen)}
+      style={{ position: "relative", width: "100%" }}
+        {...props}
       >
-        <span
-          className={selectedOption ? "select-value" : "select-placeholder"}
+        <div
+          ref={triggerRef}
+          className="select-trigger"
+        onClick={() => !disabled && setIsOpen(!isOpen)}
         >
-          {selectedOption ? selectedOption.label : placeholder}
-        </span>
-        <HiChevronDown className={`select-icon ${isOpen ? "open" : ""}`} />
-      </div>
-      {isOpen && !disabled && (
-        <div className="select-dropdown">
-          {options.map((option) => (
-            <div
-              key={option.value}
+          <span
+            className={selectedOption ? "select-value" : "select-placeholder"}
+          >
+            {selectedOption ? selectedOption.label : placeholder}
+          </span>
+          <HiChevronDown className={`select-icon ${isOpen ? "open" : ""}`} />
+        </div>
+        {isOpen && !disabled && (
+          <div
+            className="select-dropdown"
+          style={{ 
+            position: "absolute",
+            left: 0,
+            width: dropdownWidth ? `${dropdownWidth}px` : "100%",
+            minWidth: dropdownWidth ? `${dropdownWidth}px` : "100%",
+            top: "calc(100% + 0.5rem)"
+          }}
+        >
+          {normalizedOptions.map((option) => (
+                  <div
+                    key={option.value}
               className={`select-option ${value === option.value ? "selected" : ""}`}
-              onClick={() => handleSelect(option)}
-            >
-              <span>{option.label}</span>
+                    onClick={() => handleSelect(option)}
+                  >
+                    <span>{option.label}</span>
               {value === option.value && <HiCheck className="select-check" />}
-            </div>
+                  </div>
           ))}
         </div>
       )}

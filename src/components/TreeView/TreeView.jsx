@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import {
   HiChevronRight,
   HiChevronDown,
@@ -22,34 +22,63 @@ export default function TreeView({
   ...props
 }) {
   const [expanded, setExpanded] = useState({});
+  const [selected, setSelected] = useState(null);
 
-  const toggleExpand = (id) => {
+  // Generate unique IDs for nodes if they don't have them
+  const normalizeData = (nodes, parentPath = "") => {
+    return nodes.map((node, index) => {
+      const nodeId = node.id || `${parentPath}-${index}-${node.label}`;
+      const nodePath = parentPath ? `${parentPath}-${index}` : `${index}`;
+      
+      const normalizedNode = {
+        ...node,
+        id: nodeId,
+        path: nodePath,
+      };
+
+      if (node.children && node.children.length > 0) {
+        normalizedNode.children = normalizeData(node.children, nodePath);
+      }
+
+      return normalizedNode;
+    });
+  };
+
+  const normalizedData = useMemo(() => normalizeData(data), [data]);
+
+  const toggleExpand = (id, event) => {
+    event.stopPropagation();
     setExpanded((prev) => ({
       ...prev,
       [id]: !prev[id],
     }));
   };
 
+  const handleNodeClick = (node, event) => {
+    event.stopPropagation();
+    setSelected(node.id);
+    if (onSelect) {
+      onSelect(node);
+    }
+  };
+
   const renderNode = (node, level = 0) => {
     const hasChildren = node.children && node.children.length > 0;
     const isExpanded = expanded[node.id];
+    const isSelected = selected === node.id;
 
     return (
       <div key={node.id} className="tree-view-node">
         <div
-          className="tree-view-item"
+          className={`tree-view-item ${isSelected ? "selected" : ""}`}
           style={{ paddingLeft: `${level * 1.5}rem` }}
-          onClick={() => {
-            if (hasChildren) {
-              toggleExpand(node.id);
-            }
-            if (onSelect) {
-              onSelect(node);
-            }
-          }}
+          onClick={(e) => handleNodeClick(node, e)}
         >
           {hasChildren && (
-            <span className="tree-view-chevron">
+            <span
+              className="tree-view-chevron"
+              onClick={(e) => toggleExpand(node.id, e)}
+            >
               {isExpanded ? <HiChevronDown /> : <HiChevronRight />}
             </span>
           )}
@@ -78,7 +107,7 @@ export default function TreeView({
 
   return (
     <div className={`tree-view ${className}`} {...props}>
-      {data.map((node) => renderNode(node))}
+      {normalizedData.map((node) => renderNode(node))}
     </div>
   );
 }

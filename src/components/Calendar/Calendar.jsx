@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import "../DateRangePicker/DateRangePicker.css";
 import "./Calendar.css";
 
 /**
@@ -47,10 +48,10 @@ export default function Calendar({
     return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
   };
 
-  const handleDateClick = (day) => {
+  const handleDateClick = (day, monthDate = currentDate) => {
     const newDate = new Date(
-      currentDate.getFullYear(),
-      currentDate.getMonth(),
+      monthDate.getFullYear(),
+      monthDate.getMonth(),
       day
     );
     if (minDate && newDate < minDate) return;
@@ -71,70 +72,93 @@ export default function Calendar({
     );
   };
 
-  const isToday = (day) => {
+  const isToday = (day, monthDate) => {
     const today = new Date();
     return (
       day === today.getDate() &&
-      currentDate.getMonth() === today.getMonth() &&
-      currentDate.getFullYear() === today.getFullYear()
+      monthDate.getMonth() === today.getMonth() &&
+      monthDate.getFullYear() === today.getFullYear()
     );
   };
 
-  const isSelected = (day) => {
+  const isSelected = (day, monthDate) => {
     if (!selectedDate) return false;
+    const date = new Date(monthDate.getFullYear(), monthDate.getMonth(), day);
     return (
-      day === selectedDate.getDate() &&
-      currentDate.getMonth() === selectedDate.getMonth() &&
-      currentDate.getFullYear() === selectedDate.getFullYear()
+      date.getTime() ===
+      new Date(
+        selectedDate.getFullYear(),
+        selectedDate.getMonth(),
+        selectedDate.getDate()
+      ).getTime()
     );
   };
 
-  const daysInMonth = getDaysInMonth(currentDate);
-  const firstDay = getFirstDayOfMonth(currentDate);
-  const days = [];
+  const renderCalendar = () => {
+    const daysInMonth = getDaysInMonth(currentDate);
+    const firstDay = getFirstDayOfMonth(currentDate);
+    const days = [];
 
-  for (let i = 0; i < firstDay; i++) {
-    days.push(null);
-  }
+    for (let i = 0; i < firstDay; i++) {
+      days.push(null);
+    }
 
-  for (let i = 1; i <= daysInMonth; i++) {
-    days.push(i);
-  }
+    for (let i = 1; i <= daysInMonth; i++) {
+      days.push(i);
+    }
+
+    return (
+      <div className="date-range-calendar">
+        <div className="date-range-calendar-header">
+          <button
+            className="date-range-calendar-nav"
+            onClick={goToPreviousMonth}
+          >
+            <HiChevronLeft />
+          </button>
+          <h3 className="date-range-calendar-month">
+            {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
+          </h3>
+          <button
+            className="date-range-calendar-nav"
+            onClick={goToNextMonth}
+          >
+            <HiChevronRight />
+          </button>
+        </div>
+
+        <div className="date-range-calendar-weekdays">
+          {dayNames.map((day) => (
+            <div key={day} className="date-range-calendar-weekday">
+              {day}
+            </div>
+          ))}
+        </div>
+
+        <div className="date-range-calendar-days">
+          {days.map((day, index) => {
+            const isTodayDate = isToday(day, currentDate);
+            const isSelectedDate = isSelected(day, currentDate);
+
+            return (
+              <button
+                key={index}
+                className={`date-range-calendar-day ${day === null ? "empty" : ""} ${isTodayDate ? "today" : ""} ${isSelectedDate ? "start" : ""}`}
+                onClick={() => day && handleDateClick(day)}
+                disabled={day === null}
+              >
+                {day}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className={`calendar ${className}`} {...props}>
-      <div className="calendar-header">
-        <button className="calendar-nav" onClick={goToPreviousMonth}>
-          <HiChevronLeft />
-        </button>
-        <h3 className="calendar-month">
-          {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
-        </h3>
-        <button className="calendar-nav" onClick={goToNextMonth}>
-          <HiChevronRight />
-        </button>
-      </div>
-
-      <div className="calendar-weekdays">
-        {dayNames.map((day) => (
-          <div key={day} className="calendar-weekday">
-            {day}
-          </div>
-        ))}
-      </div>
-
-      <div className="calendar-days">
-        {days.map((day, index) => (
-          <button
-            key={index}
-            className={`calendar-day ${day === null ? "empty" : ""} ${isToday(day) ? "today" : ""} ${isSelected(day) ? "selected" : ""}`}
-            onClick={() => day && handleDateClick(day)}
-            disabled={day === null}
-          >
-            {day}
-          </button>
-        ))}
-      </div>
+      {renderCalendar()}
     </div>
   );
 }

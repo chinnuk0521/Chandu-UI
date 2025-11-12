@@ -14,6 +14,8 @@
     "Helvetica Neue",
     sans-serif;
   position: relative;
+  display: block;
+  box-sizing: border-box;
 }
 
 .input-area {
@@ -97,11 +99,12 @@
 
 .suggestions {
   list-style: none;
-  margin-top: 8px;
+  margin-top: 0;
   border: 1px solid #d1d5db;
   border-radius: 12px;
   max-height: 240px;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 6px;
   background: #f0f0f0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -109,17 +112,20 @@
   width: 100%;
   z-index: 1000;
   left: 0;
-  animation: slideDown 0.2s ease-out;
+  top: calc(100% + 0.5rem);
+  animation: slideDown 0.15s ease-out;
+  box-sizing: border-box;
+  transform: translateX(0);
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-8px) translateX(0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateX(0);
   }
 }
 
@@ -162,7 +168,7 @@
 }
 
 .empty-state {
-  margin-top: 8px;
+  margin-top: 0;
   padding: 20px;
   text-align: center;
   color: #6b7280;
@@ -174,7 +180,10 @@
   width: 100%;
   z-index: 1000;
   left: 0;
-  animation: slideDown 0.2s ease-out;
+  top: calc(100% + 0.5rem);
+  animation: slideDown 0.15s ease-out;
+  box-sizing: border-box;
+  transform: translateX(0);
 }
 
 .empty-state .empty-icon {

@@ -18,11 +18,11 @@ export default function Header({
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
     { label: "Features", href: "#features" },
-    { label: "Contact", href: "#contact" },
   ],
   logo = "Chandu UI",
   onMenuItemClick,
   className = "",
+  viewComponentsButton,
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -101,6 +101,18 @@ export default function Header({
               {item.label}
             </a>
           ))}
+          {viewComponentsButton && (
+            <button
+              className="nav-button"
+              onClick={(e) => {
+                e.preventDefault();
+                handleClick({ label: "View Components" });
+                viewComponentsButton.onClick?.();
+              }}
+            >
+              {viewComponentsButton.label || "View Components"}
+            </button>
+          )}
         </nav>
         <button
           className={`mobile-menu-toggle ${isMobileMenuOpen ? "active" : ""}`}
