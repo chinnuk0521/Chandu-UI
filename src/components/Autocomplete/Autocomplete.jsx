@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import {
   HiInformationCircle,
   HiMagnifyingGlass,
@@ -39,6 +39,7 @@ export default function Autocomplete({
   const [customInputs, setCustomInputs] = useState([]);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownWidth, setDropdownWidth] = useState(null);
 
   const containerRef = useRef(null);
   const inputRef = useRef(null);
@@ -203,6 +204,14 @@ export default function Autocomplete({
     }
   }, [highlightedIndex]);
 
+  // Calculate dropdown width to prevent layout shifts
+  useLayoutEffect(() => {
+    if (isOpen && containerRef.current) {
+      const width = containerRef.current.offsetWidth;
+      setDropdownWidth(width);
+    }
+  }, [isOpen]);
+
   const canAddCustom =
     search.trim() &&
     allowCustomInput &&
@@ -244,7 +253,19 @@ export default function Autocomplete({
       {isOpen && (
         <>
           {filtered.length > 0 ? (
-            <ul className="suggestions" ref={dropdownRef} role="listbox">
+            <ul 
+              className="suggestions" 
+              ref={dropdownRef} 
+              role="listbox"
+              style={{
+                position: "absolute",
+                left: 0,
+                width: dropdownWidth ? `${dropdownWidth}px` : "100%",
+                minWidth: dropdownWidth ? `${dropdownWidth}px` : "100%",
+                top: "calc(100% + 0.5rem)",
+                transform: "translateX(0)"
+              }}
+            >
               {filtered.map((option, index) => (
                 <li
                   key={getOptionValue(option)}
@@ -259,7 +280,18 @@ export default function Autocomplete({
               ))}
             </ul>
           ) : search.trim() && canAddCustom ? (
-            <div className="empty-state" role="status">
+            <div 
+              className="empty-state" 
+              role="status"
+              style={{
+                position: "absolute",
+                left: 0,
+                width: dropdownWidth ? `${dropdownWidth}px` : "100%",
+                minWidth: dropdownWidth ? `${dropdownWidth}px` : "100%",
+                top: "calc(100% + 0.5rem)",
+                transform: "translateX(0)"
+              }}
+            >
               <HiMagnifyingGlass className="empty-icon" />
               <p>
                 No suggestions found. Press <kbd>Enter</kbd> to add "
@@ -267,12 +299,34 @@ export default function Autocomplete({
               </p>
             </div>
           ) : search.trim() && !canAddCustom ? (
-            <div className="empty-state" role="status">
+            <div 
+              className="empty-state" 
+              role="status"
+              style={{
+                position: "absolute",
+                left: 0,
+                width: dropdownWidth ? `${dropdownWidth}px` : "100%",
+                minWidth: dropdownWidth ? `${dropdownWidth}px` : "100%",
+                top: "calc(100% + 0.5rem)",
+                transform: "translateX(0)"
+              }}
+            >
               <HiInformationCircle className="empty-icon" />
               <p>This item is already selected</p>
             </div>
           ) : !search.trim() && filtered.length === 0 && selected.length > 0 ? (
-            <div className="empty-state" role="status">
+            <div 
+              className="empty-state" 
+              role="status"
+              style={{
+                position: "absolute",
+                left: 0,
+                width: dropdownWidth ? `${dropdownWidth}px` : "100%",
+                minWidth: dropdownWidth ? `${dropdownWidth}px` : "100%",
+                top: "calc(100% + 0.5rem)",
+                transform: "translateX(0)"
+              }}
+            >
               <HiCheckCircle className="empty-icon" />
               <p>All items selected. Type to add custom items.</p>
             </div>

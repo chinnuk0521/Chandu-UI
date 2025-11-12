@@ -22,10 +22,12 @@ export default function Carousel({
   ...props
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState('next'); // 'next' or 'prev'
 
   useEffect(() => {
     if (autoPlay && items.length > 1) {
       const timer = setInterval(() => {
+        setDirection('next');
         setCurrentIndex((prev) => (prev + 1) % items.length);
       }, interval);
       return () => clearInterval(timer);
@@ -33,14 +35,21 @@ export default function Carousel({
   }, [autoPlay, interval, items.length]);
 
   const goToSlide = (index) => {
+    if (index > currentIndex) {
+      setDirection('next');
+    } else if (index < currentIndex) {
+      setDirection('prev');
+    }
     setCurrentIndex(index);
   };
 
   const goToPrevious = () => {
+    setDirection('prev');
     setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
   };
 
   const goToNext = () => {
+    setDirection('next');
     setCurrentIndex((prev) => (prev + 1) % items.length);
   };
 
@@ -52,9 +61,9 @@ export default function Carousel({
         {items.map((item, index) => (
           <div
             key={index}
-            className={`carousel-slide ${index === currentIndex ? "active" : ""}`}
+            className={`carousel-slide ${index === currentIndex ? "active" : ""} ${index === currentIndex ? `slide-${direction}` : ""}`}
           >
-            {item}
+            {typeof item === 'object' && item !== null && 'content' in item ? item.content : item}
           </div>
         ))}
       </div>
@@ -64,12 +73,16 @@ export default function Carousel({
           <button
             className="carousel-arrow carousel-arrow-prev"
             onClick={goToPrevious}
+            aria-label="Previous slide"
+            type="button"
           >
             <HiChevronLeft />
           </button>
           <button
             className="carousel-arrow carousel-arrow-next"
             onClick={goToNext}
+            aria-label="Next slide"
+            type="button"
           >
             <HiChevronRight />
           </button>

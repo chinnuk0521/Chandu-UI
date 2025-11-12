@@ -3,14 +3,16 @@
 ## Installation
 
 ```bash
-npm install @chandu/components
+npm install chandu-ui-components
+# or
+npm i chandu-ui-components
 ```
 
 ## Quick Start
 
 ```jsx
 import React from 'react';
-import { Header, Hero, Autocomplete } from '@chandu/components';
+import { Header, Hero, Autocomplete } from 'chandu-ui-components';
 
 function App() {
   return (
@@ -29,11 +31,11 @@ Each component requires its CSS file to be imported:
 
 ```jsx
 // Option 1: Import individual component styles
-import '@chandu/components/dist/Header.css';
-import '@chandu/components/dist/Autocomplete.css';
+import 'chandu-ui-components/dist/Header.css';
+import 'chandu-ui-components/dist/Autocomplete.css';
 
 // Option 2: Import all styles (if bundled)
-import '@chandu/components/dist/index.css';
+import 'chandu-ui-components/dist/index.css';
 ```
 
 ## Components
@@ -44,7 +46,7 @@ import '@chandu/components/dist/index.css';
 Navigation header with mobile menu support.
 
 ```jsx
-import { Header } from '@chandu/components';
+import { Header } from 'chandu-ui-components';
 
 <Header
   logo="My App"
@@ -60,7 +62,7 @@ import { Header } from '@chandu/components';
 Full-screen hero section.
 
 ```jsx
-import { Hero } from '@chandu/components';
+import { Hero } from 'chandu-ui-components';
 
 <Hero
   title="Welcome to Our App"
@@ -77,7 +79,7 @@ import { Hero } from '@chandu/components';
 Multi-column footer with links and social media.
 
 ```jsx
-import { Footer } from '@chandu/components';
+import { Footer } from 'chandu-ui-components';
 
 <Footer
   logo="My App"
@@ -104,7 +106,7 @@ import { Footer } from '@chandu/components';
 Features grid section.
 
 ```jsx
-import { Features } from '@chandu/components';
+import { Features } from 'chandu-ui-components';
 
 <Features
   title="Our Features"
@@ -123,7 +125,7 @@ import { Features } from '@chandu/components';
 About section with highlights.
 
 ```jsx
-import { About } from '@chandu/components';
+import { About } from 'chandu-ui-components';
 
 <About
   title="About Us"
@@ -139,7 +141,7 @@ import { About } from '@chandu/components';
 Services grid section.
 
 ```jsx
-import { Services } from '@chandu/components';
+import { Services } from 'chandu-ui-components';
 
 <Services
   title="Our Services"
@@ -157,7 +159,7 @@ import { Services } from '@chandu/components';
 Contact form section.
 
 ```jsx
-import { Contact } from '@chandu/components';
+import { Contact } from 'chandu-ui-components';
 
 <Contact
   title="Get In Touch"
@@ -176,7 +178,7 @@ import { Contact } from '@chandu/components';
 Multi-select autocomplete with search.
 
 ```jsx
-import { Autocomplete } from '@chandu/components';
+import { Autocomplete } from 'chandu-ui-components';
 import { useState } from 'react';
 
 function MyComponent() {
@@ -198,7 +200,7 @@ function MyComponent() {
 Global search component.
 
 ```jsx
-import { GlobalSearch } from '@chandu/components';
+import { GlobalSearch } from 'chandu-ui-components';
 
 <GlobalSearch
   items={['Item 1', 'Item 2', 'Item 3']}

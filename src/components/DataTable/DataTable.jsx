@@ -23,26 +23,63 @@ export default function DataTable({
   const [sortColumn, setSortColumn] = useState(null);
   const [sortDirection, setSortDirection] = useState("asc");
 
+  // Normalize columns - support both array of strings and array of objects
+  const normalizedColumns = columns.map((col, index) => {
+    if (typeof col === "string") {
+      return { 
+        key: col.toLowerCase().replace(/\s+/g, "_"), 
+        label: col, 
+        sortable: sortable 
+      };
+    }
+    return { 
+      key: col.key || `col_${index}`, 
+      label: col.label || col.key, 
+      sortable: col.sortable !== undefined ? col.sortable : sortable 
+    };
+  });
+
   const filteredData =
     searchable && searchQuery
       ? data.filter((row) =>
-          columns.some((col) =>
-            String(row[col.key] || "")
+          normalizedColumns.some((col) => {
+            // Handle both object and array data formats
+            const value = row[col.key] || (typeof row === 'object' && row !== null ? Object.values(row).join(' ') : String(row));
+            return String(value || "")
               .toLowerCase()
-              .includes(searchQuery.toLowerCase())
-          )
+              .includes(searchQuery.toLowerCase());
+          })
         )
       : data;
 
   const sortedData =
     sortable && sortColumn
       ? [...filteredData].sort((a, b) => {
-          const aVal = a[sortColumn];
-          const bVal = b[sortColumn];
-          if (sortDirection === "asc") {
-            return aVal > bVal ? 1 : -1;
+          let aVal = a[sortColumn];
+          let bVal = b[sortColumn];
+          
+          // Handle null/undefined values
+          if (aVal == null) aVal = "";
+          if (bVal == null) bVal = "";
+          
+          // Convert to strings for comparison if needed
+          const aStr = String(aVal).toLowerCase();
+          const bStr = String(bVal).toLowerCase();
+          
+          // Try to compare as numbers if both are numeric
+          const aNum = Number(aVal);
+          const bNum = Number(bVal);
+          const isNumeric = !isNaN(aNum) && !isNaN(bNum) && aStr !== "" && bStr !== "";
+          
+          if (isNumeric) {
+            return sortDirection === "asc" ? aNum - bNum : bNum - aNum;
           }
-          return aVal < bVal ? 1 : -1;
+          
+          // String comparison
+          if (sortDirection === "asc") {
+            return aStr > bStr ? 1 : aStr < bStr ? -1 : 0;
+          }
+          return aStr < bStr ? 1 : aStr > bStr ? -1 : 0;
         })
       : filteredData;
 
@@ -73,27 +110,29 @@ export default function DataTable({
         <table className="data-table-table">
           <thead>
             <tr>
-              {columns.map((column) => (
+              {normalizedColumns.map((column) => (
                 <th
                   key={column.key}
-                  className={sortable && column.sortable ? "sortable" : ""}
+                  className={column.sortable ? "sortable" : ""}
                   onClick={() =>
-                    sortable && column.sortable && handleSort(column.key)
+                    column.sortable && handleSort(column.key)
                   }
                 >
                   <div className="data-table-header">
-                    {column.label}
-                    {sortable &&
-                      column.sortable &&
-                      sortColumn === column.key && (
-                        <span className="data-table-sort-icon">
-                          {sortDirection === "asc" ? (
+                    <span>{column.label}</span>
+                    {column.sortable && (
+                      <span className="data-table-sort-icon">
+                        {sortColumn === column.key ? (
+                          sortDirection === "asc" ? (
                             <HiChevronUp />
                           ) : (
                             <HiChevronDown />
-                          )}
-                        </span>
-                      )}
+                          )
+                        ) : (
+                          <HiChevronUp style={{ opacity: 0.3 }} />
+                        )}
+                      </span>
+                    )}
                   </div>
                 </th>
               ))}
@@ -103,14 +142,21 @@ export default function DataTable({
             {sortedData.length > 0 ? (
               sortedData.map((row, index) => (
                 <tr key={index}>
-                  {columns.map((column) => (
-                    <td key={column.key}>{row[column.key]}</td>
-                  ))}
+                  {normalizedColumns.map((column) => {
+                    // Handle both object and array data formats
+                    let cellValue = row[column.key];
+                    if (cellValue === undefined && typeof row === 'object' && row !== null) {
+                      // Try to find value by label if key doesn't match
+                      const labelKey = column.label;
+                      cellValue = row[labelKey] || '';
+                    }
+                    return <td key={column.key}>{cellValue != null ? cellValue : ""}</td>;
+                  })}
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan={columns.length} className="data-table-empty">
+                <td colSpan={normalizedColumns.length} className="data-table-empty">
                   No data found
                 </td>
               </tr>

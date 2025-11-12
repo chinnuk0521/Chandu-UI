@@ -8,16 +8,20 @@ import "./Stepper.css";
 export default function Stepper({
   steps = [],
   currentStep = 0,
+  activeStep,
   orientation = "horizontal",
   className = "",
   ...props
 }) {
+  // Support both currentStep and activeStep for backward compatibility
+  const activeStepIndex = activeStep !== undefined ? activeStep : currentStep;
+  
   return (
     <div className={`stepper stepper-${orientation} ${className}`} {...props}>
       {steps.map((step, index) => {
-        const isCompleted = index < currentStep;
-        const isActive = index === currentStep;
-        const isPending = index > currentStep;
+        const isCompleted = index < activeStepIndex;
+        const isActive = index === activeStepIndex;
+        const isPending = index > activeStepIndex;
 
         return (
           <div key={index} className="stepper-step">

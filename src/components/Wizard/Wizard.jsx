@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { HiCheck } from "react-icons/hi";
+import React from "react";
+import { HiCheck, HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import "./Wizard.css";
 
 /**
@@ -7,19 +7,38 @@ import "./Wizard.css";
  *
  * @param {Array} steps - Wizard steps
  * @param {number} currentStep - Current step index
+ * @param {number} activeStep - Active step index (alternative to currentStep)
  * @param {Function} onStepChange - Step change handler
+ * @param {boolean} showNavigation - Show Previous/Next buttons (default: true)
  * @param {string} className - Additional CSS classes
  */
 export default function Wizard({
   steps = [],
   currentStep = 0,
+  activeStep,
   onStepChange,
+  showNavigation = true,
   className = "",
   ...props
 }) {
+  // Support both currentStep and activeStep for backward compatibility
+  const activeStepIndex = activeStep !== undefined ? activeStep : currentStep;
+  
   const handleStepClick = (index) => {
-    if (onStepChange && index <= currentStep) {
+    if (onStepChange && index <= activeStepIndex) {
       onStepChange(index);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (onStepChange && activeStepIndex > 0) {
+      onStepChange(activeStepIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (onStepChange && activeStepIndex < steps.length - 1) {
+      onStepChange(activeStepIndex + 1);
     }
   };
 
@@ -27,9 +46,9 @@ export default function Wizard({
     <div className={`wizard ${className}`} {...props}>
       <div className="wizard-steps">
         {steps.map((step, index) => {
-          const isCompleted = index < currentStep;
-          const isActive = index === currentStep;
-          const isDisabled = index > currentStep;
+          const isCompleted = index < activeStepIndex;
+          const isActive = index === activeStepIndex;
+          const isDisabled = index > activeStepIndex;
 
           return (
             <div
@@ -59,8 +78,32 @@ export default function Wizard({
           );
         })}
       </div>
-      {steps[currentStep] && (
-        <div className="wizard-content">{steps[currentStep].content}</div>
+      {steps[activeStepIndex] && (
+        <>
+          <div className="wizard-content">{steps[activeStepIndex].content}</div>
+          {showNavigation && (
+            <div className="wizard-navigation">
+              <button
+                className="wizard-button wizard-button-previous"
+                onClick={handlePrevious}
+                disabled={activeStepIndex === 0}
+                type="button"
+              >
+                <HiChevronLeft />
+                Previous
+              </button>
+              <button
+                className="wizard-button wizard-button-next"
+                onClick={handleNext}
+                disabled={activeStepIndex === steps.length - 1}
+                type="button"
+              >
+                Next
+                <HiChevronRight />
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

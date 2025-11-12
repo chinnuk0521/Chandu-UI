@@ -34,7 +34,12 @@ export default function Slider({
           {showValue && <span className="slider-value">{currentValue}</span>}
         </div>
       )}
-      <div className="slider-container">
+      <div 
+        className="slider-container"
+        style={{
+          "--percentage": `${percentage}%`,
+        }}
+      >
         <input
           type="range"
           className="slider-input"
@@ -44,9 +49,6 @@ export default function Slider({
           value={currentValue}
           onChange={handleChange}
           disabled={disabled}
-          style={{
-            "--percentage": `${percentage}%`,
-          }}
         />
         {!label && showValue && (
           <div className="slider-value-display">{currentValue}</div>

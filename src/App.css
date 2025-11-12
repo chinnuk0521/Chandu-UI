@@ -129,10 +129,20 @@ input[type="radio"] {
   background: var(--bg-primary);
   min-height: 100vh;
   transition: background-color 0.3s ease;
+  position: relative;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Modern container max-widths for better readability */
+@media (min-width: 1400px) {
+  .app {
+    max-width: 100%;
+  }
 }
 
 /* Components Showcase */
@@ -465,6 +475,26 @@ html {
   gap: 1.5rem;
   flex-direction: column;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* About component in demo - ensure full visibility and proper layout */
+.demo-interactive .about {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  display: block !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+}
+
+.demo-interactive .about-container {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.demo-interactive .about-content {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 /* Modal component specific - larger interactive area */

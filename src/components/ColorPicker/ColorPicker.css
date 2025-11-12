@@ -1,6 +1,8 @@
 .color-picker {
   position: relative;
   width: 100%;
+  display: block;
+  box-sizing: border-box;
 }
 
 .color-picker-trigger {
@@ -14,6 +16,8 @@
   transition: all 0.2s ease;
   min-height: 44px;
   background: var(--bg-card);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .color-picker-trigger:hover {
@@ -29,9 +33,9 @@
 
 .color-picker-dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 0.5rem);
   left: 0;
-  margin-top: 0.5rem;
+  margin-top: 0;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 12px;
@@ -39,7 +43,10 @@
   padding: 1.5rem;
   z-index: 1000;
   min-width: 250px;
+  width: 100%;
   animation: slideDown 0.2s ease;
+  box-sizing: border-box;
+  transform: translateX(0);
 }
 
 .color-picker-presets {
@@ -111,11 +118,11 @@
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateX(0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateX(0);
   }
 }
 

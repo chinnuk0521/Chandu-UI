@@ -65,6 +65,9 @@
   padding: 0;
   margin-left: 0;
   position: relative;
+  border: none;
+  outline: none;
+  background: transparent;
 }
 
 .logo::before {
@@ -97,6 +100,10 @@
   mix-blend-mode: normal;
   position: relative;
   z-index: 1;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  display: block;
 }
 
 .logo:hover .logo-image {
@@ -181,6 +188,44 @@
 
 .nav-link:hover::after {
   width: calc(100% - 2rem);
+}
+
+.nav-button {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-hover) 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  font-family: inherit;
+  box-shadow: 0 2px 8px rgba(0, 51, 141, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-button:hover {
+  background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent-primary) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 51, 141, 0.3);
+}
+
+.nav-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 51, 141, 0.2);
+}
+
+.dark-mode .nav-button {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-light) 100%);
+  box-shadow: 0 2px 8px rgba(74, 158, 255, 0.3);
+}
+
+.dark-mode .nav-button:hover {
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-primary) 100%);
+  box-shadow: 0 4px 12px rgba(74, 158, 255, 0.4);
 }
 
 .mobile-menu-toggle {
@@ -550,6 +595,21 @@
 
   .nav-link::after {
     display: none;
+  }
+
+  .nav-button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    min-height: 52px;
+    border-radius: 12px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .nav-button:hover {
+    transform: translateY(0);
   }
 }
 
