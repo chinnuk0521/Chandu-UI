@@ -1,27 +1,82 @@
 .code-editor {
   width: 100%;
   background: #1e1e1e;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   overflow: hidden;
-  font-family: "Courier New", monospace;
+  font-family: "Fira Code", "Consolas", "Monaco", "Courier New", monospace;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.code-editor:hover {
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.code-editor::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent-primary) 20%,
+    rgba(0, 51, 141, 0.8) 50%,
+    var(--accent-primary) 80%,
+    transparent 100%
+  );
+  opacity: 0.6;
+  z-index: 1;
 }
 
 .code-editor-header {
-  padding: 0.75rem 1rem;
-  background: #252526;
-  border-bottom: 1px solid #3e3e42;
+  padding: 0.875rem 1.25rem;
+  background: linear-gradient(135deg, #252526 0%, #1e1e1e 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.code-editor-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 51, 141, 0.3) 50%,
+    transparent 100%
+  );
 }
 
 .code-editor-language {
-  font-size: 0.875rem;
-  color: #cccccc;
-  font-weight: 500;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.875rem;
+  background: rgba(0, 51, 141, 0.15);
+  border: 1px solid rgba(0, 51, 141, 0.3);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
 }
 
 .code-editor-container {
@@ -30,22 +85,33 @@
   min-height: 300px;
   max-height: 600px;
   overflow: auto;
+  background: #1e1e1e;
 }
 
 .code-editor-line-numbers {
-  padding: 1rem 0.75rem;
+  padding: 1rem 0.5rem 1rem 1rem;
   background: #252526;
-  color: #858585;
+  color: rgba(255, 255, 255, 0.4);
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.6;
   text-align: right;
   user-select: none;
-  min-width: 50px;
+  min-width: 55px;
   flex-shrink: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  font-variant-numeric: tabular-nums;
+  position: sticky;
+  left: 0;
+  z-index: 1;
 }
 
 .code-editor-line-number {
   padding-right: 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.code-editor-line-number:hover {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .code-editor-textarea {
@@ -55,46 +121,115 @@
   color: #d4d4d4;
   border: none;
   outline: none;
-  font-family: "Courier New", monospace;
+  font-family: "Fira Code", "Consolas", "Monaco", "Courier New", monospace;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.6;
   resize: none;
   white-space: pre;
   overflow-wrap: normal;
   overflow-x: auto;
+  tab-size: 2;
+  transition: background-color 0.2s ease;
+}
+
+.code-editor-textarea:focus {
+  background: #1a1a1a;
 }
 
 .code-editor-textarea::placeholder {
-  color: #6a6a6a;
+  color: rgba(255, 255, 255, 0.25);
+  font-style: italic;
 }
 
 .code-editor-textarea::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
+}
+
+.code-editor-textarea::-webkit-scrollbar-track {
+  background: #252526;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .code-editor-textarea::-webkit-scrollbar-thumb {
-  background: #424242;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  border: 2px solid #252526;
+  transition: background 0.2s ease;
 }
 
 .code-editor-textarea::-webkit-scrollbar-thumb:hover {
-  background: #4e4e4e;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.code-editor-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.code-editor-container::-webkit-scrollbar-track {
+  background: #252526;
+}
+
+.code-editor-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  transition: background 0.2s ease;
+}
+
+.code-editor-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Dark mode support */
+.dark-mode .code-editor {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark-mode .code-editor-header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #141414 100%);
+}
+
+.dark-mode .code-editor-line-numbers {
+  background: #1a1a1a;
+}
+
+.dark-mode .code-editor-textarea {
+  background: #141414;
+}
+
+.dark-mode .code-editor-textarea:focus {
+  background: #0f0f0f;
 }
 
 @media (max-width: 768px) {
+  .code-editor {
+    border-radius: 12px;
+  }
+
   .code-editor-container {
     min-height: 250px;
     max-height: 400px;
   }
 
-  .code-editor-line-numbers {
-    min-width: 40px;
+  .code-editor-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .code-editor-language {
     font-size: 0.75rem;
+    padding: 0.3125rem 0.75rem;
+  }
+
+  .code-editor-line-numbers {
+    min-width: 45px;
+    font-size: 0.8125rem;
+    padding: 0.875rem 0.375rem 0.875rem 0.75rem;
   }
 
   .code-editor-textarea {
     font-size: 0.8125rem;
-    padding: 0.75rem;
+    padding: 0.875rem;
+    line-height: 1.5;
   }
 }

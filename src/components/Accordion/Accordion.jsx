@@ -4,6 +4,11 @@ import "./Accordion.css";
 
 /**
  * Reusable Accordion Component
+ *
+ * @param {Array} items - Array of accordion items with title and content
+ * @param {boolean} allowMultiple - Allow multiple items to be open at once
+ * @param {Array} defaultOpen - Array of indices that should be open by default
+ * @param {string} className - Additional CSS classes
  */
 export default function Accordion({
   items = [],
@@ -32,23 +37,28 @@ export default function Accordion({
 
   return (
     <div className={`accordion ${className}`} {...props}>
-      {items.map((item, index) => (
-        <div key={index} className="accordion-item">
-          <button
-            className={`accordion-header ${openItems.has(index) ? "open" : ""}`}
-            onClick={() => toggleItem(index)}
-            aria-expanded={openItems.has(index)}
-          >
-            <span className="accordion-title">{item.title}</span>
-            <HiChevronDown
-              className={`accordion-icon ${openItems.has(index) ? "open" : ""}`}
-            />
-          </button>
-          {openItems.has(index) && (
-            <div className="accordion-content">{item.content}</div>
-          )}
-        </div>
-      ))}
+      {items.map((item, index) => {
+        const isOpen = openItems.has(index);
+        return (
+          <div key={index} className="accordion-item">
+            <button
+              className={`accordion-header ${isOpen ? "open" : ""}`}
+              onClick={() => toggleItem(index)}
+              aria-expanded={isOpen}
+              type="button"
+            >
+              <span className="accordion-title">{item.title}</span>
+              <HiChevronDown
+                className={`accordion-icon ${isOpen ? "open" : ""}`}
+                aria-hidden="true"
+              />
+            </button>
+            <div className={`accordion-content ${isOpen ? "open" : ""}`}>
+              {item.content}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

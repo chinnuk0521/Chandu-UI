@@ -5,7 +5,7 @@ import "./Spinner.css";
  * Reusable Spinner/Loader Component
  *
  * @param {string} size - Spinner size: 'small', 'medium', 'large'
- * @param {string} variant - Spinner variant: 'primary', 'secondary'
+ * @param {string} variant - Spinner variant: 'primary', 'secondary', 'success', 'warning', 'error'
  * @param {string} className - Additional CSS classes
  */
 export default function Spinner({
@@ -20,6 +20,7 @@ export default function Spinner({
       {...props}
       role="status"
       aria-label="Loading"
+      aria-live="polite"
     >
       <span className="sr-only">Loading...</span>
     </div>

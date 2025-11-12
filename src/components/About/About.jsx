@@ -10,7 +10,19 @@ export default function About() {
       <div className="about-container">
         <div className="about-content">
           <div className="about-text">
-            <h2 className="about-title">Built for Modern Teams</h2>
+            <div className="about-header">
+              <h2 className="about-title">Built for Modern Teams</h2>
+              <div className="about-stats">
+                <div className="stat-item">
+                  <div className="stat-number">71+</div>
+                  <div className="stat-label">Components</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">100%</div>
+                  <div className="stat-label">Accessible</div>
+                </div>
+              </div>
+            </div>
             <p className="about-description">
               Chandu UI is a comprehensive React component library designed
               specifically for tech companies and startups. We understand the
@@ -23,20 +35,6 @@ export default function About() {
               platform, a startup MVP, or an enterprise application, Chandu UI
               provides the building blocks you need to ship faster.
             </p>
-            <div className="about-stats">
-              <div className="stat-item">
-                <div className="stat-number">71+</div>
-                <div className="stat-label">Components</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">100%</div>
-                <div className="stat-label">Accessible</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">0</div>
-                <div className="stat-label">Dependencies</div>
-              </div>
-            </div>
           </div>
           <div className="about-image">
             <div className="about-image-placeholder">
@@ -59,7 +57,7 @@ export default function About() {
                       <span className="code-keyword"> from</span>
                     </div>
                     <div className="code-line">
-                      <span className="code-string"> '@chandu/components'</span>
+                      <span className="code-string"> 'chandu-ui-components'</span>
                       <span className="code-punctuation">;</span>
                     </div>
                     <div className="code-line code-empty"></div>

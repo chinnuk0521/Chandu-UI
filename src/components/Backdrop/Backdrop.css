@@ -6,7 +6,15 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 998;
-  animation: fadeIn 0.2s ease;
+  animation: fadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.backdrop:hover {
+  background: rgba(0, 0, 0, 0.6);
 }
 
 @keyframes fadeIn {
@@ -16,4 +24,13 @@
   to {
     opacity: 1;
   }
+}
+
+/* Dark mode support */
+.dark-mode .backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .backdrop:hover {
+  background: rgba(0, 0, 0, 0.8);
 }

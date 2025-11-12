@@ -1,14 +1,22 @@
 .accordion {
   width: 100%;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
   overflow: hidden;
-  transition: border-color 0.3s ease;
+  background: var(--bg-card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .accordion {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-color: var(--border-color);
 }
 
 .accordion-item {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-light);
   transition: border-color 0.3s ease;
+  position: relative;
 }
 
 .accordion-item:last-child {
@@ -17,7 +25,7 @@
 
 .accordion-header {
   width: 100%;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
   background: var(--bg-card);
   border: none;
   text-align: left;
@@ -27,55 +35,156 @@
   align-items: center;
   transition: all 0.3s ease;
   font-family: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+.accordion-header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: var(--accent-primary);
+  transition: width 0.3s ease;
+  z-index: -1;
 }
 
 .accordion-header:hover {
   background: var(--bg-tertiary);
+  padding-left: 1.75rem;
+}
+
+.accordion-header:hover::before {
+  width: 4px;
 }
 
 .accordion-header.open {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-card) 100%);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header.open::before {
+  width: 4px;
+}
+
+.dark-mode .accordion-header.open {
   background: var(--bg-tertiary);
-  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .accordion-title {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  letter-spacing: 0.01em;
+  flex: 1;
+}
+
+.accordion-header:hover .accordion-title {
+  color: var(--accent-primary);
+}
+
+.accordion-header.open .accordion-title {
+  color: var(--accent-primary);
+  font-weight: 700;
 }
 
 .accordion-icon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   color: var(--text-tertiary);
-  transition:
-    transform 0.3s ease,
-    color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.accordion-header:hover .accordion-icon {
+  color: var(--accent-primary);
+  transform: scale(1.1);
 }
 
 .accordion-icon.open {
-  transform: rotate(180deg);
+  transform: rotate(180deg) scale(1.1);
   color: var(--accent-primary);
 }
 
 .accordion-content {
-  padding: 1rem 1.25rem;
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
   background: var(--bg-card);
   color: var(--text-secondary);
-  line-height: 1.6;
-  animation: slideDown 0.3s ease;
-  transition: color 0.3s ease;
+  line-height: 1.7;
+  font-size: 0.9375rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.accordion-content.open {
+  padding: 1.25rem 1.5rem;
+  max-height: 1000px;
+  opacity: 1;
+  animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
+    transform: translateY(-10px);
     max-height: 0;
   }
   to {
     opacity: 1;
-    max-height: 500px;
+    transform: translateY(0);
+    max-height: 1000px;
+  }
+}
+
+/* Smooth content reveal */
+.accordion-item {
+  overflow: hidden;
+}
+
+/* Focus states for accessibility */
+.accordion-header:focus {
+  outline: none;
+}
+
+.accordion-header:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: -2px;
+  border-radius: 0;
+}
+
+.accordion-header:focus-visible:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .accordion-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .accordion-header:hover {
+    padding-left: 1.5rem;
+  }
+
+  .accordion-content.open {
+    padding: 1rem 1.25rem;
+  }
+
+  .accordion-title {
+    font-size: 0.9375rem;
+  }
+
+  .accordion-icon {
+    width: 20px;
+    height: 20px;
   }
 }

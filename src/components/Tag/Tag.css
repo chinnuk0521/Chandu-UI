@@ -3,12 +3,13 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.375rem 0.75rem;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.875rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.5;
   white-space: nowrap;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 .tag-small {
@@ -58,18 +59,33 @@
   color: inherit;
   cursor: pointer;
   padding: 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-left: 0.25rem;
+  margin-left: 0.375rem;
   opacity: 0.7;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
   font-size: 1rem;
   line-height: 1;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .tag-close:hover {
   opacity: 1;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.tag-primary .tag-close:hover,
+.tag-success .tag-close:hover,
+.tag-warning .tag-close:hover,
+.tag-error .tag-close:hover,
+.tag-info .tag-close:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {

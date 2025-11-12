@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import "./ColorPicker.css";
 
 /**
@@ -28,6 +28,8 @@ export default function ColorPicker({
   ...props
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownWidth, setDropdownWidth] = useState(null);
+  const containerRef = useRef(null);
 
   const handleColorChange = (color) => {
     if (onChange) {
@@ -35,8 +37,38 @@ export default function ColorPicker({
     }
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Calculate dropdown width to prevent layout shifts
+  useLayoutEffect(() => {
+    if (isOpen && containerRef.current) {
+      const width = containerRef.current.offsetWidth;
+      setDropdownWidth(width);
+    }
+  }, [isOpen]);
+
   return (
-    <div className={`color-picker ${className}`} {...props}>
+    <div
+      className={`color-picker ${className}`}
+      ref={containerRef}
+      style={{ position: "relative", width: "100%" }}
+      {...props}
+    >
       <div
         className="color-picker-trigger"
         onClick={() => setIsOpen(!isOpen)}
@@ -45,7 +77,17 @@ export default function ColorPicker({
         <span className="color-picker-value">{value}</span>
       </div>
       {isOpen && (
-        <div className="color-picker-dropdown">
+        <div
+          className="color-picker-dropdown"
+          style={{
+            position: "absolute",
+            left: 0,
+            width: dropdownWidth ? `${dropdownWidth}px` : "100%",
+            minWidth: dropdownWidth ? `${dropdownWidth}px` : "100%",
+            top: "calc(100% + 0.5rem)",
+            transform: "translateX(0)",
+          }}
+        >
           <div className="color-picker-presets">
             {presetColors.map((color, index) => (
               <button
