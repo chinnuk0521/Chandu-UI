@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Alert
+ */
+
 import React from "react";
 import {
   HiInformationCircle,
@@ -29,6 +35,17 @@ export default function Alert({
 
   return (
     <div className={`alert alert-${variant} ${className}`} {...props}>
+      <a 
+        href="/docs?component=Alert" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Alert";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
       <div className="alert-content">
         <Icon className="alert-icon" />
         <div className="alert-text">

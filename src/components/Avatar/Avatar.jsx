@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Avatar
+ */
+
 import React, { useState } from "react";
 import "./Avatar.css";
 
@@ -47,10 +53,22 @@ export default function Avatar({
   const showImage = src && !imageError;
 
   return (
-    <div 
-      className={`avatar avatar-${size} ${getColorClass()} ${className}`} 
-      {...props}
-    >
+    <>
+      <a 
+        href="/docs?component=Avatar" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Avatar";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div 
+        className={`avatar avatar-${size} ${getColorClass()} ${className}`} 
+        {...props}
+      >
       {showImage ? (
         <img 
           src={src} 
@@ -72,5 +90,6 @@ export default function Avatar({
         </span>
       )}
     </div>
+    </>
   );
 }

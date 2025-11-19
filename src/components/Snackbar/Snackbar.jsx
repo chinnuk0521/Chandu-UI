@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Snackbar
+ */
+
 import React, { useEffect } from "react";
 import {
   HiXMark,
@@ -57,10 +63,22 @@ export default function Snackbar({
   const Icon = icons[variant] || null;
 
   return (
-    <div
-      className={`snackbar snackbar-${variant} snackbar-${position} ${className}`}
-      {...props}
-    >
+    <>
+      <a 
+        href="/docs?component=Snackbar" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Snackbar";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div
+        className={`snackbar snackbar-${variant} snackbar-${position} ${className}`}
+        {...props}
+      >
       {showIcon && Icon && (
         <Icon className="snackbar-icon" />
       )}
@@ -70,6 +88,7 @@ export default function Snackbar({
           <HiXMark />
         </button>
       )}
-    </div>
+      </div>
+    </>
   );
 }

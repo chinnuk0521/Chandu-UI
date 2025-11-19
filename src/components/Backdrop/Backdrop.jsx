@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Backdrop
+ */
+
 import React, { useEffect } from "react";
 import "./Backdrop.css";
 
@@ -41,12 +47,25 @@ export default function Backdrop({
   };
 
   return (
-    <div
-      className={`backdrop ${className}`}
-      onClick={handleClick}
-      role="presentation"
-      aria-hidden="true"
-      {...props}
-    />
+    <>
+      <a 
+        href="/docs?component=Backdrop" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Backdrop";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div
+        className={`backdrop ${className}`}
+        onClick={handleClick}
+        role="presentation"
+        aria-hidden="true"
+        {...props}
+      />
+    </>
   );
 }

@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Features
+ */
+
 import React from "react";
 import {
   HiBolt,

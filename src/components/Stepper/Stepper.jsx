@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Stepper
+ */
+
 import React from "react";
 import { HiCheck } from "react-icons/hi2";
 import "./Stepper.css";
@@ -17,7 +23,19 @@ export default function Stepper({
   const activeStepIndex = activeStep !== undefined ? activeStep : currentStep;
   
   return (
-    <div className={`stepper stepper-${orientation} ${className}`} {...props}>
+    <>
+      <a 
+        href="/docs?component=Stepper" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Stepper";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`stepper stepper-${orientation} ${className}`} {...props}>
       {steps.map((step, index) => {
         const isCompleted = index < activeStepIndex;
         const isActive = index === activeStepIndex;
@@ -58,6 +76,7 @@ export default function Stepper({
           </div>
         );
       })}
-    </div>
+      </div>
+    </>
   );
 }

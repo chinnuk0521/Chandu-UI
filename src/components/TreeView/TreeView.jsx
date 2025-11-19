@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## TreeView
+ */
+
 import React, { useState, useMemo } from "react";
 import {
   HiChevronRight,
@@ -106,8 +112,21 @@ export default function TreeView({
   };
 
   return (
-    <div className={`tree-view ${className}`} {...props}>
-      {normalizedData.map((node) => renderNode(node))}
-    </div>
+    <>
+      <a 
+        href="/docs?component=TreeView" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=TreeView";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`tree-view ${className}`} {...props}>
+        {normalizedData.map((node) => renderNode(node))}
+      </div>
+    </>
   );
 }

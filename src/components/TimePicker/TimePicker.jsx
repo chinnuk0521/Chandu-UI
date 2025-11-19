@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## TimePicker
+ */
+
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { HiClock } from "react-icons/hi";
 import "./TimePicker.css";
@@ -106,12 +112,24 @@ export default function TimePicker({
   };
 
   return (
-    <div
-      className={`time-picker ${className}`}
-      ref={containerRef}
-      style={{ position: "relative", width: "100%" }}
-      {...props}
-    >
+    <>
+      <a 
+        href="/docs?component=TimePicker" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=TimePicker";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div
+        className={`time-picker ${className}`}
+        ref={containerRef}
+        style={{ position: "relative", width: "100%" }}
+        {...props}
+      >
       <div className="time-picker-trigger" onClick={() => setIsOpen(!isOpen)}>
         <HiClock className="time-picker-icon" />
         <span className="time-picker-text">{value || "Select time"}</span>
@@ -167,6 +185,7 @@ export default function TimePicker({
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

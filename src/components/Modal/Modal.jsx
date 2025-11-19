@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Modal
+ */
+
 import React, { useEffect } from "react";
 import "./Modal.css";
 
@@ -95,7 +101,20 @@ export default function Modal({
             )}
           </div>
         )}
-        <div className="modal-content">{children}</div>
+        <div className="modal-content">
+          <a 
+            href="/docs?component=Modal" 
+            className="documentation-link"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = "/docs?component=Modal";
+            }}
+            style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+          >
+            Check Documentation
+          </a>
+          {children}
+        </div>
         {footer && <div className="modal-footer">{footer}</div>}
       </div>
     </div>

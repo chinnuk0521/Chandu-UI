@@ -1,4 +1,11 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Header
+ */
+
 import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
 
 // Import logo image
@@ -13,17 +20,14 @@ import logoImage from "../../assets/Logo.svg";
  * @param {string} className - Additional CSS classes
  */
 export default function Header({
-  menuItems = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Features", href: "#features" },
-  ],
+  menuItems = [],
   logo = "Chandu UI",
   onMenuItemClick,
   className = "",
   viewComponentsButton,
 }) {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -69,8 +73,16 @@ export default function Header({
           className="logo"
           onClick={(e) => {
             e.preventDefault();
-            const element = document.querySelector("#home");
-            element?.scrollIntoView({ behavior: "smooth" });
+            if (location.pathname !== "/") {
+              navigate("/");
+              setTimeout(() => {
+                const element = document.querySelector("#home");
+                element?.scrollIntoView({ behavior: "smooth" });
+              }, 100);
+            } else {
+              const element = document.querySelector("#home");
+              element?.scrollIntoView({ behavior: "smooth" });
+            }
           }}
         >
           <img
@@ -82,6 +94,7 @@ export default function Header({
               e.target.style.display = "none";
             }}
           />
+          <span className="logo-text">Chandu UI</span>
         </a>
         <nav className={`nav ${isMobileMenuOpen ? "open" : ""}`}>
           {menuItems.map((item, index) => (
@@ -93,8 +106,17 @@ export default function Header({
                 e.preventDefault();
                 handleClick(item);
                 if (item.href.startsWith("#")) {
-                  const element = document.querySelector(item.href);
-                  element?.scrollIntoView({ behavior: "smooth" });
+                  // If not on homepage, navigate to homepage first
+                  if (location.pathname !== "/") {
+                    navigate("/");
+                    setTimeout(() => {
+                      const element = document.querySelector(item.href);
+                      element?.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                  } else {
+                    const element = document.querySelector(item.href);
+                    element?.scrollIntoView({ behavior: "smooth" });
+                  }
                 }
               }}
             >
@@ -106,13 +128,23 @@ export default function Header({
               className="nav-button"
               onClick={(e) => {
                 e.preventDefault();
-                handleClick({ label: "View Components" });
+                handleClick({ label: "Components" });
                 viewComponentsButton.onClick?.();
               }}
             >
-              {viewComponentsButton.label || "View Components"}
+              {viewComponentsButton.label || "Components"}
             </button>
           )}
+          <button
+            className="nav-button"
+            onClick={(e) => {
+              e.preventDefault();
+              handleClick({ label: "Documentation" });
+              window.location.href = "/docs";
+            }}
+          >
+            Documentation
+          </button>
         </nav>
         <button
           className={`mobile-menu-toggle ${isMobileMenuOpen ? "active" : ""}`}

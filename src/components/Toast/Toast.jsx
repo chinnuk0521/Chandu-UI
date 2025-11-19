@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Toast
+ */
+
 import React, { useEffect } from "react";
 import {
   HiXMark,
@@ -38,7 +44,19 @@ export default function Toast({
   const Icon = icons[variant] || HiInformationCircle;
 
   return (
-    <div className={`toast toast-${variant} ${className}`} {...props}>
+    <>
+      <a 
+        href="/docs?component=Toast" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Toast";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`toast toast-${variant} ${className}`} {...props}>
       <Icon className="toast-icon" />
       <span className="toast-message">{message}</span>
       {onClose && (
@@ -50,6 +68,7 @@ export default function Toast({
           <HiXMark />
         </button>
       )}
-    </div>
+      </div>
+    </>
   );
 }

@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Services
+ */
+
 import React from "react";
 import {
   HiBriefcase,

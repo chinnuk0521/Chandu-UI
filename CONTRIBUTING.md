@@ -1,5 +1,7 @@
 # Contributing to Chandu UI
 
+**Last Updated: November 2025**
+
 Thank you for your interest in contributing to Chandu UI! This document provides guidelines and instructions for contributing to the project.
 
 ## Table of Contents

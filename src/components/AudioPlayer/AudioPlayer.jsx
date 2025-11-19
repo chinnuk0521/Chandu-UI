@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## AudioPlayer
+ */
+
 import React, { useState, useRef, useEffect } from "react";
 import { HiPlay, HiPause, HiVolumeUp, HiVolumeOff } from "react-icons/hi";
 import "./AudioPlayer.css";
@@ -117,10 +123,22 @@ export default function AudioPlayer({
   const progressPercentage = duration ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div
-      className={`audio-player ${className} ${isPlaying ? "playing" : ""}`}
-      {...props}
-    >
+    <>
+      <a 
+        href="/docs?component=AudioPlayer" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=AudioPlayer";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div
+        className={`audio-player ${className} ${isPlaying ? "playing" : ""}`}
+        {...props}
+      >
       <audio ref={audioRef} src={src} autoPlay={autoplay} />
       
       {/* Animated background gradient */}
@@ -239,6 +257,7 @@ export default function AudioPlayer({
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

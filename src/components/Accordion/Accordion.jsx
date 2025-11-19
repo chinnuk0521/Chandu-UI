@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Accordion
+ */
+
 import React, { useState } from "react";
 import { HiChevronDown } from "react-icons/hi2";
 import "./Accordion.css";
@@ -36,7 +42,19 @@ export default function Accordion({
   };
 
   return (
-    <div className={`accordion ${className}`} {...props}>
+    <>
+      <a 
+        href="/docs?component=Accordion" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Accordion";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`accordion ${className}`} {...props}>
       {items.map((item, index) => {
         const isOpen = openItems.has(index);
         return (
@@ -59,6 +77,7 @@ export default function Accordion({
           </div>
         );
       })}
-    </div>
+      </div>
+    </>
   );
 }

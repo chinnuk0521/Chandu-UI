@@ -1,5 +1,7 @@
 # Repository Setup Instructions
 
+**Last Updated: November 2025**
+
 This document provides step-by-step instructions for completing the manual configuration required to make the Chandu UI repository fully compliant.
 
 ## ✅ Automated Setup (Already Complete)

@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## ColorPicker
+ */
+
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import "./ColorPicker.css";
 
@@ -63,12 +69,24 @@ export default function ColorPicker({
   }, [isOpen]);
 
   return (
-    <div
-      className={`color-picker ${className}`}
-      ref={containerRef}
-      style={{ position: "relative", width: "100%" }}
-      {...props}
-    >
+    <>
+      <a 
+        href="/docs?component=ColorPicker" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=ColorPicker";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div
+        className={`color-picker ${className}`}
+        ref={containerRef}
+        style={{ position: "relative", width: "100%" }}
+        {...props}
+      >
       <div
         className="color-picker-trigger"
         onClick={() => setIsOpen(!isOpen)}
@@ -117,6 +135,7 @@ export default function ColorPicker({
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

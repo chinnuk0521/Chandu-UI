@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Checkbox
+ */
+
 import React from "react";
 import "./Checkbox.css";
 
@@ -13,9 +19,21 @@ export default function Checkbox({
   ...props
 }) {
   return (
-    <label
-      className={`checkbox-wrapper ${disabled ? "disabled" : ""} ${className}`}
-    >
+    <>
+      <a 
+        href="/docs?component=Checkbox" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Checkbox";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <label
+        className={`checkbox-wrapper ${disabled ? "disabled" : ""} ${className}`}
+      >
       <input
         type="checkbox"
         className="checkbox-input"
@@ -27,5 +45,6 @@ export default function Checkbox({
       <span className="checkbox-checkmark"></span>
       {label && <span className="checkbox-label">{label}</span>}
     </label>
+    </>
   );
 }

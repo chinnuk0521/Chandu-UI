@@ -1,5 +1,7 @@
 # Security Policy
 
+**Last Updated: November 2025**
+
 ## Supported Versions
 
 We actively support security updates for the following versions:

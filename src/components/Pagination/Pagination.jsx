@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Pagination
+ */
+
 import React from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import "./Pagination.css";
@@ -36,11 +42,23 @@ export default function Pagination({
   if (totalPages <= 1) return null;
 
   return (
-    <nav
-      className={`pagination ${className}`}
-      aria-label="Pagination"
-      {...props}
-    >
+    <>
+      <a 
+        href="/docs?component=Pagination" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Pagination";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <nav
+        className={`pagination ${className}`}
+        aria-label="Pagination"
+        {...props}
+      >
       {showFirstLast && (
         <button
           className="pagination-button"
@@ -89,5 +107,6 @@ export default function Pagination({
         </button>
       )}
     </nav>
+    </>
   );
 }

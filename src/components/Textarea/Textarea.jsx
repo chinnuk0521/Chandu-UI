@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Textarea
+ */
+
 import React from "react";
 import "./Textarea.css";
 
@@ -19,6 +25,17 @@ export default function Textarea({
 }) {
   return (
     <div className={`textarea-wrapper ${className}`}>
+      <a 
+        href="/docs?component=Textarea" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Textarea";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
       {label && (
         <label className="textarea-label">
           {label}

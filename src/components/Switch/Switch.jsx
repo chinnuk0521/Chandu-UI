@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Switch
+ */
+
 import React from "react";
 import "./Switch.css";
 
@@ -13,9 +19,21 @@ export default function Switch({
   ...props
 }) {
   return (
-    <label
-      className={`switch-wrapper ${disabled ? "disabled" : ""} ${className}`}
-    >
+    <>
+      <a 
+        href="/docs?component=Switch" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Switch";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <label
+        className={`switch-wrapper ${disabled ? "disabled" : ""} ${className}`}
+      >
       {label && <span className="switch-label">{label}</span>}
       <div
         className={`switch ${checked ? "checked" : ""} ${disabled ? "disabled" : ""}`}
@@ -31,5 +49,6 @@ export default function Switch({
         <span className="switch-slider"></span>
       </div>
     </label>
+    </>
   );
 }

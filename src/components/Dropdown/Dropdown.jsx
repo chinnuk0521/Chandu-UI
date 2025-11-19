@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Dropdown
+ */
+
 import React, { useState, useRef, useEffect } from "react";
 import { HiChevronDown } from "react-icons/hi2";
 import "./Dropdown.css";
@@ -34,6 +40,17 @@ export default function Dropdown({
 
   return (
     <div className={`dropdown-container ${className}`} ref={containerRef}>
+      <a 
+        href="/docs?component=Dropdown" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Dropdown";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
       <button
         className={`dropdown-button ${isOpen ? "open" : ""} ${disabled ? "disabled" : ""}`}
         onClick={() => !disabled && setIsOpen(!isOpen)}

@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Table
+ */
+
 import React from "react";
 import "./Table.css";
 
@@ -40,7 +46,19 @@ export default function Table({
   });
 
   return (
-    <div className={`table-wrapper ${className}`} {...props}>
+    <>
+      <a 
+        href="/docs?component=Table" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Table";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`table-wrapper ${className}`} {...props}>
       <table
         className={`table ${striped ? "table-striped" : ""} ${bordered ? "table-bordered" : ""}`}
       >
@@ -74,6 +92,7 @@ export default function Table({
           )}
         </tbody>
       </table>
-    </div>
+      </div>
+    </>
   );
 }

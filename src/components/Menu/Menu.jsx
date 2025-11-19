@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Menu
+ */
+
 import React, { useState, useRef, useEffect } from "react";
 import { HiChevronRight } from "react-icons/hi2";
 import "./Menu.css";
@@ -40,7 +46,19 @@ export default function Menu({
   };
 
   return (
-    <div className={`menu-wrapper ${className}`} ref={containerRef} {...props}>
+    <>
+      <a 
+        href="/docs?component=Menu" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Menu";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`menu-wrapper ${className}`} ref={containerRef} {...props}>
       <div className="menu-trigger" onClick={() => setIsOpen(!isOpen)}>
         {trigger}
       </div>
@@ -66,6 +84,7 @@ export default function Menu({
           })}
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

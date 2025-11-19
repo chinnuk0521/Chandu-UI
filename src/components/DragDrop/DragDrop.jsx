@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## DragDrop
+ */
+
 import React, { useState } from "react";
 import "./DragDrop.css";
 
@@ -48,8 +54,20 @@ export default function DragDrop({
   };
 
   return (
-    <div className={`drag-drop ${className}`} {...props}>
-      {items.map((item, index) => (
+    <>
+      <a 
+        href="/docs?component=DragDrop" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=DragDrop";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`drag-drop ${className}`} {...props}>
+        {items.map((item, index) => (
         <div
           key={index}
           className={`drag-drop-item ${draggedIndex === index ? "dragging" : ""} ${dragOverIndex === index ? "drag-over" : ""}`}
@@ -63,6 +81,7 @@ export default function DragDrop({
           {renderItem ? renderItem(item, index) : <span>{item}</span>}
         </div>
       ))}
-    </div>
+      </div>
+    </>
   );
 }
