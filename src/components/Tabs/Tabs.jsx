@@ -40,7 +40,6 @@ export default function Tabs({
         }}
         style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
       >
-        Check Documentation
       </a>
       <div className="tabs-header">
         {tabs.map((tab, index) => (

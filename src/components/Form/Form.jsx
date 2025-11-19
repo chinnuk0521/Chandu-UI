@@ -22,22 +22,7 @@ export default function Form({ onSubmit, children, className = "", ...props }) {
     }
   };
 
-  return (
-    <>
-      <a 
-        href="/docs?component=Form" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Form";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <form className={`form ${className}`} onSubmit={handleSubmit} {...props}>
+  return (<form className={`form ${className}`} onSubmit={handleSubmit} {...props}>
         {children}
-      </form>
-    </>
-  );
+      </form>);
 }

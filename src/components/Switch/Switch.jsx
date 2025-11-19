@@ -18,20 +18,7 @@ export default function Switch({
   className = "",
   ...props
 }) {
-  return (
-    <>
-      <a 
-        href="/docs?component=Switch" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Switch";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <label
+  return (<label
         className={`switch-wrapper ${disabled ? "disabled" : ""} ${className}`}
       >
       {label && <span className="switch-label">{label}</span>}
@@ -48,7 +35,5 @@ export default function Switch({
         />
         <span className="switch-slider"></span>
       </div>
-    </label>
-    </>
-  );
+    </label>);
 }

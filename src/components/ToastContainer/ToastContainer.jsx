@@ -21,20 +21,7 @@ export default function ToastContainer({
   if (toasts.length === 0) return null;
 
   return (
-    <>
-      <a 
-        href="/docs?component=ToastContainer" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=ToastContainer";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div
-        className={`toast-container toast-container-${position} ${className}`}
+    <div className={`toast-container toast-container-${position} ${className}`}
         {...props}
       >
       {toasts.map((toast) => (
@@ -46,7 +33,5 @@ export default function ToastContainer({
           onClose={() => onRemove?.(toast.id)}
         />
       ))}
-      </div>
-    </>
-  );
+      </div>);
 }

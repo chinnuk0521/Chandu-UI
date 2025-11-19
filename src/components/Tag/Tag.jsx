@@ -34,27 +34,12 @@ export default function Tag({
   // If onClose is provided, automatically make it closable
   const isClosable = closable || (onClose !== undefined);
 
-  return (
-    <>
-      <a 
-        href="/docs?component=Tag" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Tag";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <span className={`tag tag-${variant} tag-${size} ${className}`} {...props}>
+  return (<span className={`tag tag-${variant} tag-${size} ${className}`} {...props}>
       {content}
       {isClosable && onClose && (
         <button className="tag-close" onClick={onClose} aria-label="Remove tag">
           <HiX />
         </button>
       )}
-      </span>
-    </>
-  );
+      </span>);
 }

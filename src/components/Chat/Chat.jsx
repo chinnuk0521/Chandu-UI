@@ -45,19 +45,7 @@ export default function Chat({
   };
 
   return (
-    <>
-      <a 
-        href="/docs?component=Chat" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Chat";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div className={`chat ${className}`} {...props}>
+    <div className={`chat ${className}`} {...props}>
       <div className="chat-messages">
         {messages.map((message, index) => (
           <div
@@ -106,7 +94,5 @@ export default function Chat({
           <HiPaperAirplane />
         </button>
       </div>
-      </div>
-    </>
-  );
+      </div>);
 }

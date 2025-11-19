@@ -63,20 +63,7 @@ export default function Snackbar({
   const Icon = icons[variant] || null;
 
   return (
-    <>
-      <a 
-        href="/docs?component=Snackbar" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Snackbar";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div
-        className={`snackbar snackbar-${variant} snackbar-${position} ${className}`}
+    <div className={`snackbar snackbar-${variant} snackbar-${position} ${className}`}
         {...props}
       >
       {showIcon && Icon && (
@@ -88,7 +75,5 @@ export default function Snackbar({
           <HiXMark />
         </button>
       )}
-      </div>
-    </>
-  );
+      </div>);
 }

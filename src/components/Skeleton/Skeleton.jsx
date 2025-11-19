@@ -27,27 +27,12 @@ export default function Skeleton({
   if (height) style.height = height;
 
   return (
-    <>
-      <a 
-        href="/docs?component=Skeleton" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Skeleton";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div
-        className={`skeleton skeleton-${variant} ${className}`}
+    <div className={`skeleton skeleton-${variant} ${className}`}
         style={style}
         aria-label="Loading"
         role="status"
         {...props}
       >
         <span className="sr-only">Loading content...</span>
-      </div>
-    </>
-  );
+      </div>);
 }

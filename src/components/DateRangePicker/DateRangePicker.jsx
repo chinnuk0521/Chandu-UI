@@ -190,7 +190,7 @@ export default function DateRangePicker({
     }
 
     return (
-      <div className="date-range-calendar">
+    <div className="date-range-calendar">
         <div className="date-range-calendar-header">
           <button
             className="date-range-calendar-nav"
@@ -266,20 +266,7 @@ export default function DateRangePicker({
   }, [isOpen]);
 
   return (
-    <>
-      <a 
-        href="/docs?component=DateRangePicker" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=DateRangePicker";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div
-        className={`date-range-picker ${className}`}
+    <div className={`date-range-picker ${className}`}
         ref={containerRef}
       style={{ position: "relative", width: "100%" }}
       {...props}
@@ -328,7 +315,5 @@ export default function DateRangePicker({
           )}
         </div>
       )}
-      </div>
-    </>
-  );
+      </div>);
 }

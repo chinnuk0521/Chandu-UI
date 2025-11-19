@@ -45,20 +45,7 @@ export default function Notification({
   const Icon = icons[type] || HiInformationCircle;
 
   return (
-    <>
-      <a 
-        href="/docs?component=Notification" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Notification";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div
-        className={`notification notification-${type} ${className}`}
+    <div className={`notification notification-${type} ${className}`}
         {...props}
       >
       {showIcon && (
@@ -79,7 +66,5 @@ export default function Notification({
           <HiX />
         </button>
       )}
-      </div>
-    </>
-  );
+      </div>);
 }

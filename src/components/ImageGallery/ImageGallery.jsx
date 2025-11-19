@@ -77,19 +77,7 @@ export default function ImageGallery({
 
   if (!normalizedImages || normalizedImages.length === 0) {
     return (
-      <>
-        <a 
-          href="/docs?component=ImageGallery" 
-          className="documentation-link"
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.href = "/docs?component=ImageGallery";
-          }}
-          style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-        >
-          Check Documentation
-        </a>
-        <div className={`image-gallery ${className}`} {...props}>
+    <div className={`image-gallery ${className}`} {...props}>
         <div
           style={{
             color: "var(--text-tertiary)",
@@ -104,25 +92,11 @@ export default function ImageGallery({
             No images to display
           </p>
         </div>
-      </div>
-    </>
-    );
+      </div>);
   }
 
   return (
-    <>
-      <a 
-        href="/docs?component=ImageGallery" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=ImageGallery";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div className={`image-gallery ${className}`} {...props}>
+    <div className={`image-gallery ${className}`} {...props}>
       <div className="image-gallery-grid">
         {normalizedImages.map((image, index) => (
           <div
@@ -223,7 +197,5 @@ export default function ImageGallery({
           ))}
         </div>
       )}
-      </div>
-    </>
-  );
+      </div>);
 }

@@ -68,20 +68,7 @@ export default function Select({
   };
 
   return (
-    <>
-      <a 
-        href="/docs?component=Select" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Select";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div
-        className={`select ${disabled ? "disabled" : ""} ${isOpen ? "open" : ""} ${className}`}
+    <div className={`select ${disabled ? "disabled" : ""} ${isOpen ? "open" : ""} ${className}`}
         ref={selectRef}
         style={{ position: "relative", width: "100%" }}
         {...props}
@@ -121,7 +108,5 @@ export default function Select({
           ))}
         </div>
       )}
-      </div>
-    </>
-  );
+      </div>);
 }

@@ -31,28 +31,15 @@ export default function Button({
   ...props
 }) {
   return (
-    <>
-      <a 
-        href="/docs?component=Button" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Button";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <button
-        type={type}
-        className={`btn btn-${variant} btn-${size} ${loading ? "loading" : ""} ${className}`}
-        disabled={disabled || loading}
-        onClick={onClick}
-        {...props}
-      >
-        {loading && <span className="btn-spinner"></span>}
-        <span className={loading ? "btn-content-loading" : ""}>{children}</span>
-      </button>
-    </>
+    <button
+      type={type}
+      className={`btn btn-${variant} btn-${size} ${loading ? "loading" : ""} ${className}`}
+      disabled={disabled || loading}
+      onClick={onClick}
+      {...props}
+    >
+      {loading && <span className="btn-spinner"></span>}
+      <span className={loading ? "btn-content-loading" : ""}>{children}</span>
+    </button>
   );
 }

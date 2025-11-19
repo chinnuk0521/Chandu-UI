@@ -36,20 +36,7 @@ export default function Progress({
   const displayLabel = label !== undefined ? label : (showLabel ? `${Math.round(percentage)}%` : null);
 
   return (
-    <>
-      <a 
-        href="/docs?component=Progress" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Progress";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div
-        className={`progress-wrapper progress-${size} ${className}`}
+    <div className={`progress-wrapper progress-${size} ${className}`}
         {...props}
       >
       {displayLabel && (
@@ -68,7 +55,5 @@ export default function Progress({
           aria-label={`Progress: ${Math.round(percentage)}%`}
         ></div>
       </div>
-    </div>
-    </>
-  );
+    </div>);
 }

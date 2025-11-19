@@ -42,7 +42,7 @@ export default function Chart({
 
   if (normalizedData.length === 0) {
     return (
-      <div className={`chart chart-${type} ${className}`} {...props}>
+    <div className={`chart chart-${type} ${className}`} {...props}>
         {title && <h3 className="chart-title">{title}</h3>}
         <div className="chart-container">
           <p style={{ padding: "2rem", textAlign: "center", color: "var(--text-secondary)" }}>
@@ -195,19 +195,7 @@ export default function Chart({
   };
 
   return (
-    <>
-      <a 
-        href="/docs?component=Chart" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Chart";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div className={`chart chart-${type} ${className}`} {...props}>
+    <div className={`chart chart-${type} ${className}`} {...props}>
       {title && <h3 className="chart-title">{title}</h3>}
       <div className="chart-container" ref={containerRef}>
         {type === "line" && renderLineChart()}
@@ -261,7 +249,5 @@ export default function Chart({
         </tbody>
       </table>
       </div>
-      </div>
-    </>
-  );
+      </div>);
 }

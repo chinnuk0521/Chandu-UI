@@ -49,19 +49,7 @@ export default function Wizard({
   };
 
   return (
-    <>
-      <a 
-        href="/docs?component=Wizard" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Wizard";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div className={`wizard ${className}`} {...props}>
+    <div className={`wizard ${className}`} {...props}>
       <div className="wizard-steps">
         {steps.map((step, index) => {
           const isCompleted = index < activeStepIndex;
@@ -123,7 +111,5 @@ export default function Wizard({
           )}
         </>
       )}
-      </div>
-    </>
-  );
+      </div>);
 }

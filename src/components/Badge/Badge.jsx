@@ -23,24 +23,11 @@ export default function Badge({
   ...props
 }) {
   return (
-    <>
-      <a 
-        href="/docs?component=Badge" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Badge";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <span
-        className={`badge badge-${variant} badge-${size} ${className}`}
-        {...props}
-      >
-        {children}
-      </span>
-    </>
+    <span
+      className={`badge badge-${variant} badge-${size} ${className}`}
+      {...props}
+    >
+      {children}
+    </span>
   );
 }

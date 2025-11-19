@@ -286,6 +286,12 @@
   border-bottom: 2px solid #e5e7eb;
 }
 
+.component-header-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
 .dark-mode .component-detail-header {
   border-bottom-color: #404040;
 }
@@ -301,7 +307,8 @@
   color: #f9fafb;
 }
 
-.view-code-btn {
+.view-code-btn,
+.view-documentation-btn {
   background: #00338d;
   color: white;
   border: none;
@@ -314,7 +321,8 @@
   font-family: inherit;
 }
 
-.view-code-btn:hover:not(:disabled) {
+.view-code-btn:hover:not(:disabled),
+.view-documentation-btn:hover {
   background: #0044b3;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 51, 141, 0.3);
@@ -325,8 +333,14 @@
   cursor: not-allowed;
 }
 
-.dark-mode .view-code-btn {
-  background: #0044b3;
+.dark-mode .view-code-btn,
+.dark-mode .view-documentation-btn {
+  background: #4a9eff;
+}
+
+.dark-mode .view-code-btn:hover:not(:disabled),
+.dark-mode .view-documentation-btn:hover {
+  background: #5aaaff;
 }
 
 .component-detail-content {

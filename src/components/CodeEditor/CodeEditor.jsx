@@ -45,20 +45,7 @@ export default function CodeEditor({
   };
 
   return (
-    <>
-      <a 
-        href="/docs?component=CodeEditor" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=CodeEditor";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div
-        className={`code-editor code-editor-${language} ${className}`}
+    <div className={`code-editor code-editor-${language} ${className}`}
         {...props}
       >
       <div className="code-editor-header">
@@ -82,7 +69,5 @@ export default function CodeEditor({
           placeholder="// Start coding..."
         />
       </div>
-      </div>
-    </>
-  );
+      </div>);
 }

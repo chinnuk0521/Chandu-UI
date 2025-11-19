@@ -111,7 +111,6 @@ export default function Modal({
             }}
             style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
           >
-            Check Documentation
           </a>
           {children}
         </div>

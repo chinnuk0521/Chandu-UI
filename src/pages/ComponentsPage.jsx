@@ -4344,13 +4344,21 @@ const removeToast = (id) => {
             <>
               <div className="component-detail-header">
                 <h1 className="component-detail-title">{selectedComponent}</h1>
-                <button
-                  className="view-code-btn"
-                  onClick={handleViewCode}
-                  disabled={!componentCode}
-                >
-                  View Code
-                </button>
+                <div className="component-header-buttons">
+                  <button
+                    className="view-code-btn"
+                    onClick={handleViewCode}
+                    disabled={!componentCode}
+                  >
+                    View Code
+                  </button>
+                  <button
+                    className="view-documentation-btn"
+                    onClick={() => navigate(`/docs?component=${selectedComponent}`)}
+                  >
+                    View Documentation
+                  </button>
+                </div>
               </div>
 
               <div className="component-detail-content">

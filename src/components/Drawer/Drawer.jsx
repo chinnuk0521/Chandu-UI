@@ -46,17 +46,6 @@ export default function Drawer({
 
   return (
     <>
-      <a 
-        href="/docs?component=Drawer" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Drawer";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline', padding: '1rem', background: 'rgba(59, 130, 246, 0.1)', borderRadius: '0.25rem', margin: '1rem 0' }}
-      >
-        Check Documentation
-      </a>
       <div className="drawer-overlay" onClick={onClose}></div>
       <div
         className={`drawer drawer-${position} drawer-${size} ${className}`}

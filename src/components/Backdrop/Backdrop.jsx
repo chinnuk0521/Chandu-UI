@@ -47,25 +47,10 @@ export default function Backdrop({
   };
 
   return (
-    <>
-      <a 
-        href="/docs?component=Backdrop" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Backdrop";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div
-        className={`backdrop ${className}`}
+    <div className={`backdrop ${className}`}
         onClick={handleClick}
         role="presentation"
         aria-hidden="true"
         {...props}
-      />
-    </>
-  );
+      />);
 }

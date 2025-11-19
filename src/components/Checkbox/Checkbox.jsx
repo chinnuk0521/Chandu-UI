@@ -19,19 +19,7 @@ export default function Checkbox({
   ...props
 }) {
   return (
-    <>
-      <a 
-        href="/docs?component=Checkbox" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Checkbox";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <label
+    <label
         className={`checkbox-wrapper ${disabled ? "disabled" : ""} ${className}`}
       >
       <input
@@ -45,6 +33,5 @@ export default function Checkbox({
       <span className="checkbox-checkmark"></span>
       {label && <span className="checkbox-label">{label}</span>}
     </label>
-    </>
   );
 }

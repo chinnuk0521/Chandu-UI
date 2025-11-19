@@ -74,7 +74,7 @@ export default function TreeView({
     const isSelected = selected === node.id;
 
     return (
-      <div key={node.id} className="tree-view-node">
+    <div key={node.id} className="tree-view-node">
         <div
           className={`tree-view-item ${isSelected ? "selected" : ""}`}
           style={{ paddingLeft: `${level * 1.5}rem` }}
@@ -112,21 +112,7 @@ export default function TreeView({
   };
 
   return (
-    <>
-      <a 
-        href="/docs?component=TreeView" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=TreeView";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div className={`tree-view ${className}`} {...props}>
+    <div className={`tree-view ${className}`} {...props}>
         {normalizedData.map((node) => renderNode(node))}
-      </div>
-    </>
-  );
+      </div>);
 }

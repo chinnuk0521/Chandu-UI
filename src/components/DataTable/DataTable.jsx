@@ -99,19 +99,7 @@ export default function DataTable({
   };
 
   return (
-    <>
-      <a 
-        href="/docs?component=DataTable" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=DataTable";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div className={`data-table ${className}`} {...props}>
+    <div className={`data-table ${className}`} {...props}>
       {searchable && (
         <div className="data-table-search">
           <HiSearch className="data-table-search-icon" />
@@ -182,7 +170,5 @@ export default function DataTable({
           </tbody>
         </table>
       </div>
-      </div>
-    </>
-  );
+      </div>);
 }

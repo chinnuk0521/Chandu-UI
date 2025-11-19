@@ -20,20 +20,7 @@ export default function Radio({
   className = "",
   ...props
 }) {
-  return (
-    <>
-      <a 
-        href="/docs?component=Radio" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Radio";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <label
+  return (<label
         className={`radio-wrapper ${disabled ? "disabled" : ""} ${className}`}
       >
       <input
@@ -48,7 +35,5 @@ export default function Radio({
       />
       <span className="radio-checkmark"></span>
       {label && <span className="radio-label">{label}</span>}
-    </label>
-    </>
-  );
+    </label>);
 }

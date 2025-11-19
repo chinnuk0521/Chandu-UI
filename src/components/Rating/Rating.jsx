@@ -43,20 +43,7 @@ export default function Rating({
   const displayValue = hoverValue || value;
 
   return (
-    <>
-      <a 
-        href="/docs?component=Rating" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Rating";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div
-        className={`rating rating-${size} ${readOnly ? "readonly" : ""} ${className}`}
+    <div className={`rating rating-${size} ${readOnly ? "readonly" : ""} ${className}`}
         onMouseLeave={handleMouseLeave}
         {...props}
       >
@@ -79,7 +66,5 @@ export default function Rating({
           </button>
         );
       })}
-      </div>
-    </>
-  );
+      </div>);
 }

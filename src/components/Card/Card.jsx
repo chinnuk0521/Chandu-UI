@@ -34,17 +34,6 @@ export default function Card({
       onClick={onClick}
       {...props}
     >
-      <a 
-        href="/docs?component=Card" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Card";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
       {image && <div className="card-image">{image}</div>}
       {(title || subtitle || children) && (
         <div className="card-content">

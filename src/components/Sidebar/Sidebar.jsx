@@ -29,17 +29,6 @@ export default function Sidebar({
 
   return (
     <>
-      <a 
-        href="/docs?component=Sidebar" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Sidebar";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
       <div className="sidebar-backdrop" onClick={onClose} />
       <aside className={`sidebar sidebar-${position} ${className}`} {...props}>
         {onClose && (

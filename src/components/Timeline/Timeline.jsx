@@ -21,19 +21,7 @@ export default function Timeline({
   ...props
 }) {
   return (
-    <>
-      <a 
-        href="/docs?component=Timeline" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Timeline";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div className={`timeline timeline-${orientation} ${className}`} {...props}>
+    <div className={`timeline timeline-${orientation} ${className}`} {...props}>
       {items.map((item, index) => (
         <div key={index} className="timeline-item">
           <div className="timeline-marker">
@@ -48,7 +36,5 @@ export default function Timeline({
           </div>
         </div>
       ))}
-      </div>
-    </>
-  );
+      </div>);
 }

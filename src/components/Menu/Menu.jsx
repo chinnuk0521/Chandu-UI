@@ -46,19 +46,7 @@ export default function Menu({
   };
 
   return (
-    <>
-      <a 
-        href="/docs?component=Menu" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Menu";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div className={`menu-wrapper ${className}`} ref={containerRef} {...props}>
+    <div className={`menu-wrapper ${className}`} ref={containerRef} {...props}>
       <div className="menu-trigger" onClick={() => setIsOpen(!isOpen)}>
         {trigger}
       </div>
@@ -71,8 +59,7 @@ export default function Menu({
             }
             
             return (
-              <div
-                key={index}
+    <div key={index}
                 className={`menu-item ${item.disabled ? "disabled" : ""}`}
                 onClick={() => handleItemClick(item)}
               >
@@ -84,7 +71,5 @@ export default function Menu({
           })}
         </div>
       )}
-      </div>
-    </>
-  );
+      </div>);
 }

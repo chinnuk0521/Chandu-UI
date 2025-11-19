@@ -22,17 +22,6 @@ const Input = forwardRef(function Input(
 ) {
   return (
     <div className={`input-wrapper ${className}`}>
-      <a 
-        href="/docs?component=Input" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Input";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
       {label && (
         <label className="input-label">
           {label}

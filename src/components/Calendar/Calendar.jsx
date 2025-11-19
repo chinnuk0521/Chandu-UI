@@ -114,7 +114,7 @@ export default function Calendar({
     }
 
     return (
-      <div className="date-range-calendar">
+    <div className="date-range-calendar">
         <div className="date-range-calendar-header">
           <button
             className="date-range-calendar-nav"
@@ -163,21 +163,7 @@ export default function Calendar({
   };
 
   return (
-    <>
-      <a 
-        href="/docs?component=Calendar" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=Calendar";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div className={`calendar ${className}`} {...props}>
+    <div className={`calendar ${className}`} {...props}>
         {renderCalendar()}
-      </div>
-    </>
-  );
+      </div>);
 }

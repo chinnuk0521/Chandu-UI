@@ -181,7 +181,6 @@ export default function GlobalSearch({
         }}
         style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
       >
-        Check Documentation
       </a>
       <div className="global-search-input-wrapper">
         <HiMagnifyingGlass className="search-icon" />

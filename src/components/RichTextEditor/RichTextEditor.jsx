@@ -159,19 +159,7 @@ export default function RichTextEditor({
   }, [handleInput]);
 
   return (
-    <>
-      <a 
-        href="/docs?component=RichTextEditor" 
-        className="documentation-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = "/docs?component=RichTextEditor";
-        }}
-        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
-      >
-        Check Documentation
-      </a>
-      <div className={`rich-text-editor ${className}`} {...props}>
+    <div className={`rich-text-editor ${className}`} {...props}>
       <div className="rich-text-editor-toolbar">
         <button
           type="button"
@@ -230,7 +218,5 @@ export default function RichTextEditor({
         data-placeholder={placeholder}
         suppressContentEditableWarning
       />
-      </div>
-    </>
-  );
+      </div>);
 }
