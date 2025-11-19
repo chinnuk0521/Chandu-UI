@@ -140,7 +140,7 @@ export default function Header({
             onClick={(e) => {
               e.preventDefault();
               handleClick({ label: "Documentation" });
-              window.location.href = "/docs";
+              navigate("/docs");
             }}
           >
             Documentation
