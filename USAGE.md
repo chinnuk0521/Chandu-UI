@@ -1,5 +1,7 @@
 # Component Library Usage Guide
 
+**Last Updated: November 2025**
+
 ## Installation
 
 ```bash

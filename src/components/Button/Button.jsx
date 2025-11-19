@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Button
+ */
+
 import React from "react";
 import "./Button.css";
 
@@ -25,15 +31,28 @@ export default function Button({
   ...props
 }) {
   return (
-    <button
-      type={type}
-      className={`btn btn-${variant} btn-${size} ${loading ? "loading" : ""} ${className}`}
-      disabled={disabled || loading}
-      onClick={onClick}
-      {...props}
-    >
-      {loading && <span className="btn-spinner"></span>}
-      <span className={loading ? "btn-content-loading" : ""}>{children}</span>
-    </button>
+    <>
+      <a 
+        href="/docs?component=Button" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Button";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <button
+        type={type}
+        className={`btn btn-${variant} btn-${size} ${loading ? "loading" : ""} ${className}`}
+        disabled={disabled || loading}
+        onClick={onClick}
+        {...props}
+      >
+        {loading && <span className="btn-spinner"></span>}
+        <span className={loading ? "btn-content-loading" : ""}>{children}</span>
+      </button>
+    </>
   );
 }

@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Calendar
+ */
+
 import React, { useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import "../DateRangePicker/DateRangePicker.css";
@@ -157,8 +163,21 @@ export default function Calendar({
   };
 
   return (
-    <div className={`calendar ${className}`} {...props}>
-      {renderCalendar()}
-    </div>
+    <>
+      <a 
+        href="/docs?component=Calendar" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Calendar";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`calendar ${className}`} {...props}>
+        {renderCalendar()}
+      </div>
+    </>
   );
 }

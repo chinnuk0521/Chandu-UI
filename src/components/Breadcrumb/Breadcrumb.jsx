@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Breadcrumb
+ */
+
 import React from "react";
 import { HiChevronRight } from "react-icons/hi2";
 import "./Breadcrumb.css";
@@ -14,11 +20,23 @@ export default function Breadcrumb({
   if (!items || items.length === 0) return null;
 
   return (
-    <nav
-      className={`breadcrumb ${className}`}
-      aria-label="Breadcrumb"
-      {...props}
-    >
+    <>
+      <a 
+        href="/docs?component=Breadcrumb" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Breadcrumb";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <nav
+        className={`breadcrumb ${className}`}
+        aria-label="Breadcrumb"
+        {...props}
+      >
       <ol className="breadcrumb-list">
         {items.map((item, index) => (
           <li key={index} className="breadcrumb-item">
@@ -38,5 +56,6 @@ export default function Breadcrumb({
         ))}
       </ol>
     </nav>
+    </>
   );
 }

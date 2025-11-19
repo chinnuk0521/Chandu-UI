@@ -1,5 +1,7 @@
 # chandu-ui-components
 
+**Last Updated: November 2025**
+
 A production-ready, reusable React component library. Similar to Material-UI and MUI.
 
 ## Installation

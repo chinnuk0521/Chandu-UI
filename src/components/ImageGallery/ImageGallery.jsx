@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## ImageGallery
+ */
+
 import React, { useState, useEffect } from "react";
 import { HiX, HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import "./ImageGallery.css";
@@ -71,7 +77,19 @@ export default function ImageGallery({
 
   if (!normalizedImages || normalizedImages.length === 0) {
     return (
-      <div className={`image-gallery ${className}`} {...props}>
+      <>
+        <a 
+          href="/docs?component=ImageGallery" 
+          className="documentation-link"
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "/docs?component=ImageGallery";
+          }}
+          style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+        >
+          Check Documentation
+        </a>
+        <div className={`image-gallery ${className}`} {...props}>
         <div
           style={{
             color: "var(--text-tertiary)",
@@ -87,11 +105,24 @@ export default function ImageGallery({
           </p>
         </div>
       </div>
+    </>
     );
   }
 
   return (
-    <div className={`image-gallery ${className}`} {...props}>
+    <>
+      <a 
+        href="/docs?component=ImageGallery" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=ImageGallery";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`image-gallery ${className}`} {...props}>
       <div className="image-gallery-grid">
         {normalizedImages.map((image, index) => (
           <div
@@ -192,6 +223,7 @@ export default function ImageGallery({
           ))}
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

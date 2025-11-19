@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## List
+ */
+
 import React from "react";
 import "./List.css";
 
@@ -29,10 +35,22 @@ export default function List({
   };
 
   return (
-    <ul
-      className={`list list-${variant} ${dense ? "list-dense" : ""} ${dividers ? "list-dividers" : ""} ${className}`}
-      {...props}
-    >
+    <>
+      <a 
+        href="/docs?component=List" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=List";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <ul
+        className={`list list-${variant} ${dense ? "list-dense" : ""} ${dividers ? "list-dividers" : ""} ${className}`}
+        {...props}
+      >
       {items.length > 0 ? (
         items.map((item, index) => (
           <li
@@ -68,6 +86,7 @@ export default function List({
           </div>
         </li>
       )}
-    </ul>
+      </ul>
+    </>
   );
 }

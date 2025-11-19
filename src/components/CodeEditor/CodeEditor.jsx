@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## CodeEditor
+ */
+
 import React, { useState, useRef, useEffect } from "react";
 import "./CodeEditor.css";
 
@@ -39,10 +45,22 @@ export default function CodeEditor({
   };
 
   return (
-    <div
-      className={`code-editor code-editor-${language} ${className}`}
-      {...props}
-    >
+    <>
+      <a 
+        href="/docs?component=CodeEditor" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=CodeEditor";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div
+        className={`code-editor code-editor-${language} ${className}`}
+        {...props}
+      >
       <div className="code-editor-header">
         <span className="code-editor-language">{language}</span>
       </div>
@@ -64,6 +82,7 @@ export default function CodeEditor({
           placeholder="// Start coding..."
         />
       </div>
-    </div>
+      </div>
+    </>
   );
 }

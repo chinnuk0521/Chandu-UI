@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## DateRangePicker
+ */
+
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { HiCalendar, HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import "./DateRangePicker.css";
@@ -260,9 +266,21 @@ export default function DateRangePicker({
   }, [isOpen]);
 
   return (
-    <div
-      className={`date-range-picker ${className}`}
-      ref={containerRef}
+    <>
+      <a 
+        href="/docs?component=DateRangePicker" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=DateRangePicker";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div
+        className={`date-range-picker ${className}`}
+        ref={containerRef}
       style={{ position: "relative", width: "100%" }}
       {...props}
     >
@@ -310,6 +328,7 @@ export default function DateRangePicker({
           )}
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

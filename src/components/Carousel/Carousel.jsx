@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Carousel
+ */
+
 import React, { useState, useEffect } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import "./Carousel.css";
@@ -56,7 +62,19 @@ export default function Carousel({
   if (items.length === 0) return null;
 
   return (
-    <div className={`carousel ${className}`} {...props}>
+    <>
+      <a 
+        href="/docs?component=Carousel" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Carousel";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`carousel ${className}`} {...props}>
       <div className="carousel-container">
         {items.map((item, index) => (
           <div
@@ -101,6 +119,7 @@ export default function Carousel({
           ))}
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

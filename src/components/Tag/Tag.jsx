@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Tag
+ */
+
 import React from "react";
 import { HiX } from "react-icons/hi";
 import "./Tag.css";
@@ -29,13 +35,26 @@ export default function Tag({
   const isClosable = closable || (onClose !== undefined);
 
   return (
-    <span className={`tag tag-${variant} tag-${size} ${className}`} {...props}>
+    <>
+      <a 
+        href="/docs?component=Tag" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Tag";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <span className={`tag tag-${variant} tag-${size} ${className}`} {...props}>
       {content}
       {isClosable && onClose && (
         <button className="tag-close" onClick={onClose} aria-label="Remove tag">
           <HiX />
         </button>
       )}
-    </span>
+      </span>
+    </>
   );
 }

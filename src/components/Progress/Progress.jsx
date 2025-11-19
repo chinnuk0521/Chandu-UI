@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Progress
+ */
+
 import React from "react";
 import "./Progress.css";
 
@@ -30,10 +36,22 @@ export default function Progress({
   const displayLabel = label !== undefined ? label : (showLabel ? `${Math.round(percentage)}%` : null);
 
   return (
-    <div
-      className={`progress-wrapper progress-${size} ${className}`}
-      {...props}
-    >
+    <>
+      <a 
+        href="/docs?component=Progress" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Progress";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div
+        className={`progress-wrapper progress-${size} ${className}`}
+        {...props}
+      >
       {displayLabel && (
         <div className="progress-label">
           <span>{displayLabel}</span>
@@ -51,5 +69,6 @@ export default function Progress({
         ></div>
       </div>
     </div>
+    </>
   );
 }

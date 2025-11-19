@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Chat
+ */
+
 import React, { useState, useRef, useEffect } from "react";
 import { HiPaperAirplane, HiFaceSmile } from "react-icons/hi2";
 import "./Chat.css";
@@ -39,7 +45,19 @@ export default function Chat({
   };
 
   return (
-    <div className={`chat ${className}`} {...props}>
+    <>
+      <a 
+        href="/docs?component=Chat" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Chat";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`chat ${className}`} {...props}>
       <div className="chat-messages">
         {messages.map((message, index) => (
           <div
@@ -88,6 +106,7 @@ export default function Chat({
           <HiPaperAirplane />
         </button>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

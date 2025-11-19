@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## CodeViewer
+ */
+
 import React, { useState } from "react";
 import { HiClipboard, HiCheck } from "react-icons/hi2";
 import Modal from "../Modal/Modal";
@@ -96,6 +102,17 @@ export default function CodeViewer({
       size="large"
     >
       <div className="code-viewer">
+        <a 
+          href="/docs?component=CodeViewer" 
+          className="documentation-link"
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "/docs?component=CodeViewer";
+          }}
+          style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+        >
+          Check Documentation
+        </a>
         {tabs.length > 0 ? (
           <Tabs tabs={tabs} />
         ) : (

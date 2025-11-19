@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Hero
+ */
+
 import React from "react";
 import "./Hero.css";
 

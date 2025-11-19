@@ -51,8 +51,9 @@ If you're interested in becoming a maintainer, please:
 
 For questions or concerns about project maintenance:
 
-- Open an issue on GitHub
-- Contact maintainers via their GitHub profiles
+- **Email**: chanduui@outlook.in
+- **GitHub**: [https://github.com/chinnuk0521/Chandu-UI](https://github.com/chinnuk0521/Chandu-UI)
+- **Issues**: [https://github.com/chinnuk0521/Chandu-UI/issues](https://github.com/chinnuk0521/Chandu-UI/issues)
 - Refer to [SECURITY.md](SECURITY.md) for security-related matters
 
 ## Decision Making

@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## SearchBar
+ */
+
 import React, { useState, useRef, useEffect } from "react";
 import { HiSearch, HiX } from "react-icons/hi";
 import "./SearchBar.css";
@@ -55,7 +61,19 @@ export default function SearchBar({
   };
 
   return (
-    <div className={`search-bar ${className}`} ref={searchRef} {...props}>
+    <>
+      <a 
+        href="/docs?component=SearchBar" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=SearchBar";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div className={`search-bar ${className}`} ref={searchRef} {...props}>
       <div className="search-bar-input-wrapper">
         <HiSearch className="search-bar-icon" />
         <input
@@ -85,6 +103,7 @@ export default function SearchBar({
           ))}
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

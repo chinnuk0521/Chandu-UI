@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Tour
+ */
+
 import React, { useState, useEffect, useRef } from "react";
 import { HiXMark, HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import "./Tour.css";
@@ -254,6 +260,17 @@ export default function Tour({
 
   return (
     <>
+      <a 
+        href="/docs?component=Tour" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Tour";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline', position: 'relative', zIndex: 10000 }}
+      >
+        Check Documentation
+      </a>
       <div className="tour-overlay" onClick={handleClose} />
       {highlightRect && (
         <div

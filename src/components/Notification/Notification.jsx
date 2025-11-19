@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## Notification
+ */
+
 import React from "react";
 import {
   HiCheckCircle,
@@ -39,10 +45,22 @@ export default function Notification({
   const Icon = icons[type] || HiInformationCircle;
 
   return (
-    <div
-      className={`notification notification-${type} ${className}`}
-      {...props}
-    >
+    <>
+      <a 
+        href="/docs?component=Notification" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=Notification";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
+      <div
+        className={`notification notification-${type} ${className}`}
+        {...props}
+      >
       {showIcon && (
         <div className="notification-icon">
           <Icon />
@@ -61,6 +79,7 @@ export default function Notification({
           <HiX />
         </button>
       )}
-    </div>
+      </div>
+    </>
   );
 }

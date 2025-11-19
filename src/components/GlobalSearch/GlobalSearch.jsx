@@ -1,3 +1,9 @@
+/**
+ * Documentation:
+ * Refer to COMPONENT_DOCUMENTATION.md
+ * Section: ## GlobalSearch
+ */
+
 import React, { useState, useRef, useEffect } from "react";
 import {
   HiMagnifyingGlass,
@@ -166,6 +172,17 @@ export default function GlobalSearch({
 
   return (
     <div className={`global-search-wrapper ${className}`} ref={containerRef}>
+      <a 
+        href="/docs?component=GlobalSearch" 
+        className="documentation-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/docs?component=GlobalSearch";
+        }}
+        style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', color: 'inherit', textDecoration: 'underline' }}
+      >
+        Check Documentation
+      </a>
       <div className="global-search-input-wrapper">
         <HiMagnifyingGlass className="search-icon" />
         <input

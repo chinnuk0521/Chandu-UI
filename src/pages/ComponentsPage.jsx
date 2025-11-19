@@ -167,6 +167,25 @@ export default function ComponentsPage() {
   );
   const [codeViewerOpen, setCodeViewerOpen] = useState(false);
   
+  // Dark mode state
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("darkMode");
+    return saved === "true";
+  });
+
+  // Apply dark mode
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+      document.documentElement.classList.add("dark-mode");
+      localStorage.setItem("darkMode", "true");
+    } else {
+      document.body.classList.remove("dark-mode");
+      document.documentElement.classList.remove("dark-mode");
+      localStorage.setItem("darkMode", "false");
+    }
+  }, [darkMode]);
+  
   // State for all component demos
   const [selectedFruits, setSelectedFruits] = useState([]);
   const [searchResult, setSearchResult] = useState(null);
